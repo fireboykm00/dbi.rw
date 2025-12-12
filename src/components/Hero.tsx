@@ -58,7 +58,7 @@ const Hero = () => {
           </a>
 
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-4 bg-gray-500/20 border-gray-500/20 border backdrop-blur-sm rounded-md px-6 py-5">
+          <div className="inline-flex items-center gap-4 bg-gray-500/10 border-gray-500/40 border backdrop-blur-sm rounded-md px-6 py-5">
             {/* Company Logos */}
             <div className="flex items-center -space-x-3">
               {profilesImages.map((logo, index) => (
@@ -86,8 +86,7 @@ const Hero = () => {
 
             {/* Trust Text */}
             <span className="text-white text-sm font-medium">
-              Trusted by <span className="text-blue-400">50+</span> Verified
-              Businesses
+              Trusted by 50+ Verified Businesses
             </span>
           </div>
         </div>

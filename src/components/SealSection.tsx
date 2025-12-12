@@ -21,7 +21,7 @@ const SealSection = () => {
     <section className="relative w-full bg-white overflow-hidden py-20">
       {/* Background Shape */}
       <div
-        className="absolute inset-0 bg-no-repeat bg-right-bottom opacity-60"
+        className="absolute inset-0 bg-no-repeat bg-bottom-right opacity-60"
         style={{ backgroundImage: "url('/shapes/shapes.svg')" }}
       />
 
