@@ -1,63 +1,98 @@
-import React from "react";
-
 const Hero = () => {
-  return (
-    <div className="relative w-full min-h-[calc(100vh-80px)] flex items-center bg-gray-50 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/hero-bg.png"
-          alt="Background"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
-      </div>
+  // Profile Images for trust badge
+  const profilesImages = [
+    "/all/profile.jpg",
+    "/all/profile1.jpg",
+    "/all/profile2.jpg",
+    "/all/profile3.jpg",
+  ];
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#455F84] leading-tight">
-            Digital Business <br />
-            <span className="text-[#2a4874]">Institute</span>
+  return (
+    <section className="relative min-h-screen  w-full overflow-hidden rounded-[20px]">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/all/hero.jpg')" }}
+      />
+
+      {/* Gradient Overlay - darker on left for text readability */}
+      <div className="absolute inset-0 bg-linear-to-r from-[#03396C]/70 via-[#03396C00]/40 to-transparent" />
+
+      {/* Content Container */}
+      <div className="relative z-10 flex flex-col justify-end min-h-screen max-w-7xl mx-auto px-6 pt-24 pb-12">
+        <div className="max-w-xl">
+          {/* Main Headline */}
+          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6">
+            The Standard for
+            <br />
+            Digital Trust in Rwanda
           </h1>
 
-          <div className="space-y-6 text-lg text-gray-700 max-w-xl">
-            <p className="border-l-4 border-[#455F84] pl-4">
-              The capacity building arm of the Rwanda ICT Chamber.
-            </p>
-            <p>
-              DBI as a trade and investment support institution – is
-              complementing the Rwanda National Strategy for Transformation and
-              Prosperity.
-            </p>
-          </div>
+          {/* Subtext */}
+          <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+            The official verification partner for startups, fintechs, and
+            e-commerce platforms. We certify businesses and upskill
+            professionals to accelerate the digital economy.
+          </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a
-              href="/training"
-              className="px-8 py-3 bg-[#455F84] text-white font-semibold rounded-lg hover:bg-[#2a4874] transition-colors shadow-lg hover:shadow-xl"
+          {/* CTA Button */}
+          <a
+            href="#"
+            className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-[#03396C] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
+          >
+            Get Your Trust Seal
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
             >
-              Explore Training
-            </a>
-            <a
-              href="/contact"
-              className="px-8 py-3 bg-white text-[#455F84] border-2 border-[#455F84] font-semibold rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </a>
 
-        <div className="hidden lg:block relative">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 border-4 border-white">
-            <img
-              src="/hero-bg.png"
-              alt="Office"
-              className="w-full h-auto object-cover"
-            />
+          {/* Trust Badge */}
+          <div className="inline-flex items-center gap-4 bg-gray-500/20 border-gray-500/20 border backdrop-blur-sm rounded-md px-6 py-5">
+            {/* Company Logos */}
+            <div className="flex items-center -space-x-3">
+              {profilesImages.map((logo, index) => (
+                <div
+                  key={index}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-white overflow-hidden flex items-center justify-center"
+                >
+                  <img
+                    src={logo}
+                    alt={`Company ${index + 1}`}
+                    className={`w-10 h-10 object-cover z-[${index}]`}
+                  />
+                </div>
+              ))}
+              {/* Plus indicator */}
+              <div className="w-10 h-10 relative rounded-full z-10 bg-[#03396C] border-2 border-transparent overflow-hidden flex items-center justify-center">
+                <img
+                  src={profilesImages[0]}
+                  alt={`Company`}
+                  className="absolute w-10 h-10 object-cover z-0 opacity-50"
+                />
+                <span className="text-white text-sm font-bold z-11">+</span>
+              </div>
+            </div>
+
+            {/* Trust Text */}
+            <span className="text-white text-sm font-medium">
+              Trusted by <span className="text-blue-400">50+</span> Verified
+              Businesses
+            </span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

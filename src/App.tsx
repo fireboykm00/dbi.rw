@@ -1,20 +1,46 @@
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Stats from "./components/Stats";
-import "./App.css";
+import SealSection from "./components/SealSection";
+import StandardsSection from "./components/StandardsSection";
+import PolicySection from "./components/PolicySection";
+import SearchSection from "./components/SearchSection";
+import PartnersSection from "./components/PartnersSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col w-full min-h-screen bg-gray-100">
-      <Navbar />
-      <main className="grow">
+    <div className="min-h-screen bg-white">
+      {/* Navbar positioned absolutely over Hero */}
+      <div className="relative p-2">
+        <header className="absolute top-2 left-0 right-0 z-50">
+          <Navbar />
+        </header>
+
+        {/* Hero Section */}
         <Hero />
-        <Stats />
-        <Services />
-      </main>
-      <Footer />
+      </div>
+
+      {/* Seal Section */}
+      <SealSection />
+
+      {/* Standards Section */}
+      <div className="px-20">
+        <StandardsSection />
+      </div>
+
+      {/* Policy Section */}
+      <PolicySection />
+
+      {/* Search Section */}
+      <SearchSection />
+
+      {/* Partners Section */}
+      <PartnersSection />
+
+      {/* Footer */}
+      <div className="relative p-2">
+        <Footer />
+      </div>
     </div>
   );
 }
