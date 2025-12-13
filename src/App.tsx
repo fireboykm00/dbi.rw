@@ -1,47 +1,26 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import SealSection from "./components/SealSection";
-import StandardsSection from "./components/StandardsSection";
-import PolicySection from "./components/PolicySection";
-import SearchSection from "./components/SearchSection";
-import PartnersSection from "./components/PartnersSection";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
+import HomePage from "./pages/HomePage";
+import AcademyPage from "./pages/AcademyPage";
+import CertificationPage from "./pages/CertificationPage";
+import DirectoryPage from "./pages/DirectoryPage";
+import ResourcesPage from "./pages/ResourcesPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navbar positioned absolutely over Hero */}
-      <div className="relative p-2">
-        <header className="absolute top-2 left-0 right-0 z-50">
-          <Navbar />
-        </header>
-
-        {/* Hero Section */}
-        <Hero />
-      </div>
-
-      {/* Seal Section */}
-      <SealSection />
-
-      {/* Standards Section */}
-      <div className="px-20">
-        <StandardsSection />
-      </div>
-
-      {/* Policy Section */}
-      <PolicySection />
-
-      {/* Search Section */}
-      <SearchSection />
-
-      {/* Partners Section */}
-      <PartnersSection />
-
-      {/* Footer */}
-      <div className="relative p-2">
-        <Footer />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/academy" element={<AcademyPage />} />
+          <Route path="/certification" element={<CertificationPage />} />
+          <Route path="/directory" element={<DirectoryPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

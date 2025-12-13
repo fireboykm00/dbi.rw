@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const currentPath =
-    typeof window !== "undefined" ? window.location.pathname : "";
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -30,15 +31,17 @@ const Navbar = () => {
       >
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-          <img src="./logo.png" alt="DBI LOGO" className="w-44" />
+          <Link to="/">
+            <img src="/logo.png" alt="DBI LOGO" className="w-44" />
+          </Link>
         </div>
 
         {/* Navigation Links */}
         <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a
-                href={link.href}
+              <Link
+                to={link.href}
                 className={`text-white text-sm transition-colors duration-200 ${
                   isActive(link.href)
                     ? "font-bold"
@@ -46,7 +49,7 @@ const Navbar = () => {
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -65,8 +68,8 @@ const Navbar = () => {
         </button>
 
         {/* CTA Button */}
-        <a
-          href="#"
+        <Link
+          to="/certification"
           className="hidden lg:flex items-center gap-2 bg-[#03396C] hover:bg-[#143f68] text-white text-sm font-medium px-5 py-4 rounded-lg transition-colors duration-200"
         >
           Get Certified
@@ -84,7 +87,7 @@ const Navbar = () => {
               d="M14 5l7 7m0 0l-7 7m7-7H3"
             />
           </svg>
-        </a>
+        </Link>
       </div>
 
       {/* Mobile Menu */}
@@ -96,8 +99,9 @@ const Navbar = () => {
           <ul className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`text-white text-sm block py-2 transition-colors duration-200 ${
                     isActive(link.href)
                       ? "font-bold"
@@ -105,16 +109,17 @@ const Navbar = () => {
                   }`}
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <a
-                href="#"
+              <Link
+                to="/certification"
+                onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 bg-[#03396C] text-white text-sm font-medium px-4 py-3 rounded-lg w-full"
               >
                 Get Certified
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
