@@ -40,10 +40,10 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative w-full rounded-xl bg-[#0a1929] overflow-hidden">
+    <footer className="relative w-full rounded-xl bg-[#212529] overflow-hidden">
       {/* Background Shape */}
       <div
-        className="absolute inset-0 bg-no-repeat bg-cover opacity-30"
+        className="absolute inset-0 bg-no-repeat bg-cover"
         style={{ backgroundImage: "url('/shapes/footer-shapes.png')" }}
       />
 
@@ -171,24 +171,28 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="flex flex-row items-center gap-2">
+          <div className="border-t border-gray-700 h-2 w-full"></div>
 
           {/* Social Links */}
-          <div className="flex justify-center gap-3 mt-12">
+          <div className="flex justify-center gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.href}
-                className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-gray-900 transition-all duration-200"
+                className="w-12 h-12 rounded-full bg-[#03396C] flex items-center justify-center text-white hover:bg-white hover:text-gray-900 transition-all duration-200"
                 aria-label={social.name}
               >
                 {social.icon}
               </a>
             ))}
           </div>
+          <div className="border-t border-gray-700 h-2 w-full"></div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700">
+        <div className="py-6">
           <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
               Copyright © 2025 All Rights Reserved.
