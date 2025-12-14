@@ -253,9 +253,7 @@ const ResourcesPage = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 mb-6 flex-grow">
-                  {item.description}
-                </p>
+                <p className="text-gray-600 mb-6 grow">{item.description}</p>
                 <button
                   className="w-full py-3 rounded-xl font-medium text-[#212529] flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                   style={{ backgroundColor: primaryColor }}
