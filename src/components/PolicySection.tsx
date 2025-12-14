@@ -1,4 +1,4 @@
-import { primaryColor } from "../lib/site";
+import { darkColor, primaryColor } from "../lib/site";
 
 const PolicySection = () => {
   return (
@@ -13,13 +13,11 @@ const PolicySection = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left Side - Image */}
           <div className="flex-1 w-full max-w-lg">
-            <div className="rounded-2xl overflow-hidden">
-              <img
-                src="/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg"
-                alt="Team collaboration"
-                className="w-full object-cover rounded-2xl"
-              />
-            </div>
+            <img
+              src="/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg"
+              alt="Team collaboration"
+              className="w-full object-cover h-full min-h-[600px] rounded-2xl -rotate-2"
+            />
           </div>
 
           {/* Right Side - Content */}
@@ -42,8 +40,8 @@ const PolicySection = () => {
             {/* CTA Button */}
             <a
               href="#"
-              className="inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
-              style={{ backgroundColor: primaryColor }}
+              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
+              style={{ backgroundColor: darkColor, color: primaryColor }}
             >
               Read Our Mission
               <svg
@@ -65,17 +63,21 @@ const PolicySection = () => {
             {/* Members Badge */}
             <div className="absolute -right-4 top-1/2 transform translate-x-1/2 -translate-y-1/2 hidden lg:block">
               <div
-                className="relative w-32 h-32 rounded-full flex flex-col items-center justify-center text-white"
-                style={{ backgroundColor: primaryColor }}
+                className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center"
+                style={{ backgroundColor: darkColor, color: primaryColor }}
               >
-                <span className="text-4xl font-bold">
+                <span className="text-5xl font-bold">
                   300<sup className="text-lg">+</sup>
                 </span>
                 <span className="text-sm">Members</span>
                 {/* Speech bubble tail */}
                 <div
-                  className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45"
-                  style={{ backgroundColor: primaryColor }}
+                  className="absolute bottom-0 -left-6 w-10 h-10 rounded-full"
+                  style={{ backgroundColor: darkColor }}
+                />
+                <div
+                  className="absolute bottom-5 -left-2 w-8 h-5 -rotate-45"
+                  style={{ backgroundColor: darkColor }}
                 />
               </div>
             </div>

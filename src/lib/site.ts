@@ -1,4 +1,6 @@
-export const primaryColor = "#03396C";
+export const primaryColor = "#FBD40E";
+export const darkColor = "#212529";
+export const grayColor = "#555555";
 
 interface FAQItem {
   question: string;

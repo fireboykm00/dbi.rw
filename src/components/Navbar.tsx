@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,10 +43,10 @@ const Navbar = () => {
             <li key={link.name}>
               <Link
                 to={link.href}
-                className={`text-white text-sm transition-colors duration-200 ${
+                className={`text-sm transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "font-bold"
-                    : "font-normal hover:text-gray-300"
+                    ? "font-bold text-[#FBD40E]"
+                    : "font-normal text-white hover:text-[#FBD40E]"
                 }`}
               >
                 {link.name}
@@ -70,23 +71,10 @@ const Navbar = () => {
         {/* CTA Button */}
         <Link
           to="/certification"
-          className="hidden lg:flex items-center gap-2 bg-[#03396C] hover:bg-[#143f68] text-white text-sm font-medium px-5 py-4 rounded-lg transition-colors duration-200"
+          className="hidden lg:flex items-center gap-2 bg-[#FBD40E] hover:bg-[#e0bd0c] text-[#212529] text-sm font-medium px-5 py-4 rounded-lg transition-colors duration-200"
         >
           Get Certified
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            />
-          </svg>
+          <ArrowRightIcon className="w-5" />
         </Link>
       </div>
 
@@ -116,7 +104,7 @@ const Navbar = () => {
               <Link
                 to="/certification"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 bg-[#03396C] text-white text-sm font-medium px-4 py-3 rounded-lg w-full"
+                className="flex items-center justify-center gap-2 bg-[#FBD40E] text-[#212529] text-sm font-medium px-4 py-3 rounded-lg w-full"
               >
                 Get Certified
               </Link>

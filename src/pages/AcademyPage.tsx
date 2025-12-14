@@ -39,8 +39,30 @@ const AcademyPage = () => {
           {/* Content */}
           <div className="relative z-10 text-center px-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Global Certification. Local Impact.
+              Master Global Tech Standards
             </h1>
+          </div>
+        </section>
+      </div>
+
+      <div className="p-2">
+        <section className="py-24 px-6 flex flex-col md:flex-row gap-10 md:gap-20 items-center max-w-7xl w-full mx-auto">
+          <div>
+            <img
+              src="/all/bcd964855b4468d9e1945fbbf1927dd628340e14.png"
+              className="w-full object-cover -rotate-2"
+            />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold text-[#212529] mb-6">
+              Don't just learn. Get Accredited.
+            </h2>
+            <p className="text-gray-600">
+              Digital Business Institute is fully accredited by the Southern
+              African Software Testing Qualifications Board (SASTQB) to deliver
+              the ISTQB Certified Tester Foundation Level (CTFL) training. Your
+              certificate will be recognized in over 100 countries.
+            </p>
           </div>
         </section>
       </div>
@@ -51,7 +73,7 @@ const AcademyPage = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Text Content */}
             <div>
-              <h2 className="text-3xl font-bold text-[#0a1929] mb-8">
+              <h2 className="text-3xl font-bold text-[#212529] mb-8">
                 CTFL Accreditation
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
@@ -80,7 +102,7 @@ const AcademyPage = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-[#03396C] inline-block border-b-4 border-[#03396C] pb-2">
+            <h2 className="text-3xl font-bold text-[#212529] inline-block border-b-4 border-[#FBD40E] pb-2">
               Categories
             </h2>
           </div>
@@ -90,7 +112,7 @@ const AcademyPage = () => {
             {categories.map((category, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-8 rounded-lg border-l-4 border-[#03396C] hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50 p-8 rounded-lg border-l-4 border-[#FBD40E] hover:shadow-lg transition-shadow duration-300"
               >
                 <h3 className="text-xl font-bold text-black mb-6">
                   {category.title}

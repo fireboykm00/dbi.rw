@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { primaryColor } from "../lib/site";
 
 const Footer = () => {
@@ -68,13 +69,13 @@ const Footer = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-gray-400 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-gray-500" />
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -88,11 +89,11 @@ const Footer = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                     style={{ backgroundColor: primaryColor }}
                   >
                     <svg
-                      className="w-4 h-4 text-white"
+                      className="w-4 h-4 text-[#212529]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -118,11 +119,11 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                     style={{ backgroundColor: primaryColor }}
                   >
                     <svg
-                      className="w-4 h-4 text-white"
+                      className="w-4 h-4 text-[#212529]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -144,11 +145,11 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                     style={{ backgroundColor: primaryColor }}
                   >
                     <svg
-                      className="w-4 h-4 text-white"
+                      className="w-4 h-4 text-[#212529]"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -181,7 +182,7 @@ const Footer = () => {
               <a
                 key={social.name}
                 href={social.href}
-                className="w-12 h-12 rounded-full bg-[#03396C] flex items-center justify-center text-white hover:bg-white hover:text-gray-900 transition-all duration-200"
+                className="w-12 h-12 rounded-full bg-[#FBD40E] flex items-center justify-center text-[#212529] hover:bg-white hover:text-gray-900 transition-all duration-200"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -198,18 +199,18 @@ const Footer = () => {
               Copyright © 2025 All Rights Reserved.
             </p>
             <div className="flex items-center gap-6">
-              <a
-                href="/privacy"
+              <Link
+                to="/privacy"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Privacy policy
-              </a>
-              <a
-                href="/terms"
+              </Link>
+              <Link
+                to="/terms"
                 className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 Terms & conditions
-              </a>
+              </Link>
             </div>
           </div>
         </div>

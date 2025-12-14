@@ -1,27 +1,27 @@
 import { primaryColor } from "../lib/site";
-import { Shield, Lightbulb, Scale, Handshake } from "lucide-react";
+import { Shield, Lightbulb, Scale, Handshake, Link } from "lucide-react";
 
 const AboutPage = () => {
   const values = [
     {
       title: "Trust",
       description: "Building confidence in Rwanda's digital economy",
-      icon: <Shield className="w-12 h-12 text-[#03396C]" />,
+      icon: <Shield className="w-12 h-12 text-[#212529]" />,
     },
     {
       title: "Innovation",
       description: "Driving digital transformation forward",
-      icon: <Lightbulb className="w-12 h-12 text-[#03396C]" />,
+      icon: <Lightbulb className="w-12 h-12 text-[#212529]" />,
     },
     {
       title: "Integrity",
       description: "Upholding the highest ethical standards",
-      icon: <Scale className="w-12 h-12 text-[#03396C]" />,
+      icon: <Scale className="w-12 h-12 text-[#212529]" />,
     },
     {
       title: "Inclusion",
       description: "Ensuring digital access for all Rwandans",
-      icon: <Handshake className="w-12 h-12 text-[#03396C]" />,
+      icon: <Handshake className="w-12 h-12 text-[#212529]" />,
     },
   ];
 
@@ -158,10 +158,10 @@ const AboutPage = () => {
             { value: "50+", label: "Partner Organizations" },
           ].map((stat, i) => (
             <div key={i} className="p-4">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-[#212529] mb-2">
                 {stat.value}
               </div>
-              <div className="text-white/70 font-medium">{stat.label}</div>
+              <div className="text-[#212529]/70 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -172,7 +172,7 @@ const AboutPage = () => {
         <section className="relative py-24 px-6 overflow-hidden rounded-xl">
           {/* Background Image & Overlay */}
 
-          <div className="absolute inset-0 bg-linear-to-r from-[#03396C]/70 to-[#000000]/50">
+          <div className="absolute inset-0 bg-linear-to-r from-[#212529]/70 to-[#000000]/50">
             <div
               className="absolute inset-0 bg-cover bg-center mix-blend-overlay"
               style={{
@@ -197,12 +197,12 @@ const AboutPage = () => {
                   stages of their development: Startups, Small and Medium
                   Enterprises and Corporations.
                 </p>
-                <a
-                  href="#"
-                  className="inline-block bg-white text-[#03396C] font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+                <Link
+                  to="#"
+                  className="inline-block bg-white text-[#212529] font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
                 >
                   Become A Member
-                </a>
+                </Link>
               </div>
 
               {/* Logo Card */}

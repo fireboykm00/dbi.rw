@@ -36,7 +36,7 @@ const DirectoryPage = () => {
           />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#03396C]/70 via-[#03396C00]/40 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#212529]/70 via-[#21252900]/40 to-transparent" />
 
           {/* Content Container */}
           <div className="relative z-10 flex flex-col justify-end min-h-screen max-w-7xl mx-auto px-6 pt-24 pb-12">
@@ -47,7 +47,7 @@ const DirectoryPage = () => {
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6">
                 DBI Certified
                 <br />
-                <span className="text-[#4dd0e1]">Business Directory</span>
+                <span className="text-[#FBD40E]">Business Directory</span>
               </h1>
               <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md">
                 Find and connect with certified digital businesses in Rwanda.
@@ -63,7 +63,7 @@ const DirectoryPage = () => {
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1929] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
               Certified Platforms
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -93,7 +93,7 @@ const DirectoryPage = () => {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a1929] mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-gray-600 text-lg">
@@ -112,11 +112,11 @@ const DirectoryPage = () => {
                   onClick={() => toggleFaq(index)}
                   className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-lg font-semibold text-[#0a1929] pr-8">
+                  <span className="text-lg font-semibold text-[#212529] pr-8">
                     {faq.question}
                   </span>
                   {openFaqIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-[#03396C] shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-[#212529] shrink-0" />
                   ) : (
                     <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" />
                   )}

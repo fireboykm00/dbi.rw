@@ -1,5 +1,7 @@
-import { primaryColor } from "../lib/site";
-import { QuoteIcon, ShieldCheck, BadgeCheck } from "lucide-react";
+import { darkColor } from "../lib/site";
+import { BadgeCheck } from "lucide-react";
+import { ShieldCheckIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const SealSection = () => {
   const sealTypes = [
@@ -42,9 +44,9 @@ const SealSection = () => {
               <div className="absolute top-1/5 -translate-y-1/2 -right-10 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 flex items-center gap-2">
                 <div
                   className="w-10 h-10 rounded-md flex items-center justify-center"
-                  style={{ backgroundColor: primaryColor }}
+                  style={{ backgroundColor: darkColor }}
                 >
-                  <ShieldCheck className=" text-white" />
+                  <ShieldCheckIcon className="text-[#FBD40E] w-6" />
                 </div>
                 <span className="text-sm font-medium text-gray-800">
                   Security Check: Passed
@@ -61,9 +63,17 @@ const SealSection = () => {
                 <div className="flex items-start gap-3">
                   <div
                     className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden"
-                    style={{ backgroundColor: primaryColor }}
+                    style={{ backgroundColor: darkColor }}
                   >
-                    <QuoteIcon className="text-white transform rotate-180" />
+                    {/* <QuoteIcon className="text-[#FBD40E] transform rotate-180" /> */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                      fill="#FBD40E"
+                      width="16"
+                    >
+                      <path d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64L0 216zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-136z" />
+                    </svg>
                   </div>
                   <p className="text-sm text-gray-700 leading-relaxed">
                     Exceptional service and peace of mind. Highly recommend!
@@ -97,12 +107,7 @@ const SealSection = () => {
                   </div>
                   {/* Text */}
                   <p className="text-base">
-                    <span
-                      className="font-semibold"
-                      style={{ color: primaryColor }}
-                    >
-                      {seal.name}
-                    </span>{" "}
+                    <span className="font-semibold">{seal.name}</span>{" "}
                     <span className="text-gray-600">{seal.description}</span>
                   </p>
                 </div>
@@ -112,24 +117,11 @@ const SealSection = () => {
             {/* CTA Button */}
             <a
               href="#"
-              className="inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
-              style={{ backgroundColor: primaryColor }}
+              className="inline-flex items-center gap-3 text-[#FBD40E] font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
+              style={{ backgroundColor: "#212529" }}
             >
               Get Started
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
+              <ArrowRightIcon className="w-5" />
             </a>
           </div>
         </div>

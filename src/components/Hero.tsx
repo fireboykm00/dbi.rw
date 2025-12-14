@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import { primaryColor } from "../lib/site";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+
 const Hero = () => {
   // Profile Images for trust badge
   const profilesImages = [
@@ -16,8 +20,7 @@ const Hero = () => {
       />
 
       {/* Gradient Overlay - darker on left for text readability */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#03396C]/70 via-[#03396C00]/40 to-transparent" />
-
+      <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
       {/* Content Container */}
       <div className="relative z-10 flex flex-col justify-end min-h-screen max-w-7xl mx-auto px-6 pt-24 pb-12">
         <div className="max-w-xl">
@@ -36,26 +39,16 @@ const Hero = () => {
           </p>
 
           {/* CTA Button */}
-          <a
-            href="#"
-            className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-[#03396C] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
+          <Link
+            to="#"
+            className="inline-flex items-center hover:bg-[#e0bd0c] gap-3 text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
+            style={{
+              backgroundColor: primaryColor,
+            }}
           >
             Get Your Trust Seal
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </a>
+            <ArrowRightIcon className="w-5" />
+          </Link>
 
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-4 bg-gray-500/10 border-gray-500/40 border backdrop-blur-sm rounded-md px-6 py-5">
@@ -74,13 +67,13 @@ const Hero = () => {
                 </div>
               ))}
               {/* Plus indicator */}
-              <div className="w-10 h-10 relative rounded-full z-10 bg-[#03396C] border-2 border-transparent overflow-hidden flex items-center justify-center">
+              <div className="w-10 h-10 relative rounded-full z-10 bg-[#FBD40E] border-2 border-transparent overflow-hidden flex items-center justify-center">
                 <img
                   src={profilesImages[0]}
                   alt={`Company`}
                   className="absolute w-10 h-10 object-cover z-0 opacity-50"
                 />
-                <span className="text-white text-sm font-bold z-11">+</span>
+                <span className="text-[#212529] text-sm font-bold z-11">+</span>
               </div>
             </div>
 

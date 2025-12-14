@@ -1,14 +1,25 @@
-import { primaryColor } from "../lib/site";
+import { darkColor, primaryColor } from "../lib/site";
 import { BugIcon, ShieldIcon, CogIcon } from "lucide-react";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+
 const StandardsSection = () => {
   const certifications = [
-    { name: "Certified Agile Business Analysis", icon: BugIcon },
-    { name: "Certified Tester Foundation Level", icon: ShieldIcon },
-    { name: "Quality Engineering for DevOps", icon: CogIcon },
+    {
+      name: "Certified Agile Business Analysis",
+      icon: <ShieldIcon color={primaryColor} fill={primaryColor} />,
+    },
+    {
+      name: "Certified Tester Foundation Level",
+      icon: <BugIcon color={primaryColor} />,
+    },
+    {
+      name: "Quality Engineering for DevOps",
+      icon: <CogIcon color={primaryColor} />,
+    },
   ];
 
   return (
-    <section className="relative max-w-7xl w-full mx-auto px-10 py-6 bg-gray-200 rounded-xl overflow-hiddexn">
+    <section className="relative max-w-7xl w-full mx-auto px-10 py-6 bg-gray-200 rounded-2xl">
       {/* Background Shape */}
 
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -24,24 +35,11 @@ const StandardsSection = () => {
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
-            style={{ backgroundColor: primaryColor }}
+            className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
+            style={{ backgroundColor: darkColor, color: primaryColor }}
           >
             Learn More
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
+            <ArrowRightIcon className="w-5" />
           </a>
         </div>
 
@@ -69,9 +67,9 @@ const StandardsSection = () => {
               >
                 <div
                   className="w-10 h-10 rounded-md flex items-center justify-center"
-                  style={{ backgroundColor: primaryColor }}
+                  style={{ backgroundColor: darkColor }}
                 >
-                  {<cert.icon className="text-white" />}
+                  {cert.icon}
                 </div>
                 <span className="text-xs font-medium text-gray-800 whitespace-nowrap">
                   {cert.name}

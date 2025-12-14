@@ -1,4 +1,4 @@
-import { primaryColor } from "../lib/site";
+import { darkColor, primaryColor } from "../lib/site";
 
 const SearchSection = () => {
   return (
@@ -54,8 +54,8 @@ const SearchSection = () => {
                 />
               </div>
               <button
-                className="flex items-center rounded-lg gap-2 text-white font-medium px-6 py-4 transition-colors duration-200 hover:opacity-90"
-                style={{ backgroundColor: primaryColor }}
+                className="flex items-center rounded-lg gap-2 font-medium px-6 py-4 transition-colors duration-200 hover:opacity-90"
+                style={{ backgroundColor: darkColor, color: primaryColor }}
               >
                 Search
                 <svg

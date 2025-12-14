@@ -57,7 +57,7 @@ const CertificationPage = () => {
           />
 
           {/* Gradient Overlay - darker on left for text readability */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#03396C]/70 via-[#0a1929]/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#212529]/70 via-[#212529]/80 to-transparent" />
 
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-end min-h-screen max-w-7xl mx-auto px-6 pt-24 pb-12">
@@ -72,7 +72,7 @@ const CertificationPage = () => {
 
               <a
                 href="#"
-                className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-[#03396C] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
+                className="inline-flex items-center gap-3 bg-[#FBD40E] hover:bg-[#e0bd0c] text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
               >
                 Start Assessment
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -97,11 +97,11 @@ const CertificationPage = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Image Side */}
-            <div className="relative rounded-4xl overflow-hidden h-[600px] shadow-2xl">
+            <div className="relative h-[600px] transform -rotate-2  bg-black  rounded-4xl overflow-hidden">
               <img
                 src="/all/5f5daa7adf3331199f682a231d8c7d576b3a4b1c.jpg"
                 alt="Professionals working"
-                className="w-full h-full object-cover"
+                className="absolute inset-0 h-full w-full object-cover opacity-70"
               />
             </div>
 
@@ -122,11 +122,11 @@ const CertificationPage = () => {
               <div className="space-y-6">
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
-                    className="w-6 h-6 text-[#03396C] shrink-0 mt-1"
+                    className="w-6 h-6 text-[#212529] shrink-0 mt-1"
                     strokeWidth={2}
                   />
                   <div>
-                    <span className="font-bold text-[#03396C] text-lg">
+                    <span className="font-bold text-[#212529] text-lg">
                       Credible Mark:{" "}
                     </span>
                     <span className="text-[#1e3a8a] font-medium">
@@ -136,11 +136,11 @@ const CertificationPage = () => {
                 </div>
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
-                    className="w-6 h-6 text-[#03396C] shrink-0 mt-1"
+                    className="w-6 h-6 text-[#212529] shrink-0 mt-1"
                     strokeWidth={2}
                   />
                   <div>
-                    <span className="font-bold text-[#03396C] text-lg">
+                    <span className="font-bold text-[#212529] text-lg">
                       Compliance:{" "}
                     </span>
                     <span className="text-[#1e3a8a] font-medium">
@@ -150,7 +150,7 @@ const CertificationPage = () => {
                 </div>
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
-                    className="w-6 h-6 text-[#03396C] shrink-0 mt-1"
+                    className="w-6 h-6 text-[#212529] shrink-0 mt-1"
                     strokeWidth={2}
                   />
                   <div>
@@ -174,7 +174,7 @@ const CertificationPage = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Header Card */}
             <div className="lg:col-span-1 flex flex-col justify-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0a1929] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#212529] mb-6">
                 Validate Your Excellence
               </h2>
               <p className="text-gray-600 text-lg">
@@ -196,7 +196,7 @@ const CertificationPage = () => {
                     className="w-24 h-24 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-[#0a1929] mb-4">
+                <h3 className="text-xl font-bold text-[#212529] mb-4">
                   {seal.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -210,13 +210,13 @@ const CertificationPage = () => {
 
       {/* How To Get DBI Trust Seal Section */}
       <div className="p-2 mb-20">
-        <section className="p-30 rounded-[16px] bg-[#03396C] text-white">
+        <section className="p-30 rounded-[16px] bg-[#212529] text-white">
           <div className="">
             <div className="grid lg:grid-cols-2 gap-12 mb-20">
               <h2 className="text-4xl md:text-5xl font-bold leading-tight">
                 How To Get DBI Trust Seal
               </h2>
-              <p className="text-white/80 text-lg leading-relaxed max-w-xl">
+              <p className="text-white/70 text-lg leading-relaxed max-w-xl">
                 Follow these 4 simple steps to earn your Trust Seal and verify
                 your business.
               </p>
@@ -253,7 +253,7 @@ const CertificationPage = () => {
                   className="relative flex flex-col items-start group"
                 >
                   {/* Step Badge */}
-                  <div className="bg-white text-[#03396C] px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md">
+                  <div className="bg-[#FBD40E] text-[#212529] px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md">
                     {item.step}
                   </div>
 
@@ -261,7 +261,7 @@ const CertificationPage = () => {
                   <div className="absolute top-8 left-14 bottom-0 w-px h-16 border-l-2 border-dotted border-white/30 z-0" />
 
                   {/* Content Card */}
-                  <div className="bg-[#1e4d7a] rounded-xl p-8 w-full flex-1 hover:bg-[#2a5d8f] transition-colors duration-300 relative z-10 mt-4">
+                  <div className="bg-[#444444] hover:bg-[#555555] text-white rounded-xl p-8 w-full flex-1 transition-colors duration-300 relative z-10 mt-4">
                     <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
                     <p className="text-white/70 text-lg leading-relaxed">
                       {item.description}
@@ -299,7 +299,7 @@ const CertificationPage = () => {
                 (Fintech, Software, Edtech, Startup, and E-Commerce) in our
                 unified portal.
               </p>
-              <button className="bg-white text-[#0a1929] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 hover:bg-gray-100 transition-all">
+              <button className="bg-[#FBD40E] text-[#212529] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 hover:bg-[#e0bd0c] transition-all">
                 Start Assessment
                 <ArrowRight className="w-5 h-5" />
               </button>

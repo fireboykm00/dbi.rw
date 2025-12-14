@@ -1,5 +1,3 @@
-import { primaryColor } from "../lib/site";
-
 const PartnersSection = () => {
   // Company logos from public/company folder
   const companyLogos = [
@@ -19,10 +17,7 @@ const PartnersSection = () => {
     <section className="relative w-full bg-white py-16 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h3
-          className="text-center text-lg font-medium mb-10"
-          style={{ color: primaryColor }}
-        >
+        <h3 className="text-center text-lg font-bold mb-10">
           Powered by Global Standards
         </h3>
 
