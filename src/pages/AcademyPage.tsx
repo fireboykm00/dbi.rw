@@ -47,7 +47,7 @@ const AcademyPage = () => {
 
       <div className="p-2">
         <section className="py-24 px-6 flex flex-col md:flex-row gap-10 md:gap-20 items-center max-w-7xl w-full mx-auto">
-          <div>
+          <div className="grow">
             <img
               src="/all/bcd964855b4468d9e1945fbbf1927dd628340e14.png"
               className="w-full object-cover -rotate-2"

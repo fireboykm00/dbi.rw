@@ -90,10 +90,10 @@ const Navbar = () => {
                 <Link
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-white text-sm block py-2 transition-colors duration-200 ${
+                  className={`text-sm block py-2 transition-colors duration-200 ${
                     isActive(link.href)
-                      ? "font-bold"
-                      : "font-normal hover:text-gray-300"
+                      ? "font-bold text-[#FBD40E]"
+                      : "font-normal text-white hover:text-[#FBD40E]"
                   }`}
                 >
                   {link.name}

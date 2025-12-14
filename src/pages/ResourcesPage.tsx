@@ -145,7 +145,9 @@ const ResourcesPage = () => {
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Everything You Need
-            <span className="block text-[#4dd0e1]">to Succeed Online</span>
+            <span className="block" style={{ color: primaryColor }}>
+              to Succeed Online
+            </span>
           </h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Access guides, templates, and tools to help you build, grow, and

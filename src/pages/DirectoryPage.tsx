@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faqData } from "../lib/site";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import PartnersSection from "../components/PartnersSection";
 
 const DirectoryPage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -25,7 +26,7 @@ const DirectoryPage = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-screen w-full overflow-hidden rounded-[20px]">
+        <section className="relative w-full overflow-hidden rounded-[20px]">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -36,10 +37,10 @@ const DirectoryPage = () => {
           />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#212529]/70 via-[#21252900]/40 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-transparent" />
 
           {/* Content Container */}
-          <div className="relative z-10 flex flex-col justify-end min-h-screen max-w-7xl mx-auto px-6 pt-24 pb-12">
+          <div className="relative z-10 flex flex-col justify-end min-h-[600px] max-w-7xl mx-auto px-6 pt-24 pb-12">
             <div className="max-w-xl">
               <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
                 Trusted Businesses
@@ -139,6 +140,7 @@ const DirectoryPage = () => {
           </div>
         </div>
       </section>
+      <PartnersSection />
     </div>
   );
 };

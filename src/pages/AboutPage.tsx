@@ -1,5 +1,12 @@
-import { primaryColor } from "../lib/site";
-import { Shield, Lightbulb, Scale, Handshake } from "lucide-react";
+import PartnersSection from "../components/PartnersSection";
+import { darkColor, primaryColor } from "../lib/site";
+import {
+  Shield,
+  Lightbulb,
+  Scale,
+  Handshake,
+  ArrowRightIcon,
+} from "lucide-react";
 
 const AboutPage = () => {
   const values = [
@@ -44,7 +51,7 @@ const AboutPage = () => {
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Building Trust in
-            <span className="block text-[#4dd0e1]">
+            <span className="block" style={{ color: primaryColor }}>
               Rwanda's Digital Economy
             </span>
           </h1>
@@ -60,7 +67,7 @@ const AboutPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2
             className="text-3xl md:text-4xl font-bold mb-8"
-            style={{ color: primaryColor }}
+            style={{ color: darkColor }}
           >
             What is DBI?
           </h2>
@@ -146,7 +153,7 @@ const AboutPage = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-20 px-6" style={{ backgroundColor: primaryColor }}>
+      {/* <section className="py-20 px-6" style={{ backgroundColor: primaryColor }}>
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {[
             { value: "500+", label: "Certified Businesses" },
@@ -162,23 +169,22 @@ const AboutPage = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ICT Chamber Membership CTA */}
       <div className="p-2 my-10">
-        <section className="relative py-24 px-6 overflow-hidden rounded-xl">
+        <section className="relative py-24 px-6 overflow-hidden rounded-xl min-h-[700px]">
           {/* Background Image & Overlay */}
 
-          <div className="absolute inset-0 bg-linear-to-r from-[#212529]/70 to-[#000000]/50">
-            <div
-              className="absolute inset-0 bg-cover bg-center mix-blend-overlay"
-              style={{
-                backgroundImage:
-                  "url('/all/310a11fe05bb9a32ed316a5104ae8c97bd08aca4.jpg')",
-              }}
-            />
-          </div>
+          <div className="absolute inset-0 bg-linear-to-r from-black/90 to-black/60" />
 
+          <div
+            className="absolute inset-0 bg-cover bg-center mix-blend-overlay"
+            style={{
+              backgroundImage:
+                "url('/all/310a11fe05bb9a32ed316a5104ae8c97bd08aca4.jpg')",
+            }}
+          />
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               {/* Text Content */}
@@ -196,10 +202,11 @@ const AboutPage = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-block text-[#212529] font-bold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:opacity-90"
+                  className="inline-flex text-[#212529] gap-2 items-center font-bold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:opacity-90"
                   style={{ backgroundColor: primaryColor }}
                 >
                   Become A Member
+                  <ArrowRightIcon className="w-5" />
                 </a>
               </div>
 
@@ -221,6 +228,7 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
+        <PartnersSection />
       </div>
     </>
   );

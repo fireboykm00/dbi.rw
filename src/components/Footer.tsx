@@ -41,7 +41,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative w-full rounded-xl bg-[#212529] overflow-hidden">
+    <footer className="relative w-full rounded-2xl bg-[#212529] overflow-hidden">
       {/* Background Shape */}
       <div
         className="absolute inset-0 bg-no-repeat bg-cover"
@@ -55,7 +55,7 @@ const Footer = () => {
             {/* Logo & Description */}
             <div>
               <img src="/logo.png" alt="DBI Logo" className="w-40 mb-6" />
-              <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+              <p className="text-white text-sm leading-relaxed max-w-xs">
                 Empowering Rwanda's digital businesses through skills, trust,
                 and innovation.
               </p>
@@ -66,14 +66,14 @@ const Footer = () => {
               <h4 className="text-white font-semibold text-lg mb-6">
                 Quick Links
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-gray-400 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2"
+                      className="text-white hover:text-[#FBD40E] transition-colors duration-200 text-sm flex items-center gap-2"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-gray-500" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white" />
                       {link.name}
                     </Link>
                   </li>
@@ -138,7 +138,7 @@ const Footer = () => {
                   </div>
                   <a
                     href="mailto:info@dbi.rw"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
                   >
                     info@dbi.rw
                   </a>
@@ -164,7 +164,7 @@ const Footer = () => {
                   </div>
                   <a
                     href="tel:+250781375971"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
                   >
                     +250781375971
                   </a>
@@ -182,7 +182,7 @@ const Footer = () => {
               <a
                 key={social.name}
                 href={social.href}
-                className="w-12 h-12 rounded-full bg-[#FBD40E] flex items-center justify-center text-[#212529] hover:bg-white hover:text-gray-900 transition-all duration-200"
+                className="w-12 h-12 rounded-full bg-[#FBD40E] flex items-center justify-center text-[#212529] hover:bg-[#e0bd0c] hover:text-gray-900 transition-all duration-200"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -201,13 +201,13 @@ const Footer = () => {
             <div className="flex items-center gap-6">
               <Link
                 to="/privacy"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
+                className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
               >
                 Privacy policy
               </Link>
               <Link
                 to="/terms"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
+                className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
               >
                 Terms & conditions
               </Link>
