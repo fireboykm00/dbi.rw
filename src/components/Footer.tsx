@@ -196,7 +196,7 @@ const Footer = () => {
         <div className="py-6">
           <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
-              Copyright © 2025 All Rights Reserved.
+              Copyright © 2025 DBI Rwanda. All Rights Reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link
