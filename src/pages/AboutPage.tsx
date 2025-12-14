@@ -35,7 +35,7 @@ const AboutPage = () => {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center rounded-xl m-2 overflow-hidden">
+      <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center rounded-xl m-2 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -45,7 +45,7 @@ const AboutPage = () => {
 
         <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
 
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-4xl mx-auto pt-16 md:pt-20">
+        <div className="relative z-10 text-center px-4 md:px-6 lg:px-12 max-w-4xl mx-auto pt-16 md:pt-20 lg:pt-24">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
             About DBI
           </span>
@@ -63,7 +63,7 @@ const AboutPage = () => {
       </section>
 
       {/* What is DBI Section */}
-      <section className="py-12 px-4 md:py-20 md:px-6 bg-white">
+      <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2
             className="text-3xl md:text-4xl font-bold mb-8"
@@ -82,8 +82,8 @@ const AboutPage = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-12 px-4 md:py-20 md:px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
+      <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           <div className="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-3xl"
@@ -120,7 +120,7 @@ const AboutPage = () => {
       </section>
 
       {/* Values */}
-      <section className="py-12 px-4 md:py-20 md:px-6">
+      <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span
@@ -172,8 +172,8 @@ const AboutPage = () => {
       </section> */}
 
       {/* ICT Chamber Membership CTA */}
-      <div className="p-2 my-6 md:my-10">
-        <section className="relative py-12 px-4 md:py-24 md:px-6 overflow-hidden rounded-xl min-h-[500px] md:min-h-[700px]">
+      <div className="p-2 my-6 md:my-10 lg:my-16">
+        <section className="relative py-12 px-4 md:py-24 md:px-6 lg:px-12 overflow-hidden rounded-xl min-h-[500px] md:min-h-[700px]">
           {/* Background Image & Overlay */}
 
           <div className="absolute inset-0 bg-linear-to-r from-black/90 to-black/60" />
@@ -186,7 +186,7 @@ const AboutPage = () => {
             }}
           />
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center">
               {/* Text Content */}
               <div className="text-white">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">

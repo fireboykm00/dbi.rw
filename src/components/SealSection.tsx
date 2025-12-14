@@ -28,12 +28,12 @@ const SealSection = () => {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           {/* Left Side - Image with overlays */}
           <div className="relative flex-1 w-full max-w-lg">
             {/* Main Image */}
-            <div className="relative rounded-2xl h-64 md:h-[600px]">
+            <div className="relative rounded-2xl h-64 md:h-[600px] lg:h-[500px] xl:h-[600px]">
               <img
                 src="/all/56d112e5e1cd2d4b5abb8a898f4a3655b593e8f5.jpg"
                 alt="Professional working"
@@ -41,7 +41,7 @@ const SealSection = () => {
               />
 
               {/* Security Check Badge */}
-              <div className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2">
+              <div className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 lg:-right-12 xl:-right-16 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2">
                 <div
                   className="w-10 h-10 rounded-md flex items-center justify-center"
                   style={{ backgroundColor: darkColor }}
@@ -59,7 +59,7 @@ const SealSection = () => {
               </div>
 
               {/* Testimonial Card */}
-              <div className="hidden md:block max-w-[300px] absolute bottom-20  -right-5 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
+              <div className="hidden md:block max-w-[300px] absolute bottom-20 -right-5 lg:-right-8 xl:-right-10 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
                 <div className="flex items-start gap-3">
                   <div
                     className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden"
@@ -86,7 +86,7 @@ const SealSection = () => {
           {/* Right Side - Content */}
           <div className="flex-1 max-w-xl">
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-gray-900 leading-tight mb-6">
               A Seal for Every Sector
             </h2>
 

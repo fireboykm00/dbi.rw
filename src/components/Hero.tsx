@@ -22,10 +22,10 @@ const Hero = () => {
       {/* Gradient Overlay - darker on left for text readability */}
       <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col justify-end min-h-[80vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-6 pt-24 pb-12">
+      <div className="relative z-10 flex flex-col justify-end min-h-[80vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-8 lg:px-12 pt-24 pb-12">
         <div className="max-w-xl">
           {/* Main Headline */}
-          <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-[4rem] font-bold text-white leading-tight mb-6">
             The Standard for
             <br />
             Digital Trust in Rwanda

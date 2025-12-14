@@ -22,9 +22,9 @@ const StandardsSection = () => {
     <section className="relative max-w-7xl w-full mx-auto px-4 py-8 md:px-10 md:py-6 bg-gray-200 rounded-2xl">
       {/* Background Shape */}
 
-      <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-20">
+      <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 xl:gap-24">
         {/* Left Side - Content */}
-        <div className="flex-1 w-full">
+        <div className="flex-1 w-full max-2xl:max-w-md">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
             Powered by Global Standards
           </h2>
@@ -50,7 +50,7 @@ const StandardsSection = () => {
             <img
               src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png"
               alt=""
-              className="w-auto h-64 md:h-[400px]"
+              className="w-auto h-64 md:h-[400px] lg:h-[350px] xl:h-[400px]"
             />
 
             {/* Floating Badges */}
@@ -59,14 +59,14 @@ const StandardsSection = () => {
                 key={index}
                 className={`hidden md:flex absolute bg-white rounded-md px-4 py-3 shadow-lg items-center gap-2 ${
                   index === 0
-                    ? "top-1/3 -left-12"
+                    ? "top-1/6 -left-12"
                     : index === 1
-                    ? "top-1/2 -right-40"
+                    ? "top-1/3 -right-40 lg:-right-8"
                     : "bottom-20"
                 }`}
               >
                 <div
-                  className="w-10 h-10 rounded-md flex items-center justify-center"
+                  className="xl:w-10 xl:h-10 w-8 h-8 rounded-md flex items-center justify-center"
                   style={{ backgroundColor: darkColor }}
                 >
                   {cert.icon}

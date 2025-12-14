@@ -9,8 +9,9 @@ const PolicySection = () => {
         style={{ backgroundImage: "url('/shapes/shapes.svg')" }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-20">
+      {/* LINE 12 FIX: Changed items-center to xl:items-start to keep text top-aligned on large screens */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center xl:items-start gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           {/* Left Side - Image */}
           <div className="flex-1 w-full max-w-lg">
             <img
@@ -21,9 +22,9 @@ const PolicySection = () => {
           </div>
 
           {/* Right Side - Content */}
-          <div className="flex-1 max-w-xl relative">
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 leading-tight mb-4 md:mb-6">
+          <div className="flex-1 flex flex-col items-start max-w-xl relative">
+            {/* LINE 24 FIX: Adjusted text sizing for smoother XL scaling */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
               Bridging Policy &<br />
               Practice.
             </h2>
@@ -40,7 +41,7 @@ const PolicySection = () => {
             {/* CTA Button */}
             <a
               href="#"
-              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
+              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90 z-20"
               style={{ backgroundColor: darkColor, color: primaryColor }}
             >
               Read Our Mission
@@ -60,16 +61,31 @@ const PolicySection = () => {
               </svg>
             </a>
 
-            {/* Members Badge */}
-            <div className="absolute -right-4 top-1/2 transform translate-x-1/2 -translate-y-1/2 hidden lg:block">
+            {/* --- COMPONENT 1: Text Version (Visible Mobile/Tablet, Hidden on XL) --- */}
+            {/* Option 1: Subtle Accent Bar */}
+            <div
+              className="flex xl:hidden mt-10 items-center gap-4 py-2 border-l-4 pl-4"
+              style={{ borderColor: darkColor }}
+            >
+              <span className="text-5xl font-bold" style={{ color: darkColor }}>
+                300+
+              </span>
+              <span className="text-3xl text-gray-700 font-medium">
+                Members
+              </span>
+            </div>
+
+            {/* --- COMPONENT 2: Bubble Version (Hidden on Mobile, Visible Absolute on XL) --- */}
+            <div className="hidden xl:flex absolute -right-16 bottom-1/2 transform translate-y-1/2 z-10">
               <div
-                className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center"
+                className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-lg"
                 style={{ backgroundColor: darkColor, color: primaryColor }}
               >
                 <span className="text-5xl font-bold">
                   300<sup className="text-lg">+</sup>
                 </span>
                 <span className="text-sm">Members</span>
+
                 {/* Speech bubble tail */}
                 <div
                   className="absolute bottom-0 -left-6 w-10 h-10 rounded-full"

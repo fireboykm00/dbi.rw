@@ -2,7 +2,7 @@ import { darkColor, primaryColor } from "../lib/site";
 
 const SearchSection = () => {
   return (
-    <section className="relative w-full py-12 px-4 md:py-20 md:px-6">
+    <section className="relative w-full py-12 px-4 md:py-20 md:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Dark Card with Background Image */}
         <div
@@ -21,8 +21,8 @@ const SearchSection = () => {
           <div className="absolute inset-0 bg-black/60" />
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center min-h-[400px] md:min-h-[550px] px-4 py-8 md:px-6 md:py-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center mb-4">
+          <div className="relative z-10 flex flex-col items-center justify-center min-h-[400px] md:min-h-[550px] px-4 py-8 md:px-6 md:py-12 lg:px-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-4">
               Is that website safe?
             </h2>
             <p className="text-gray-300 text-center mb-8 max-w-lg text-sm md:text-base">
