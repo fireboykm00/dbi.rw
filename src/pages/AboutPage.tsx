@@ -1,5 +1,5 @@
 import { primaryColor } from "../lib/site";
-import { Shield, Lightbulb, Scale, Handshake, Link } from "lucide-react";
+import { Shield, Lightbulb, Scale, Handshake } from "lucide-react";
 
 const AboutPage = () => {
   const values = [
@@ -35,12 +35,9 @@ const AboutPage = () => {
             backgroundImage: "url('/all/hero.jpg')",
           }}
         />
-        <div
-          className="absolute inset-0 opacity-90"
-          style={{
-            background: `linear-gradient(135deg, ${primaryColor} 0%, #0a2540 100%)`,
-          }}
-        />
+
+        <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
+
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
             About DBI
@@ -83,7 +80,7 @@ const AboutPage = () => {
           <div className="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-3xl"
-              style={{ backgroundColor: `${primaryColor}15` }}
+              style={{ backgroundColor: `${primaryColor}` }}
             >
               🎯
             </div>
@@ -197,12 +194,13 @@ const AboutPage = () => {
                   stages of their development: Startups, Small and Medium
                   Enterprises and Corporations.
                 </p>
-                <Link
-                  to="#"
-                  className="inline-block bg-white text-[#212529] font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+                <a
+                  href="#"
+                  className="inline-block text-[#212529] font-bold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:opacity-90"
+                  style={{ backgroundColor: primaryColor }}
                 >
                   Become A Member
-                </Link>
+                </a>
               </div>
 
               {/* Logo Card */}

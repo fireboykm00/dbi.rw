@@ -137,12 +137,8 @@ const ResourcesPage = () => {
             backgroundImage: "url('/all/hero.jpg')",
           }}
         />
-        <div
-          className="absolute inset-0 opacity-90"
-          style={{
-            background: `linear-gradient(135deg, ${primaryColor} 0%, #212529 100%)`,
-          }}
-        />
+        <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
+
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
             📚 Resource Center
