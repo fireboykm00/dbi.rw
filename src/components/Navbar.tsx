@@ -25,7 +25,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full px-6 py-4">
+    <nav className="w-full px-4 lg:px-6 py-4">
       <div
         className="max-w-7xl w-full mx-auto rounded-md px-3 flex items-center justify-between"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
@@ -33,7 +33,7 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="flex items-center gap-3">
           <Link to="/">
-            <img src="/logo.png" alt="DBI LOGO" className="w-44" />
+            <img src="/logo.png" alt="DBI LOGO" className="w-32 md:w-44" />
           </Link>
         </div>
 

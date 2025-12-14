@@ -2,34 +2,34 @@ import { darkColor, primaryColor } from "../lib/site";
 
 const PolicySection = () => {
   return (
-    <section className="relative w-full bg-white py-20">
+    <section className="relative w-full bg-white py-12 md:py-20">
       {/* Background Shape */}
       <div
         className="absolute inset-0 bg-no-repeat bg-bottom-left opacity-40"
         style={{ backgroundImage: "url('/shapes/shapes.svg')" }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-20">
           {/* Left Side - Image */}
           <div className="flex-1 w-full max-w-lg">
             <img
               src="/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg"
               alt="Team collaboration"
-              className="w-full object-cover h-full min-h-[600px] rounded-2xl -rotate-2"
+              className="w-full object-cover h-64 md:h-full md:min-h-[600px] rounded-2xl -rotate-2"
             />
           </div>
 
           {/* Right Side - Content */}
           <div className="flex-1 max-w-xl relative">
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-gray-900 leading-tight mb-4 md:mb-6">
               Bridging Policy &<br />
               Practice.
             </h2>
 
             {/* Description */}
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-md">
               The Digital Business Institute (DBI) is a Trade and Investment
               Support Institution (TISI) dedicated to accelerating Rwanda's
               digital exports. Operating under the Private Sector Federation

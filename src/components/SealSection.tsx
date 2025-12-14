@@ -20,7 +20,7 @@ const SealSection = () => {
   ];
 
   return (
-    <section className="relative w-full bg-white overflow-hidden py-20">
+    <section className="relative w-full bg-white overflow-hidden py-12 md:py-20">
       {/* Background Shape */}
       <div
         className="absolute inset-0 bg-no-repeat bg-bottom-right opacity-60"
@@ -28,20 +28,20 @@ const SealSection = () => {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-20">
           {/* Left Side - Image with overlays */}
           <div className="relative flex-1 w-full max-w-lg">
             {/* Main Image */}
-            <div className="relative rounded-2xl h-[600px]">
+            <div className="relative rounded-2xl h-64 md:h-[600px]">
               <img
                 src="/all/56d112e5e1cd2d4b5abb8a898f4a3655b593e8f5.jpg"
                 alt="Professional working"
-                className="w-full h-[600px] object-cover rounded-2xl transform scale-x-[-1]"
+                className="w-full h-full object-cover rounded-2xl transform scale-x-[-1]"
               />
 
               {/* Security Check Badge */}
-              <div className="absolute top-1/5 -translate-y-1/2 -right-10 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 flex items-center gap-2">
+              <div className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2">
                 <div
                   className="w-10 h-10 rounded-md flex items-center justify-center"
                   style={{ backgroundColor: darkColor }}
@@ -54,12 +54,12 @@ const SealSection = () => {
               </div>
 
               {/* Phone Mockup */}
-              <div className="absolute bottom-24 right-8 w-20 h-36 bg-white rounded-xl shadow-xl border border-gray-200 flex items-center justify-center">
+              <div className="hidden md:flex absolute bottom-24 right-8 w-20 h-36 bg-white rounded-xl shadow-xl border border-gray-200 items-center justify-center">
                 <div className="w-16 h-32 bg-gray-100 rounded-lg"></div>
               </div>
 
               {/* Testimonial Card */}
-              <div className="max-w-[300px] absolute bottom-20  -right-5 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
+              <div className="hidden md:block max-w-[300px] absolute bottom-20  -right-5 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
                 <div className="flex items-start gap-3">
                   <div
                     className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden"

@@ -23,7 +23,7 @@ const AcademyPage = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-[60vh] w-full overflow-hidden rounded-xl flex items-center justify-center">
+        <section className="relative min-h-[50vh] md:min-h-[60vh] w-full overflow-hidden rounded-xl flex items-center justify-center">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -46,7 +46,7 @@ const AcademyPage = () => {
       </div>
 
       <div className="p-2">
-        <section className="py-24 px-6 flex flex-col md:flex-row gap-10 md:gap-20 items-center max-w-7xl w-full mx-auto">
+        <section className="py-12 px-4 md:py-24 md:px-6 flex flex-col md:flex-row gap-8 md:gap-20 items-center max-w-7xl w-full mx-auto">
           <div className="grow">
             <img
               src="/all/bcd964855b4468d9e1945fbbf1927dd628340e14.png"
@@ -68,9 +68,9 @@ const AcademyPage = () => {
       </div>
 
       {/* Accreditation Section */}
-      <section className="py-24 px-6">
+      <section className="py-12 px-4 md:py-24 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             {/* Text Content */}
             <div>
               <h2 className="text-3xl font-bold text-[#212529] mb-8">
@@ -98,7 +98,7 @@ const AcademyPage = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-12 px-4 md:py-24 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="mb-16">

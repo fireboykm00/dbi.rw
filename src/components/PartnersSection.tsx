@@ -14,15 +14,15 @@ const PartnersSection = () => {
   ];
 
   return (
-    <section className="relative w-full bg-white py-16 px-6">
+    <section className="relative w-full bg-white py-12 px-4 md:py-16 md:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h3 className="text-center text-lg font-bold mb-10">
+        <h3 className="text-center text-lg font-bold mb-8 md:mb-10">
           Powered by Global Standards
         </h3>
 
         {/* Logos Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
           {companyLogos.map((logo, index) => (
             <div
               key={index}

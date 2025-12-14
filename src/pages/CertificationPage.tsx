@@ -45,7 +45,7 @@ const CertificationPage = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-[85vh] w-full overflow-hidden rounded-xl">
+        <section className="relative min-h-[60vh] md:min-h-[85vh] w-full overflow-hidden rounded-xl">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -60,7 +60,7 @@ const CertificationPage = () => {
           <div className="absolute inset-0 bg-linear-to-r from-[#212529]/70 via-[#212529]/80 to-transparent" />
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col justify-end min-h-screen max-w-7xl mx-auto px-6 pt-24 pb-12">
+          <div className="relative z-10 flex flex-col justify-end min-h-[60vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-8 md:pb-12">
             <div className="max-w-xl">
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6">
                 The Mark of Excellence and Assurance.
@@ -83,7 +83,7 @@ const CertificationPage = () => {
       </div>
 
       {/* Bridging the Gap Section */}
-      <section className="py-24 px-6 relative">
+      <section className="py-12 px-4 md:py-24 md:px-6 relative">
         {/* Background Pattern */}
         {/* Background Pattern */}
         <div className="absolute top-0 right-0 w-[80%] h-full opacity-100 pointer-events-none">
@@ -95,7 +95,7 @@ const CertificationPage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-20 items-center">
             {/* Image Side */}
             <div className="relative h-[600px] transform -rotate-2  bg-black  rounded-4xl overflow-hidden">
               <img
@@ -169,7 +169,7 @@ const CertificationPage = () => {
       </section>
 
       {/* Validate Your Excellence Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-12 px-4 md:py-24 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Header Card */}
@@ -210,9 +210,9 @@ const CertificationPage = () => {
 
       {/* How To Get DBI Trust Seal Section */}
       <div className="p-2 mb-20">
-        <section className="p-30 rounded-[16px] bg-[#212529] text-white">
+        <section className="p-6 md:p-30 rounded-[16px] bg-[#212529] text-white">
           <div className="">
-            <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold leading-tight">
                 How To Get DBI Trust Seal
               </h2>
@@ -258,7 +258,7 @@ const CertificationPage = () => {
                   </div>
 
                   {/* Dotted Line - Connecting badge to card */}
-                  <div className="absolute top-8 left-14 bottom-0 w-px h-16 border-l-2 border-dotted border-white/30 z-0" />
+                  <div className="hidden md:block absolute top-8 left-14 bottom-0 w-px h-16 border-l-2 border-dotted border-white/30 z-0" />
 
                   {/* Content Card */}
                   <div className="bg-[#444444] hover:bg-[#555555] text-white rounded-xl p-8 w-full flex-1 transition-colors duration-300 relative z-10 mt-4">
@@ -275,8 +275,8 @@ const CertificationPage = () => {
       </div>
 
       {/* Ready to get verified CTA Section */}
-      <div className="p-2 my-10">
-        <section className="relative rounded-3xl overflow-hidden min-h-[800px] flex items-center">
+      <div className="p-2 my-6 md:my-10">
+        <section className="relative rounded-3xl overflow-hidden min-h-[500px] md:min-h-[800px] flex items-center">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-x-[-1]"

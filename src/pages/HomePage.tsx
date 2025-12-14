@@ -17,7 +17,7 @@ const HomePage = () => {
       <SealSection />
 
       {/* Standards Section */}
-      <div className="px-20">
+      <div className="px-4 md:px-20">
         <StandardsSection />
       </div>
 

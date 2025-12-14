@@ -40,7 +40,7 @@ const DirectoryPage = () => {
           <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-transparent" />
 
           {/* Content Container */}
-          <div className="relative z-10 flex flex-col justify-end min-h-[600px] max-w-7xl mx-auto px-6 pt-24 pb-12">
+          <div className="relative z-10 flex flex-col justify-end min-h-[50vh] md:min-h-[600px] max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-8 md:pb-12">
             <div className="max-w-xl">
               <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
                 Trusted Businesses
@@ -61,7 +61,7 @@ const DirectoryPage = () => {
       </div>
 
       {/* Certified Platforms Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      <section className="py-12 px-4 md:py-24 md:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">
@@ -73,7 +73,7 @@ const DirectoryPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-12 items-center">
             {certifiedPlatforms.map((platform, index) => (
               <div
                 key={index}
@@ -91,7 +91,7 @@ const DirectoryPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-12 px-4 md:py-24 md:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-[#212529] mb-4">

@@ -139,7 +139,7 @@ const ResourcesPage = () => {
         />
         <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
 
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
+        <div className="relative z-10 text-center px-4 md:px-6 max-w-4xl mx-auto pt-16 md:pt-20">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
             📚 Resource Center
           </span>
@@ -157,7 +157,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Tabs */}
-      <section className="py-8 px-6 bg-gray-50 border-b border-gray-200 sticky top-0 z-20">
+      <section className="py-6 md:py-8 px-4 md:px-6 bg-gray-50 border-b border-gray-200 sticky top-0 z-20 overflow-x-auto">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center">
           {tabs.map((tab) => (
             <button
@@ -180,7 +180,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16 px-6 bg-gray-50 min-h-screen">
+      <section className="py-12 px-4 md:py-16 md:px-6 bg-gray-50 min-h-screen">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activeTab === "guides" &&
             guides.map((item, i) => (
@@ -268,7 +268,7 @@ const ResourcesPage = () => {
       </section>
 
       {/* Newsletter */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-12 px-4 md:py-20 md:px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Stay Updated

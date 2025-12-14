@@ -50,11 +50,15 @@ const Footer = () => {
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {/* Logo & Description */}
             <div>
-              <img src="/logo.png" alt="DBI Logo" className="w-40 mb-6" />
+              <img
+                src="/logo.png"
+                alt="DBI Logo"
+                className="w-32 md:w-40 mb-6"
+              />
               <p className="text-white text-sm leading-relaxed max-w-xs">
                 Empowering Rwanda's digital businesses through skills, trust,
                 and innovation.
@@ -194,7 +198,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="py-6">
-          <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="text-gray-500 text-sm">
               Copyright © 2025 DBI Rwanda. All Rights Reserved.
             </p>
