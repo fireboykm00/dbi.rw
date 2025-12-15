@@ -8,6 +8,8 @@ import {
   ExternalLink,
   ArrowRight,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { fadeInUp, staggerContainer, scaleIn, fadeIn } from "../lib/animations";
 
 const ResourcesPage = () => {
   const [activeTab, setActiveTab] = useState("guides");
@@ -131,7 +133,10 @@ const ResourcesPage = () => {
     <>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center justify-center rounded-xl m-2 overflow-hidden">
-        <div
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/all/hero.jpg')",
@@ -140,25 +145,47 @@ const ResourcesPage = () => {
         <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
 
         <div className="relative z-10 text-center px-4 md:px-6 lg:px-12 max-w-4xl mx-auto pt-16 md:pt-20 lg:pt-24">
-          <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
+          <motion.span
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm"
+          >
             📚 Resource Center
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          </motion.span>
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
+          >
             Everything You Need
             <span className="block" style={{ color: primaryColor }}>
               to Succeed Online
             </span>
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-white/80 max-w-2xl mx-auto"
+          >
             Access guides, templates, and tools to help you build, grow, and
             secure your digital business.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Tabs */}
       <section className="py-6 md:py-8 px-4 md:px-6 lg:px-12 bg-gray-50 border-b border-gray-200 sticky top-0 z-20 overflow-x-auto">
-        <div className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className="max-w-7xl mx-auto flex flex-wrap gap-4 justify-center"
+        >
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -176,100 +203,118 @@ const ResourcesPage = () => {
               {tab.icon} {tab.name}
             </button>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Content */}
       <section className="py-12 px-4 md:py-16 md:px-6 lg:px-12 bg-gray-50 min-h-screen">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {activeTab === "guides" &&
-            guides.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <span className="px-3 py-1 bg-blue-50 text-[#212529] text-xs font-bold uppercase tracking-wider rounded-full">
-                    {item.category}
-                  </span>
-                  <span className="text-sm text-gray-500 flex items-center gap-1">
-                    ⏱️ {item.readTime}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-6 grow">{item.description}</p>
-                <button className="flex items-center gap-2 text-[#212529] font-semibold group-hover:gap-3 transition-all">
-                  Read Guide <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            ))}
-
-          {activeTab === "templates" &&
-            templates.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#212529]">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm text-gray-500 font-medium">
-                    {item.format}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-6 grow">{item.description}</p>
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                  <span className="text-sm text-gray-500">
-                    {item.downloads} downloads
-                  </span>
-                  <button
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium border transition-colors hover:bg-blue-50"
-                    style={{ borderColor: primaryColor, color: darkColor }}
-                  >
-                    <Download className="w-4 h-4" /> Download
-                  </button>
-                </div>
-              </div>
-            ))}
-
-          {activeTab === "tools" &&
-            tools.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#212529]">
-                    <Wrench className="w-5 h-5" />
-                  </div>
-                  <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider rounded-full">
-                    {item.status}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 mb-6 grow">{item.description}</p>
-                <button
-                  className="w-full py-3 rounded-xl font-medium text-[#212529] flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                  style={{ backgroundColor: primaryColor }}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={staggerContainer}
+            className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {activeTab === "guides" &&
+              guides.map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
                 >
-                  Launch Tool <ExternalLink className="w-4 h-4" />
-                </button>
-              </div>
-            ))}
-        </div>
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="px-3 py-1 bg-blue-50 text-[#212529] text-xs font-bold uppercase tracking-wider rounded-full">
+                      {item.category}
+                    </span>
+                    <span className="text-sm text-gray-500 flex items-center gap-1">
+                      ⏱️ {item.readTime}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 grow">{item.description}</p>
+                  <button className="flex items-center gap-2 text-[#212529] font-semibold group-hover:gap-3 transition-all">
+                    Read Guide <ArrowRight className="w-4 h-4" />
+                  </button>
+                </motion.div>
+              ))}
+
+            {activeTab === "templates" &&
+              templates.map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#212529]">
+                      <FileText className="w-5 h-5" />
+                    </div>
+                    <span className="text-sm text-gray-500 font-medium">
+                      {item.format}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 grow">{item.description}</p>
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                    <span className="text-sm text-gray-500">
+                      {item.downloads} downloads
+                    </span>
+                    <button
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium border transition-colors hover:bg-blue-50"
+                      style={{ borderColor: primaryColor, color: darkColor }}
+                    >
+                      <Download className="w-4 h-4" /> Download
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+
+            {activeTab === "tools" &&
+              tools.map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#212529]">
+                      <Wrench className="w-5 h-5" />
+                    </div>
+                    <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider rounded-full">
+                      {item.status}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 grow">{item.description}</p>
+                  <button
+                    className="w-full py-3 rounded-xl font-medium text-[#212529] flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: primaryColor }}
+                  >
+                    Launch Tool <ExternalLink className="w-4 h-4" />
+                  </button>
+                </motion.div>
+              ))}
+          </motion.div>
+        </AnimatePresence>
       </section>
 
       {/* Newsletter */}
       <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12 bg-white">
-        <div className="max-w-3xl mx-auto text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={scaleIn}
+          className="max-w-3xl mx-auto text-center"
+        >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Stay Updated
           </h2>
@@ -291,7 +336,7 @@ const ResourcesPage = () => {
               Subscribe
             </button>
           </form>
-        </div>
+        </motion.div>
       </section>
     </>
   );

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { primaryColor } from "../lib/site";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, fadeIn } from "../lib/animations";
 
 const Hero = () => {
   // Profile Images for trust badge
@@ -14,7 +16,10 @@ const Hero = () => {
   return (
     <section className="relative min-h-[80vh] md:min-h-screen w-full overflow-hidden rounded-[20px]">
       {/* Background Image */}
-      <div
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/all/hero.jpg')" }}
       />
@@ -23,35 +28,51 @@ const Hero = () => {
       <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
       {/* Content Container */}
       <div className="relative z-10 flex flex-col justify-end min-h-[80vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-8 lg:px-12 pt-24 pb-12">
-        <div className="max-w-xl">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="max-w-xl"
+        >
           {/* Main Headline */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-[4rem] font-bold text-white leading-tight mb-6">
+          <motion.h1
+            variants={fadeInUp}
+            className="text-3xl md:text-5xl lg:text-6xl xl:text-[4rem] font-bold text-white leading-tight mb-6"
+          >
             The Standard for
             <br />
             Digital Trust in Rwanda
-          </h1>
+          </motion.h1>
 
           {/* Subtext */}
-          <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+          <motion.p
+            variants={fadeInUp}
+            className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md"
+          >
             The official verification partner for startups, fintechs, and
             e-commerce platforms. We certify businesses and upskill
             professionals to accelerate the digital economy.
-          </p>
+          </motion.p>
 
           {/* CTA Button */}
-          <Link
-            to="#"
-            className="inline-flex items-center hover:bg-[#e0bd0c] gap-3 text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
-            style={{
-              backgroundColor: primaryColor,
-            }}
-          >
-            Get Your Trust Seal
-            <ArrowRightIcon className="w-5" />
-          </Link>
+          <motion.div variants={fadeInUp}>
+            <Link
+              to="#"
+              className="inline-flex items-center hover:bg-[#e0bd0c] gap-3 text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
+              style={{
+                backgroundColor: primaryColor,
+              }}
+            >
+              Get Your Trust Seal
+              <ArrowRightIcon className="w-5" />
+            </Link>
+          </motion.div>
 
           {/* Trust Badge */}
-          <div className="inline-flex items-center gap-4 bg-gray-500/10 border-gray-500/40 border backdrop-blur-sm rounded-md px-6 py-5">
+          <motion.div
+            variants={fadeInUp}
+            className="inline-flex items-center gap-4 bg-gray-500/10 border-gray-500/40 border backdrop-blur-sm rounded-md px-6 py-5"
+          >
             {/* Company Logos */}
             <div className="flex items-center -space-x-3">
               {profilesImages.map((logo, index) => (
@@ -81,8 +102,8 @@ const Hero = () => {
             <span className="text-white text-sm font-medium">
               Trusted by 50+ Verified Businesses
             </span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

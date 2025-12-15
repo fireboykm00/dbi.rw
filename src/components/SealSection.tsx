@@ -2,6 +2,14 @@ import { darkColor } from "../lib/site";
 import { BadgeCheck } from "lucide-react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  staggerContainer,
+  slideInLeft,
+  slideInRight,
+  scaleIn,
+} from "../lib/animations";
 
 const SealSection = () => {
   const sealTypes = [
@@ -31,7 +39,13 @@ const SealSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           {/* Left Side - Image with overlays */}
-          <div className="relative flex-1 w-full max-w-lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={slideInLeft}
+            className="relative flex-1 w-full max-w-lg"
+          >
             {/* Main Image */}
             <div className="relative rounded-2xl h-64 md:h-[600px] lg:h-[500px] xl:h-[600px]">
               <img
@@ -41,7 +55,10 @@ const SealSection = () => {
               />
 
               {/* Security Check Badge */}
-              <div className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 lg:-right-12 xl:-right-16 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2">
+              <motion.div
+                variants={scaleIn}
+                className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 lg:-right-12 xl:-right-16 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2"
+              >
                 <div
                   className="w-10 h-10 rounded-md flex items-center justify-center"
                   style={{ backgroundColor: darkColor }}
@@ -51,15 +68,23 @@ const SealSection = () => {
                 <span className="text-sm font-medium text-gray-800">
                   Security Check: Passed
                 </span>
-              </div>
+              </motion.div>
 
               {/* Phone Mockup */}
-              <div className="hidden md:flex absolute bottom-24 right-8 w-20 h-36 bg-white rounded-xl shadow-xl border border-gray-200 items-center justify-center">
+              <motion.div
+                variants={scaleIn}
+                transition={{ delay: 0.2 }}
+                className="hidden md:flex absolute bottom-24 right-8 w-20 h-36 bg-white rounded-xl shadow-xl border border-gray-200 items-center justify-center"
+              >
                 <div className="w-16 h-32 bg-gray-100 rounded-lg"></div>
-              </div>
+              </motion.div>
 
               {/* Testimonial Card */}
-              <div className="hidden md:block max-w-[300px] absolute bottom-20 -right-5 lg:-right-8 xl:-right-10 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg">
+              <motion.div
+                variants={scaleIn}
+                transition={{ delay: 0.4 }}
+                className="hidden md:block max-w-[300px] absolute bottom-20 -right-5 lg:-right-8 xl:-right-10 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg"
+              >
                 <div className="flex items-start gap-3">
                   <div
                     className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden"
@@ -79,28 +104,44 @@ const SealSection = () => {
                     Exceptional service and peace of mind. Highly recommend!
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Side - Content */}
-          <div className="flex-1 max-w-xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="flex-1 max-w-xl"
+          >
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-gray-900 leading-tight mb-6">
+            <motion.h2
+              variants={slideInRight}
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-gray-900 leading-tight mb-6"
+            >
               A Seal for Every Sector
-            </h2>
+            </motion.h2>
 
             {/* Description */}
-            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
+            <motion.p
+              variants={slideInRight}
+              className="text-gray-600 text-base md:text-lg leading-relaxed mb-8"
+            >
               Validate your platform against industry best practices. The DBI
               Trust Seal signals security, reliability, and compliance to your
               customers and partners.
-            </p>
+            </motion.p>
 
             {/* Seal Types List */}
             <div className="space-y-4 mb-8">
               {sealTypes.map((seal, index) => (
-                <div key={index} className="flex items-start gap-3">
+                <motion.div
+                  key={index}
+                  variants={fadeInUp}
+                  className="flex items-start gap-3"
+                >
                   {/* Icon */}
                   <div className="mt-1">
                     <BadgeCheck className="w-5 h-5" />
@@ -110,20 +151,22 @@ const SealSection = () => {
                     <span className="font-semibold">{seal.name}</span>{" "}
                     <span className="text-gray-600">{seal.description}</span>
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             {/* CTA Button */}
-            <a
-              href="#"
-              className="inline-flex items-center gap-3 text-[#FBD40E] font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
-              style={{ backgroundColor: "#212529" }}
-            >
-              Get Started
-              <ArrowRightIcon className="w-5" />
-            </a>
-          </div>
+            <motion.div variants={fadeInUp}>
+              <a
+                href="#"
+                className="inline-flex items-center gap-3 text-[#FBD40E] font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
+                style={{ backgroundColor: "#212529" }}
+              >
+                Get Started
+                <ArrowRightIcon className="w-5" />
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

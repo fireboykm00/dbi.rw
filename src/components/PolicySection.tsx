@@ -1,8 +1,10 @@
 import { darkColor, primaryColor } from "../lib/site";
+import { motion } from "framer-motion";
+import { slideInLeft, slideInRight, scaleIn } from "../lib/animations";
 
 const PolicySection = () => {
   return (
-    <section className="relative w-full bg-white py-12 md:py-20">
+    <section className="relative w-full bg-white py-12 md:py-20 overflow-hidden">
       {/* Background Shape */}
       <div
         className="absolute inset-0 bg-no-repeat bg-bottom-left opacity-40"
@@ -13,16 +15,28 @@ const PolicySection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center xl:items-start gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           {/* Left Side - Image */}
-          <div className="flex-1 w-full max-w-lg">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={slideInLeft}
+            className="flex-1 w-full max-w-lg"
+          >
             <img
               src="/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg"
               alt="Team collaboration"
               className="w-full object-cover h-64 md:h-full md:min-h-[600px] rounded-2xl -rotate-2"
             />
-          </div>
+          </motion.div>
 
           {/* Right Side - Content */}
-          <div className="flex-1 flex flex-col items-start max-w-xl relative">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={slideInRight}
+            className="flex-1 flex flex-col items-start max-w-xl relative"
+          >
             {/* LINE 24 FIX: Adjusted text sizing for smoother XL scaling */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
               Bridging Policy &<br />
@@ -76,7 +90,11 @@ const PolicySection = () => {
             </div>
 
             {/* --- COMPONENT 2: Bubble Version (Hidden on Mobile, Visible Absolute on XL) --- */}
-            <div className="hidden xl:flex absolute -right-16 bottom-1/2 transform translate-y-1/2 z-10">
+            <motion.div
+              variants={scaleIn}
+              transition={{ delay: 0.3 }}
+              className="hidden xl:flex absolute -right-16 bottom-1/2 transform translate-y-1/2 z-10"
+            >
               <div
                 className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-lg"
                 style={{ backgroundColor: darkColor, color: primaryColor }}
@@ -96,8 +114,8 @@ const PolicySection = () => {
                   style={{ backgroundColor: darkColor }}
                 />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

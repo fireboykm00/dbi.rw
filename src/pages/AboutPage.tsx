@@ -7,6 +7,13 @@ import {
   Handshake,
   ArrowRightIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  staggerContainer,
+  slideInLeft,
+  slideInRight,
+} from "../lib/animations";
 
 const AboutPage = () => {
   const values = [
@@ -46,25 +53,48 @@ const AboutPage = () => {
         <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
 
         <div className="relative z-10 text-center px-4 md:px-6 lg:px-12 max-w-4xl mx-auto pt-16 md:pt-20 lg:pt-24">
-          <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm">
+          <motion.span
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="inline-block px-4 py-2 bg-white/10 rounded-full text-white/90 text-sm font-medium mb-6 backdrop-blur-sm"
+          >
             About DBI
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          </motion.span>
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
+          >
             Building Trust in
             <span className="block" style={{ color: primaryColor }}>
               Rwanda's Digital Economy
             </span>
-          </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-white/80 max-w-2xl mx-auto"
+          >
             The Digital Business Integrity Initiative empowers Rwandan
             businesses through certification, education, and innovation.
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* What is DBI Section */}
       <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="max-w-4xl mx-auto text-center"
+        >
           <h2
             className="text-3xl md:text-4xl font-bold mb-8"
             style={{ color: darkColor }}
@@ -78,13 +108,19 @@ const AboutPage = () => {
             Businesses; Expanding Rwanda’s Digital Exports as well as Increasing
             Competitiveness of Rwandan ICT Companies.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12 bg-gray-50">
+      <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
-          <div className="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={slideInLeft}
+            className="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+          >
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-3xl"
               style={{ backgroundColor: `${primaryColor}` }}
@@ -99,8 +135,14 @@ const AboutPage = () => {
               certifying businesses that meet international standards of
               security, privacy, and consumer protection.
             </p>
-          </div>
-          <div className="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={slideInRight}
+            className="bg-white p-10 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+          >
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-3xl"
               style={{ backgroundColor: `${primaryColor}15` }}
@@ -115,14 +157,20 @@ const AboutPage = () => {
               complete confidence, knowing that certified businesses operate
               with integrity and transparency.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Values */}
       <section className="py-12 px-4 md:py-20 md:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
             <span
               className="text-sm font-semibold uppercase"
               style={{ color: primaryColor }}
@@ -132,11 +180,18 @@ const AboutPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3">
               Our Core Values
             </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
             {values.map((value, i) => (
-              <div
+              <motion.div
                 key={i}
+                variants={fadeInUp}
                 className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="mb-6 flex justify-center transform group-hover:scale-110 transition-transform duration-300">
@@ -146,30 +201,11 @@ const AboutPage = () => {
                   {value.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{value.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
-
-      {/* Stats */}
-      {/* <section className="py-20 px-6" style={{ backgroundColor: primaryColor }}>
-        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "500+", label: "Certified Businesses" },
-            { value: "5,000+", label: "Professionals Trained" },
-            { value: "98%", label: "Customer Trust Rate" },
-            { value: "50+", label: "Partner Organizations" },
-          ].map((stat, i) => (
-            <div key={i} className="p-4">
-              <div className="text-4xl md:text-5xl font-bold text-[#212529] mb-2">
-                {stat.value}
-              </div>
-              <div className="text-[#212529]/70 font-medium">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* ICT Chamber Membership CTA */}
       <div className="p-2 my-6 md:my-10 lg:my-16">
@@ -188,7 +224,13 @@ const AboutPage = () => {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center">
               {/* Text Content */}
-              <div className="text-white">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={slideInLeft}
+                className="text-white"
+              >
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Want to become an ICT Chamber member?
                 </h2>
@@ -208,10 +250,16 @@ const AboutPage = () => {
                   Become A Member
                   <ArrowRightIcon className="w-5" />
                 </a>
-              </div>
+              </motion.div>
 
               {/* Logo Card */}
-              <div className="flex justify-center md:justify-end">
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={slideInRight}
+                className="flex justify-center md:justify-end"
+              >
                 <div className="bg-white p-12 rounded-xl shadow-2xl max-w-md w-full flex flex-col items-center text-center">
                   {/* Using a placeholder or existing logo, user can replace */}
                   <img
@@ -224,7 +272,7 @@ const AboutPage = () => {
                     Connect. Grow. Expand
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>

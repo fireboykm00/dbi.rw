@@ -1,6 +1,13 @@
 import { darkColor, primaryColor } from "../lib/site";
 import { BugIcon, ShieldIcon, CogIcon } from "lucide-react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
+import {
+  slideInLeft,
+  slideInRight,
+  scaleIn,
+  staggerContainer,
+} from "../lib/animations";
 
 const StandardsSection = () => {
   const certifications = [
@@ -19,12 +26,18 @@ const StandardsSection = () => {
   ];
 
   return (
-    <section className="relative max-w-7xl w-full mx-auto px-4 py-8 md:px-10 md:py-6 bg-gray-200 rounded-2xl">
+    <section className="relative max-w-7xl w-full mx-auto px-4 py-8 md:px-10 md:py-6 bg-gray-200 rounded-2xl overflow-hidden">
       {/* Background Shape */}
 
       <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 xl:gap-24">
         {/* Left Side - Content */}
-        <div className="flex-1 w-full max-2xl:max-w-md">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={slideInLeft}
+          className="flex-1 w-full max-2xl:max-w-md"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
             Powered by Global Standards
           </h2>
@@ -41,13 +54,20 @@ const StandardsSection = () => {
             Learn More
             <ArrowRightIcon className="w-5" />
           </a>
-        </div>
+        </motion.div>
 
         {/* Right Side - Certificate with badges */}
-        <div className="relative mt-8 lg:mt-0">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="relative mt-8 lg:mt-0"
+        >
           {/* Certificate Image */}
           <div className="relative">
-            <img
+            <motion.img
+              variants={slideInRight}
               src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png"
               alt=""
               className="w-auto h-64 md:h-[400px] lg:h-[350px] xl:h-[400px]"
@@ -55,8 +75,9 @@ const StandardsSection = () => {
 
             {/* Floating Badges */}
             {certifications.map((cert, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={scaleIn}
                 className={`hidden md:flex absolute bg-white rounded-md px-4 py-3 shadow-lg items-center gap-2 ${
                   index === 0
                     ? "top-1/6 -left-12"
@@ -74,10 +95,10 @@ const StandardsSection = () => {
                 <span className="text-xs font-medium text-gray-800 whitespace-nowrap">
                   {cert.name}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -10,6 +10,8 @@ import {
 } from "@heroicons/react/24/solid";
 import PartnersSection from "../components/PartnersSection";
 import ReadyToGetVerified from "../components/ReadToGetVerified";
+import { motion, AnimatePresence } from "framer-motion";
+import { fadeInUp, staggerContainer, fadeIn, scaleIn } from "../lib/animations";
 
 const DirectoryPage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -37,7 +39,10 @@ const DirectoryPage = () => {
       <div className="p-2">
         <section className="relative w-full overflow-hidden rounded-[20px] min-h-[80vh] flex items-center justify-center">
           {/* Background Image */}
-          <div
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage:
@@ -50,27 +55,43 @@ const DirectoryPage = () => {
 
           {/* Content Container */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center flex flex-col items-center pt-20">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Official Registry of Certified Businesses
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-12 leading-relaxed">
-              Browse the list of organizations that have met the DBI standards
-              for quality, compliance, and trust.
-            </p>
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+              className="w-full flex flex-col items-center"
+            >
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
+              >
+                Official Registry of Certified Businesses
+              </motion.h1>
+              <motion.p
+                variants={fadeInUp}
+                className="text-lg md:text-xl text-gray-200 mb-12 leading-relaxed"
+              >
+                Browse the list of organizations that have met the DBI standards
+                for quality, compliance, and trust.
+              </motion.p>
 
-            {/* Search Bar */}
-            <div className="w-full max-w-3xl bg-white rounded-lg p-2 flex items-center shadow-xl  ring-4 md:ring-10 ring-white/10">
-              <MagnifyingGlassIcon className="h-6 w-6 text-gray-400 ml-4 shrink-0" />
-              <input
-                type="text"
-                placeholder="Search Company Name..."
-                className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
-              />
-              <button className="bg-[#212529] hover:bg-gray-800 text-[#FBD40E] px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0">
-                Search
-                <ArrowRightIcon className="h-5 w-5" />
-              </button>
-            </div>
+              {/* Search Bar */}
+              <motion.div
+                variants={scaleIn}
+                className="w-full max-w-3xl bg-white rounded-lg p-2 flex items-center shadow-xl  ring-4 md:ring-10 ring-white/10"
+              >
+                <MagnifyingGlassIcon className="h-6 w-6 text-gray-400 ml-4 shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Search Company Name..."
+                  className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
+                />
+                <button className="bg-[#212529] hover:bg-gray-800 text-[#FBD40E] px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0">
+                  Search
+                  <ArrowRightIcon className="h-5 w-5" />
+                </button>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
       </div>
@@ -88,7 +109,13 @@ const DirectoryPage = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Tabs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="flex flex-wrap justify-center gap-4 mb-16"
+          >
             {[
               "All Sectors",
               "Fintech",
@@ -109,13 +136,20 @@ const DirectoryPage = () => {
                 {sector}
               </button>
             ))}
-          </div>
+          </motion.div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          >
             {certifiedPlatforms.map((platform, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={fadeInUp}
                 className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col"
               >
                 <div className="h-32 flex items-center justify-center mb-8">
@@ -138,9 +172,9 @@ const DirectoryPage = () => {
                     <ArrowRightIcon className="w-6 h-6 text-gray-400 group-hover:text-[#212529] transition-colors" />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Pagination */}
           <div className="flex justify-center items-center gap-2">
@@ -167,7 +201,13 @@ const DirectoryPage = () => {
       <div className="p-2">
         <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 rounded-[20px] bg-[#212529]">
           <div className="max-w-7xl w-full mx-auto">
-            <div className="mb-16">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="mb-16"
+            >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Frequently Asked Questions
               </h2>
@@ -175,12 +215,16 @@ const DirectoryPage = () => {
                 Everything you need to know about the DBI Trust Seal and
                 certification process.
               </p>
-            </div>
+            </motion.div>
 
             <div className="rounded-lg overflow-hidden">
               {faqData.map((faq, index) => (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                   className="overflow-hidden transition-all duration-200"
                 >
                   <button
@@ -204,20 +248,30 @@ const DirectoryPage = () => {
                       <PlusIcon className="w-5 h-5 text-[#212529] shrink-0" />
                     )}
                   </button>
-                  {openFaqIndex === index && (
-                    <div className="px-10 py-4 bg-white/90 text-[#212529] leading-relaxed">
-                      {Array.isArray(faq.answer) ? (
-                        <ul className="list-disc pl-5 space-y-2">
-                          {faq.answer.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p>{faq.answer}</p>
-                      )}
-                    </div>
-                  )}
-                </div>
+                  <AnimatePresence>
+                    {openFaqIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-10 py-4 bg-white/90 text-[#212529] leading-relaxed">
+                          {Array.isArray(faq.answer) ? (
+                            <ul className="list-disc pl-5 space-y-2">
+                              {faq.answer.map((item, i) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p>{faq.answer}</p>
+                          )}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
               ))}
             </div>
           </div>

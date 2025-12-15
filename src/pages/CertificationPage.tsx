@@ -2,6 +2,14 @@ import { ArrowRight, BadgeCheck } from "lucide-react";
 
 import PartnersSection from "../components/PartnersSection";
 import ReadyToGetVerified from "../components/ReadToGetVerified";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  staggerContainer,
+  slideInLeft,
+  slideInRight,
+  fadeIn,
+} from "../lib/animations";
 
 const CertificationPage = () => {
   const seals = [
@@ -48,7 +56,10 @@ const CertificationPage = () => {
       <div className="p-2">
         <section className="relative min-h-[60vh] md:min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden rounded-xl">
           {/* Background Image */}
-          <div
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage:
@@ -62,29 +73,41 @@ const CertificationPage = () => {
 
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-end min-h-[60vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-6 lg:px-12 pt-16 md:pt-24 pb-8 md:pb-12">
-            <div className="max-w-xl">
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="max-w-xl"
+            >
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6"
+              >
                 The Mark of Excellence and Assurance.
-              </h1>
-              <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+              </motion.h1>
+              <motion.p
+                variants={fadeInUp}
+                className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md"
+              >
                 The DBI Trust Seal signals to customers and partners that your
                 business meets high standards of quality and compliance.
-              </p>
+              </motion.p>
 
-              <a
+              <motion.a
+                variants={fadeInUp}
                 href="#"
                 className="inline-flex items-center gap-3 bg-[#FBD40E] hover:bg-[#e0bd0c] text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
               >
                 Start Assessment
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
         </section>
       </div>
 
       {/* Bridging the Gap Section */}
-      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 relative">
+      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 relative overflow-hidden">
         {/* Background Pattern */}
         {/* Background Pattern */}
         <div className="absolute top-0 right-0 w-[80%] h-full opacity-100 pointer-events-none">
@@ -98,16 +121,27 @@ const CertificationPage = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-20 lg:gap-24 items-center">
             {/* Image Side */}
-            <div className="relative h-[600px] transform -rotate-2  bg-black  rounded-4xl overflow-hidden">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideInLeft}
+              className="relative h-[600px] transform -rotate-2  bg-black  rounded-4xl overflow-hidden"
+            >
               <img
                 src="/all/5f5daa7adf3331199f682a231d8c7d576b3a4b1c.jpg"
                 alt="Professionals working"
                 className="absolute inset-0 h-full w-full object-cover opacity-70"
               />
-            </div>
+            </motion.div>
 
             {/* Content Side */}
-            <div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideInRight}
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-8 leading-[1.15]">
                 Bridging the Gap Between
                 <br />
@@ -160,7 +194,7 @@ const CertificationPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -168,9 +202,18 @@ const CertificationPage = () => {
       {/* Validate Your Excellence Section */}
       <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid lg:grid-cols-3 gap-8"
+          >
             {/* Header Card */}
-            <div className="lg:col-span-1 flex flex-col justify-center">
+            <motion.div
+              variants={fadeInUp}
+              className="lg:col-span-1 flex flex-col justify-center"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-[#212529] mb-6">
                 Validate Your Excellence
               </h2>
@@ -178,12 +221,13 @@ const CertificationPage = () => {
                 Prove your credibility with a sector-specific seal. Choose your
                 path below to get certified.
               </p>
-            </div>
+            </motion.div>
 
             {/* Seal Cards */}
             {seals.map((seal, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={fadeInUp}
                 className={`${seal.color} rounded-2xl p-8 hover:shadow-lg shadow-md transition-shadow duration-300`}
               >
                 <div className="mb-6">
@@ -199,9 +243,9 @@ const CertificationPage = () => {
                 <p className="text-gray-600 leading-relaxed">
                   {seal.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -210,16 +254,35 @@ const CertificationPage = () => {
         <section className="p-6 md:p-30 rounded-[16px] bg-[#212529] text-white">
           <div className="">
             <div className="grid xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              <motion.h2
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl font-bold leading-tight"
+              >
                 How To Get DBI Trust Seal
-              </h2>
-              <p className="text-white/70 text-lg leading-relaxed max-w-xl">
+              </motion.h2>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                transition={{ delay: 0.2 }}
+                className="text-white/70 text-lg leading-relaxed max-w-xl"
+              >
                 Follow these 4 simple steps to earn your Trust Seal and verify
                 your business.
-              </p>
+              </motion.p>
             </div>
 
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16"
+            >
               {[
                 {
                   step: "Step 01",
@@ -245,8 +308,9 @@ const CertificationPage = () => {
                     "Integrate the DBI Trust Seal on your platforms.",
                 },
               ].map((item, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={fadeInUp}
                   className="relative flex flex-col items-start group"
                 >
                   {/* Step Badge */}
@@ -264,9 +328,9 @@ const CertificationPage = () => {
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>
