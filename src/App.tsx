@@ -6,6 +6,7 @@ import CertificationPage from "./pages/CertificationPage";
 import DirectoryPage from "./pages/DirectoryPage";
 import ResourcesPage from "./pages/ResourcesPage";
 import AboutPage from "./pages/AboutPage";
+import FaqPage from "./pages/FaqPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/directory" element={<DirectoryPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/faq" element={<FaqPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
