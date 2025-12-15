@@ -1,4 +1,5 @@
-import { darkColor, primaryColor } from "../lib/site";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+import { ArrowRightIcon } from "lucide-react";
 
 const SearchSection = () => {
   return (
@@ -31,47 +32,17 @@ const SearchSection = () => {
             </p>
 
             {/* Search Bar */}
-            <div className="w-full max-w-3xl bg-white p-2 rounded-lg flex flex-col md:flex-row items-center overflow-hidden ring-4 md:ring-10 ring-white/10 gap-2 md:gap-0">
-              <div className="flex items-center gap-3 flex-1 px-4 py-2 w-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 text-gray-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-                <input
-                  type="text"
-                  placeholder="Search Company Name..."
-                  className="flex-1 outline-none text-gray-700 placeholder-gray-400 w-full"
-                />
-              </div>
-              <button
-                className="flex items-center justify-center rounded-lg gap-2 font-medium px-6 py-3 md:py-4 transition-colors duration-200 hover:opacity-90 w-full md:w-auto"
-                style={{ backgroundColor: darkColor, color: primaryColor }}
-              >
+
+            <div className="w-full max-w-3xl bg-white rounded-lg p-2 flex items-center shadow-xl  ring-4 md:ring-10 ring-white/10">
+              <MagnifyingGlassIcon className="h-6 w-6 text-gray-400 ml-4 shrink-0" />
+              <input
+                type="text"
+                placeholder="Search Company Name..."
+                className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
+              />
+              <button className="bg-[#212529] hover:bg-gray-800 text-[#FBD40E] px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0">
                 Search
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
+                <ArrowRightIcon className="h-5 w-5" />
               </button>
             </div>
           </div>

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/solid";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -62,9 +65,9 @@ const Navbar = () => {
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
-            <X className="w-6 h-6" />
+            <XMarkIcon className="w-6 h-6" />
           ) : (
-            <Menu className="w-6 h-6" />
+            <Bars3Icon className="w-6 h-6" />
           )}
         </button>
 
@@ -74,7 +77,7 @@ const Navbar = () => {
           className="hidden lg:flex items-center gap-2 bg-[#FBD40E] hover:bg-[#e0bd0c] text-[#212529] text-sm font-medium px-5 py-4 rounded-lg transition-colors duration-200"
         >
           Get Certified
-          <ArrowRightIcon className="w-5" />
+          <ArrowRightIcon className="w-5 h-5" />
         </Link>
       </div>
 

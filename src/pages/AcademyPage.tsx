@@ -1,21 +1,47 @@
 import PartnersSection from "../components/PartnersSection";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import ReadyToGetVerified from "../components/ReadToGetVerified";
 
 const AcademyPage = () => {
-  const categories = [
+  const certifications = [
     {
-      title: "CABA",
+      title: "Certified Agile Business Analysis",
       description:
-        "Certified Agile Business Analysis (CABA) helps companies find ways to improve their structures, principles, communication and business processes. The goal is to optimize workflows and, for example, implement IT solutions that add business value. With the internationally recognized iSQI® Certified Agile Business Analysis (CABA) certification, you have the necessary knowledge to conduct business analysis and can utilize this in agile development.",
+        "Optimize workflows and implement IT solutions that add real business value to your organization.",
+      tag: "Agile Development & Business Process",
     },
     {
-      title: "CTFL",
+      title: "Certified Tester Foundation Level",
       description:
-        "Certified Tester Foundation Level (CTFL). This training provided essential testing knowledge that can be put to practical use and very importantly, explained the terminology and concepts that are used worldwide in the testing domain for software development. The training has covered three main topics which are the fundamental concepts of software testing, techniques for designing tests at all test levels and testing throughout the software development life cycle.",
+        "Master the essential testing terminology and concepts used worldwide in the software development lifecycle.",
+      tag: "Test Design & Global Standards",
     },
     {
-      title: "TMAP",
+      title: "Quality for DevOps",
       description:
-        "TMAP mostly focused on how to deliver a high quality product rather than testing. The training course offers the IT Team the required knowledge and skills to build quality into an IT-system. This training is mostly for all people working in IT delivery teams (such as DevOps and Scrum) that are responsible for or heavily involved in quality engineering such as Quality Assurance(QA )professionals, testers and operations people.",
+        'Shift from just "testing" to "building quality" into your IT systems within high-performance DevOps teams.',
+      tag: "DevOps & Scrum Quality",
+    },
+  ];
+
+  const experts = [
+    {
+      logo: "/experts/rhia.png",
+      title: "Rwanda Health Informatics Association",
+      description:
+        "Connects health professionals and data scientists to strengthen Rwanda's health system through the responsible use of technology.",
+    },
+    {
+      logo: "/experts/isaca.png",
+      title: "ISACA Rwanda",
+      description:
+        "A professional association providing certifications and guidance in IT governance, cybersecurity, auditing, and risk management.",
+    },
+    {
+      logo: "/experts/digital-frontiers-institute.png",
+      title: "Digital Frontiers Institute",
+      description:
+        "Equips professionals with advanced knowledge in digital finance, fintech, and financial inclusion through accredited online training.",
     },
   ];
 
@@ -29,7 +55,7 @@ const AcademyPage = () => {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage:
-                "url('/all/587b0cfabd568a039db949742072ab6090ae1cd3.jpg')", // Using a placeholder that likely represents the classroom
+                "url('/all/587b0cfabd568a039db949742072ab6090ae1cd3.jpg')",
             }}
           />
 
@@ -44,12 +70,15 @@ const AcademyPage = () => {
           </div>
         </section>
       </div>
-
-      <div className="p-2">
-        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 flex flex-col md:flex-row gap-8 md:gap-20 lg:gap-24 items-center max-w-7xl w-full mx-auto">
+      <div className="p-2 relative">
+        <img
+          src="/shapes/shapes.svg"
+          className="w-full inset-0 absolute h-full"
+        />
+        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 flex flex-col md:flex-row gap-6 lg:gap-10 items-center max-w-7xl w-full mx-auto">
           <div className="grow">
             <img
-              src="/all/bcd964855b4468d9e1945fbbf1927dd628340e14.png"
+              src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png"
               className="w-full object-cover -rotate-2"
             />
           </div>
@@ -67,64 +96,90 @@ const AcademyPage = () => {
         </section>
       </div>
 
-      {/* Accreditation Section */}
-      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center">
-            {/* Text Content */}
-            <div>
-              <h2 className="text-3xl font-bold text-[#212529] mb-8">
-                CTFL Accreditation
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Digital Business Institute (DBI Rwanda) has been accredited by
-                SASTQB as ISTQB training provider for ISTQB – Certified tester
-                foundation level.
-              </p>
-            </div>
-
-            {/* Certificate Image */}
-            <div className="flex justify-center md:justify-end">
-              <div className="relative shadow-2xl rounded-lg p-2 bg-white transform rotate-2 hover:rotate-0 transition-transform duration-300">
-                <img
-                  src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png" // Placeholder for certificate
-                  alt="ISTQB Certificate"
-                  className="max-w-full md:max-w-md h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-[#212529] inline-block border-b-4 border-[#FBD40E] pb-2">
-              Categories
+      {/* Internationally Accredited Certifications Section */}
+      <div className="p-2">
+        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-[#212529] rounded-[20px]">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-16">
+              Internationally Accredited Certifications
             </h2>
+            <div className="grid lg:grid-cols-3 gap-8">
+              {certifications.map((cert, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-xl flex flex-col h-full"
+                >
+                  <h3 className="text-2xl font-bold text-[#212529] mb-4">
+                    {cert.title}
+                  </h3>
+                  <p className="text-gray-600 mb-8 grow">{cert.description}</p>
+                  <div className="mt-auto">
+                    <p className="font-bold text-[#212529] text-sm mb-6">
+                      {cert.tag}
+                    </p>
+                    <button className="cursor-pointer">
+                      <ArrowRightIcon className="w-6 h-6 text-[#212529]" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Connect with Global Experts Section */}
+      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="/shapes/shapes.svg"
+            alt=""
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#212529]">
+              Connect with Global Experts
+            </h2>
+            <p className="text-gray-600 max-w-md md:text-right">
+              Through our Digital Professional Networks, we link member
+              companies to leading experts and resources to bridge skill gaps
+            </p>
           </div>
 
-          {/* Cards Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {categories.map((category, index) => (
+            {experts.map((expert, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-8 rounded-lg border-l-4 border-[#FBD40E] hover:shadow-lg transition-shadow duration-300"
+                className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg  transition-all duration-200 ease-in-out flex flex-col h-full"
               >
-                <h3 className="text-xl font-bold text-black mb-6">
-                  {category.title}
+                <div className="h-32 mb-6 flex items-center">
+                  <img
+                    src={expert.logo}
+                    alt={`${expert.title} logo`}
+                    className="max-h-full max-w-[80%] object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-[#212529] mb-4">
+                  {expert.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  {category.description}
-                </p>
+                <div className="border-t grow border-gray-200 pt-6 gap-6 flex flex-col">
+                  <p className="text-gray-600 grow leading-relaxed">
+                    {expert.description}
+                  </p>
+                  <div className="mt-auto flex justify-end ">
+                    <button className="cursor-pointer">
+                      <ArrowRightIcon className="w-6 h-6 text-[#212529]" />
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+      <ReadyToGetVerified />
       <PartnersSection />
     </div>
   );

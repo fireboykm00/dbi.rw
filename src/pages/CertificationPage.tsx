@@ -1,6 +1,7 @@
 import { ArrowRight, BadgeCheck } from "lucide-react";
 
 import PartnersSection from "../components/PartnersSection";
+import ReadyToGetVerified from "../components/ReadToGetVerified";
 
 const CertificationPage = () => {
   const seals = [
@@ -57,7 +58,7 @@ const CertificationPage = () => {
           />
 
           {/* Gradient Overlay - darker on left for text readability */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#212529]/70 via-[#212529]/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
 
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-end min-h-[60vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-6 lg:px-12 pt-16 md:pt-24 pb-8 md:pb-12">
@@ -119,45 +120,41 @@ const CertificationPage = () => {
                 based on industry best practices.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-6 text-[#212529]">
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
-                    className="w-6 h-6 text-[#212529] shrink-0 mt-1"
+                    className="w-6 h-6 shrink-0 mt-1"
                     strokeWidth={2}
                   />
                   <div>
-                    <span className="font-bold text-[#212529] text-lg">
-                      Credible Mark:{" "}
-                    </span>
-                    <span className="text-[#1e3a8a] font-medium">
+                    <span className="font-bold text-lg">Credible Mark: </span>
+                    <span className="font-medium">
                       A proven signal of assurance for your market.
                     </span>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
-                    className="w-6 h-6 text-[#212529] shrink-0 mt-1"
+                    className="w-6 h-6  shrink-0 mt-1"
                     strokeWidth={2}
                   />
                   <div>
-                    <span className="font-bold text-[#212529] text-lg">
-                      Compliance:{" "}
-                    </span>
-                    <span className="text-[#1e3a8a] font-medium">
+                    <span className="font-bold text-lg">Compliance: </span>
+                    <span className="font-medium">
                       Evaluated against general principles of best practices.
                     </span>
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
-                    className="w-6 h-6 text-[#212529] shrink-0 mt-1"
+                    className="w-6 h-6 shrink-0 mt-1"
                     strokeWidth={2}
                   />
                   <div>
-                    <span className="font-bold text-[#03396C] text-lg">
+                    <span className="font-bold text-lg">
                       Full Lifecycle Trust:{" "}
                     </span>
-                    <span className="text-[#1e3a8a] font-medium">
+                    <span className="font-medium">
                       Depict trustworthiness from inception to delivery.
                     </span>
                   </div>
@@ -273,40 +270,7 @@ const CertificationPage = () => {
           </div>
         </section>
       </div>
-
-      {/* Ready to get verified CTA Section */}
-      <div className="p-2 my-6 md:my-10 lg:my-16">
-        <section className="relative rounded-3xl overflow-hidden min-h-[500px] md:min-h-[800px] flex items-center">
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-x-[-1]"
-            style={{
-              backgroundImage:
-                "url('/all/310a11fe05bb9a32ed316a5104ae8c97bd08aca4.jpg')", // Placeholder image
-            }}
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/60" />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to get verified?
-              </h2>
-              <p className="text-white/80 text-lg mb-10 leading-relaxed">
-                Start the assessment for all categories
-                <br />
-                (Fintech, Software, Edtech, Startup, and E-Commerce) in our
-                unified portal.
-              </p>
-              <button className="bg-[#FBD40E] text-[#212529] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 hover:bg-[#e0bd0c] transition-all">
-                Start Assessment
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </section>
-      </div>
+      <ReadyToGetVerified />
 
       {/* Partners Section */}
       <PartnersSection />
