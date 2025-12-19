@@ -16,20 +16,22 @@ const FaqPage = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-[60vh] w-full overflow-hidden rounded-[20px] flex items-center justify-center bg-[#455F84]">
+        <section className="relative min-h-[60vh] w-full overflow-hidden rounded-[20px] flex items-center justify-center bg-black">
           {/* Background Image */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                "url('/all/5f5daa7adf3331199f682a231d8c7d576b3a4b1c.jpg')",
-            }}
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/60" />
+            className="absolute inset-0"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+              style={{
+                backgroundImage:
+                  "url('/all/5f5daa7adf3331199f682a231d8c7d576b3a4b1c.jpg')",
+              }}
+            />
+          </motion.div>
 
           <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
             <motion.h1

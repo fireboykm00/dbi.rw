@@ -5,21 +5,23 @@ import { fadeInUp, fadeIn, staggerContainer } from "../lib/animations";
 const ReadyToGetVerified = () => {
   return (
     <div className="p-2 my-6 md:my-10 lg:my-16">
-      <section className="relative rounded-3xl overflow-hidden min-h-[500px] xl:min-h-[700px] flex items-center">
+      <section className="relative rounded-3xl overflow-hidden min-h-[500px] xl:min-h-[700px] flex items-center bg-black">
         {/* Background Image */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-x-[-1]"
-          style={{
-            backgroundImage:
-              "url('/all/310a11fe05bb9a32ed316a5104ae8c97bd08aca4.jpg')", // Placeholder image
-          }}
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+          className="absolute inset-0"
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-x-[-1] opacity-60"
+            style={{
+              backgroundImage:
+                "url('/all/310a11fe05bb9a32ed316a5104ae8c97bd08aca4.jpg')",
+            }}
+          />
+        </motion.div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <motion.div
@@ -46,7 +48,7 @@ const ReadyToGetVerified = () => {
             </motion.p>
             <motion.button
               variants={fadeInUp}
-              className="bg-white text-[#455F84] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 hover:bg-gray-100 transition-all shadow-lg"
+              className="bg-[#455F84] hover:bg-[#3a506f] text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 transition-all shadow-lg"
             >
               Start Assessment
               <ArrowRightIcon className="w-5 h-5" />

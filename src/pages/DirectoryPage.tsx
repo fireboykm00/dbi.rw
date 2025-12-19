@@ -37,21 +37,22 @@ const DirectoryPage = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative w-full overflow-hidden rounded-[20px] min-h-[80vh] flex items-center justify-center">
+        <section className="relative w-full overflow-hidden rounded-[20px] min-h-[80vh] flex items-center justify-center bg-black">
           {/* Background Image */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
-            }}
-          />
-
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/70" />
+            className="absolute inset-0"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+              style={{
+                backgroundImage:
+                  "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
+              }}
+            />
+          </motion.div>
 
           {/* Content Container */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center flex flex-col items-center pt-20">
@@ -86,7 +87,7 @@ const DirectoryPage = () => {
                   placeholder="Search Company Name..."
                   className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
                 />
-                <button className="bg-white hover:bg-gray-100 text-[#455F84] px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0 shadow-md">
+                <button className="bg-[#455F84] hover:bg-[#3a506f] text-white px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0 shadow-md">
                   Search
                   <ArrowRightIcon className="h-5 w-5" />
                 </button>

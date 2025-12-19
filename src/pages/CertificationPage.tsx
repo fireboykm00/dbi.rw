@@ -100,7 +100,7 @@ const CertificationPage = () => {
               <motion.a
                 variants={fadeInUp}
                 href="#"
-                className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-[#455F84] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12 shadow-md"
+                className="inline-flex items-center gap-3 bg-[#455F84] hover:bg-[#3a506f] text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12 shadow-md"
               >
                 Start Assessment
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

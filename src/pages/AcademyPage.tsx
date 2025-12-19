@@ -57,21 +57,22 @@ const AcademyPage = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] w-full overflow-hidden rounded-xl flex items-center justify-center">
+        <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] w-full overflow-hidden rounded-xl flex items-center justify-center bg-black">
           {/* Background Image */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                "url('/all/587b0cfabd568a039db949742072ab6090ae1cd3.jpg')",
-            }}
-          />
-
-          {/* Dark Overlay */}
-          {/* <div className="absolute inset-0 bg-black/60" /> */}
+            className="absolute inset-0"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+              style={{
+                backgroundImage:
+                  "url('/all/587b0cfabd568a039db949742072ab6090ae1cd3.jpg')",
+              }}
+            />
+          </motion.div>
 
           {/* Content */}
           <div className="relative z-10 text-center px-6">

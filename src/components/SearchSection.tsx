@@ -13,19 +13,17 @@ const SearchSection = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={scaleIn}
-          className="relative rounded-2xl overflow-hidden"
+          className="relative rounded-2xl overflow-hidden bg-black"
           style={{ minHeight: "400px" }}
         >
           {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center opacity-60"
             style={{
               backgroundImage:
                 "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
             }}
           />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/60" />
 
           {/* Content */}
           <motion.div
