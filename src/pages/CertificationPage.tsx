@@ -2,6 +2,14 @@ import { ArrowRight, BadgeCheck } from "lucide-react";
 
 import PartnersSection from "../components/PartnersSection";
 import ReadyToGetVerified from "../components/ReadToGetVerified";
+import { motion } from "framer-motion";
+import {
+  fadeInUp,
+  staggerContainer,
+  slideInLeft,
+  slideInRight,
+  fadeIn,
+} from "../lib/animations";
 
 const CertificationPage = () => {
   const seals = [
@@ -43,48 +51,67 @@ const CertificationPage = () => {
   ];
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-[60vh] md:min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden rounded-xl">
+        <section className="relative min-h-[60vh] md:min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden rounded-xl bg-black">
           {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                "url('/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg')", // Using existing hero image as placeholder
-              backgroundPosition: "center",
-            }}
-          />
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="absolute inset-0"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+              style={{
+                backgroundImage:
+                  "url('/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg')",
+              }}
+            />
+          </motion.div>
 
           {/* Gradient Overlay - darker on left for text readability */}
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
+          {/* <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" /> */}
 
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-end min-h-[60vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-6 lg:px-12 pt-16 md:pt-24 pb-8 md:pb-12">
-            <div className="max-w-xl">
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="max-w-xl"
+            >
+              <motion.h1
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-tight mb-6"
+              >
                 The Mark of Excellence and Assurance.
-              </h1>
-              <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+              </motion.h1>
+              <motion.p
+                variants={fadeInUp}
+                className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md"
+              >
                 The DBI Trust Seal signals to customers and partners that your
                 business meets high standards of quality and compliance.
-              </p>
+              </motion.p>
 
-              <a
+              <motion.a
+                variants={fadeInUp}
                 href="#"
-                className="inline-flex items-center gap-3 bg-[#FBD40E] hover:bg-[#e0bd0c] text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
+                className="inline-flex items-center gap-3 bg-[#455F84] hover:bg-[#3a506f] text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12 shadow-md"
               >
                 Start Assessment
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
         </section>
       </div>
 
       {/* Bridging the Gap Section */}
-      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 relative">
+      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 relative overflow-hidden">
         {/* Background Pattern */}
         {/* Background Pattern */}
         <div className="absolute top-0 right-0 w-[80%] h-full opacity-100 pointer-events-none">
@@ -98,17 +125,28 @@ const CertificationPage = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-20 lg:gap-24 items-center">
             {/* Image Side */}
-            <div className="relative h-[600px] transform -rotate-2  bg-black  rounded-4xl overflow-hidden">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideInLeft}
+              className="relative h-[600px] transform -rotate-2  bg-black  rounded-4xl overflow-hidden"
+            >
               <img
                 src="/all/5f5daa7adf3331199f682a231d8c7d576b3a4b1c.jpg"
                 alt="Professionals working"
                 className="absolute inset-0 h-full w-full object-cover opacity-70"
               />
-            </div>
+            </motion.div>
 
             {/* Content Side */}
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-8 leading-[1.15]">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={slideInRight}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-[#455F84] mb-8 leading-[1.15]">
                 Bridging the Gap Between
                 <br />
                 You and Your Customers
@@ -120,7 +158,7 @@ const CertificationPage = () => {
                 based on industry best practices.
               </p>
 
-              <div className="space-y-6 text-[#212529]">
+              <div className="space-y-6 text-[#455F84]">
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
                     className="w-6 h-6 shrink-0 mt-1"
@@ -160,7 +198,7 @@ const CertificationPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -168,22 +206,32 @@ const CertificationPage = () => {
       {/* Validate Your Excellence Section */}
       <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid lg:grid-cols-3 gap-8"
+          >
             {/* Header Card */}
-            <div className="lg:col-span-1 flex flex-col justify-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#212529] mb-6">
+            <motion.div
+              variants={fadeInUp}
+              className="lg:col-span-1 flex flex-col justify-center"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-[#455F84] mb-6">
                 Validate Your Excellence
               </h2>
               <p className="text-gray-600 text-lg">
                 Prove your credibility with a sector-specific seal. Choose your
                 path below to get certified.
               </p>
-            </div>
+            </motion.div>
 
             {/* Seal Cards */}
             {seals.map((seal, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={fadeInUp}
                 className={`${seal.color} rounded-2xl p-8 hover:shadow-lg shadow-md transition-shadow duration-300`}
               >
                 <div className="mb-6">
@@ -193,33 +241,52 @@ const CertificationPage = () => {
                     className="w-24 h-24 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-[#212529] mb-4">
+                <h3 className="text-xl font-bold text-[#455F84] mb-4">
                   {seal.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {seal.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* How To Get DBI Trust Seal Section */}
       <div className="p-2 mb-20">
-        <section className="p-6 md:p-30 rounded-[16px] bg-[#212529] text-white">
+        <section className="p-6 md:p-30 rounded-[16px] bg-[#455F84] text-white">
           <div className="">
             <div className="grid xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+              <motion.h2
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="text-4xl md:text-5xl font-bold leading-tight"
+              >
                 How To Get DBI Trust Seal
-              </h2>
-              <p className="text-white/70 text-lg leading-relaxed max-w-xl">
+              </motion.h2>
+              <motion.p
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                transition={{ delay: 0.2 }}
+                className="text-white/70 text-lg leading-relaxed max-w-xl"
+              >
                 Follow these 4 simple steps to earn your Trust Seal and verify
                 your business.
-              </p>
+              </motion.p>
             </div>
 
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16"
+            >
               {[
                 {
                   step: "Step 01",
@@ -245,12 +312,13 @@ const CertificationPage = () => {
                     "Integrate the DBI Trust Seal on your platforms.",
                 },
               ].map((item, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={fadeInUp}
                   className="relative flex flex-col items-start group"
                 >
                   {/* Step Badge */}
-                  <div className="bg-[#FBD40E] text-[#212529] px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md">
+                  <div className="bg-white text-[#455F84] px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md">
                     {item.step}
                   </div>
 
@@ -258,15 +326,15 @@ const CertificationPage = () => {
                   <div className="hidden md:block absolute top-8 left-14 bottom-0 w-px h-16 border-l-2 border-dotted border-white/30 z-0" />
 
                   {/* Content Card */}
-                  <div className="bg-[#444444] hover:bg-[#555555] text-white rounded-xl p-8 w-full flex-1 transition-colors duration-300 relative z-10 mt-4">
+                  <div className="bg-white/10 hover:bg-white/20 text-white rounded-xl p-8 w-full flex-1 transition-colors duration-300 relative z-10 mt-4 backdrop-blur-sm border border-white/10">
                     <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
                     <p className="text-white/70 text-lg leading-relaxed">
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>

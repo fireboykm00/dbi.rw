@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "../lib/animations";
+
 const PartnersSection = () => {
   // Company logos from public/company folder
   const companyLogos = [
@@ -17,15 +20,28 @@ const PartnersSection = () => {
     <section className="relative w-full bg-white py-12 px-4 md:py-16 md:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h3 className="text-center text-lg font-bold mb-8 md:mb-10">
+        <motion.h3
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="text-center text-lg font-bold mb-8 md:mb-10"
+        >
           Powered by Global Standards
-        </h3>
+        </motion.h3>
 
         {/* Logos Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8"
+        >
           {companyLogos.map((logo, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={fadeInUp}
               className="bg-white border border-gray-200 rounded-xl p-6 flex items-center justify-center hover:shadow-lg transition-shadow duration-200"
             >
               <img
@@ -33,9 +49,9 @@ const PartnersSection = () => {
                 alt={`Partner ${index + 1}`}
                 className="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-200"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

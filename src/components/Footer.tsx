@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import { primaryColor } from "../lib/site";
+import {
+  MapPinIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 
 const Footer = () => {
   const quickLinks = [
@@ -41,7 +45,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative w-full rounded-2xl bg-[#212529] overflow-hidden">
+    <footer className="relative w-full rounded-2xl bg-[#455F84] overflow-hidden">
       {/* Background Shape */}
       <div
         className="absolute inset-0 bg-no-repeat bg-cover"
@@ -75,7 +79,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       to={link.href}
-                      className="text-white hover:text-[#FBD40E] transition-colors duration-200 text-sm flex items-center gap-2"
+                      className="text-white hover:text-white/80 transition-colors duration-200 text-sm flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-white" />
                       {link.name}
@@ -92,83 +96,28 @@ const Footer = () => {
               </h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: primaryColor }}
-                  >
-                    <svg
-                      className="w-4 h-4 text-[#212529]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-white">
+                    <MapPinIcon className="w-5 h-5 text-[#455F84]" />
                   </div>
-                  <span className="text-gray-400 text-sm">
+                  <span className="text-gray-300 text-sm">
                     Fairview Building, KG 622 Avenue
                     <br />
                     Kigali, Rwanda
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: primaryColor }}
-                  >
-                    <svg
-                      className="w-4 h-4 text-[#212529]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-white">
+                    <EnvelopeIcon className="w-5 h-5 text-[#455F84]" />
                   </div>
-                  <a
-                    href="mailto:info@dbi.rw"
-                    className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
-                  >
-                    info@dbi.rw
-                  </a>
+                  <span className="text-gray-300 text-sm">info@dbi.rw</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: primaryColor }}
-                  >
-                    <svg
-                      className="w-4 h-4 text-[#212529]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-white">
+                    <PhoneIcon className="w-5 h-5 text-[#455F84]" />
                   </div>
                   <a
                     href="tel:+250781375971"
-                    className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
+                    className="text-gray-200 hover:text-white transition-colors text-sm"
                   >
                     +250781375971
                   </a>
@@ -186,7 +135,7 @@ const Footer = () => {
               <a
                 key={social.name}
                 href={social.href}
-                className="w-12 h-12 rounded-full bg-[#FBD40E] flex items-center justify-center text-[#212529] hover:bg-[#e0bd0c] hover:text-gray-900 transition-all duration-200"
+                className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#455F84] hover:bg-gray-100 transition-all duration-200"
                 aria-label={social.name}
                 target="blank"
               >
@@ -200,19 +149,19 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6">
           <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-300 text-sm">
               Copyright © 2025 DBI Rwanda. All Rights Reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link
                 to="/privacy"
-                className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
+                className="text-gray-300 hover:text-white transition-colors text-sm"
               >
                 Privacy policy
               </Link>
               <Link
                 to="/terms"
-                className="text-gray-400 hover:text-[#FBD40E] transition-colors text-sm"
+                className="text-gray-300 hover:text-white transition-colors text-sm"
               >
                 Terms & conditions
               </Link>

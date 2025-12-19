@@ -1,5 +1,5 @@
-export const primaryColor = "#FBD40E";
-export const darkColor = "#212529";
+export const primaryColor = "#455F84";
+export const darkColor = "#455F84";
 export const grayColor = "#555555";
 
 interface FAQItem {
