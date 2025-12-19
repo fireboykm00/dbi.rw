@@ -1,4 +1,3 @@
-import { darkColor } from "../lib/site";
 import { BadgeCheck } from "lucide-react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
@@ -61,9 +60,9 @@ const SealSection = () => {
               >
                 <div
                   className="w-10 h-10 rounded-md flex items-center justify-center"
-                  style={{ backgroundColor: darkColor }}
+                  style={{ backgroundColor: "#455F84" }}
                 >
-                  <ShieldCheckIcon className="text-[#FBD40E] w-6" />
+                  <ShieldCheckIcon className="text-white w-6" />
                 </div>
                 <span className="text-sm font-medium text-gray-800">
                   Security Check: Passed
@@ -88,13 +87,13 @@ const SealSection = () => {
                 <div className="flex items-start gap-3">
                   <div
                     className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden"
-                    style={{ backgroundColor: darkColor }}
+                    style={{ backgroundColor: "#455F84" }}
                   >
                     {/* <QuoteIcon className="text-[#FBD40E] transform rotate-180" /> */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
-                      fill="#FBD40E"
+                      fill="white"
                       width="16"
                     >
                       <path d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64L0 216zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-136z" />
@@ -159,8 +158,7 @@ const SealSection = () => {
             <motion.div variants={fadeInUp}>
               <a
                 href="#"
-                className="inline-flex items-center gap-3 text-[#FBD40E] font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
-                style={{ backgroundColor: "#212529" }}
+                className="inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 bg-[#455F84] hover:bg-[#3a506f] shadow-md"
               >
                 Get Started
                 <ArrowRightIcon className="w-5" />

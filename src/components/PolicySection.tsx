@@ -1,6 +1,7 @@
-import { darkColor, primaryColor } from "../lib/site";
+import { darkColor } from "../lib/site";
 import { motion } from "framer-motion";
 import { slideInLeft, slideInRight, scaleIn } from "../lib/animations";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const PolicySection = () => {
   return (
@@ -55,24 +56,10 @@ const PolicySection = () => {
             {/* CTA Button */}
             <a
               href="#"
-              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90 z-20"
-              style={{ backgroundColor: darkColor, color: primaryColor }}
+              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 bg-[#455F84] hover:bg-[#3a506f] text-white shadow-md z-20"
             >
               Read Our Mission
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
+              <ArrowRightIcon className="w-5 h-5" />
             </a>
 
             {/* --- COMPONENT 1: Text Version (Visible Mobile/Tablet, Hidden on XL) --- */}
@@ -97,7 +84,7 @@ const PolicySection = () => {
             >
               <div
                 className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-lg"
-                style={{ backgroundColor: darkColor, color: primaryColor }}
+                style={{ backgroundColor: "#455F84", color: "white" }}
               >
                 <span className="text-5xl font-bold">
                   300<sup className="text-lg">+</sup>
@@ -107,11 +94,11 @@ const PolicySection = () => {
                 {/* Speech bubble tail */}
                 <div
                   className="absolute bottom-0 -left-6 w-10 h-10 rounded-full"
-                  style={{ backgroundColor: darkColor }}
+                  style={{ backgroundColor: "#455F84" }}
                 />
                 <div
                   className="absolute bottom-5 -left-2 w-8 h-5 -rotate-45"
-                  style={{ backgroundColor: darkColor }}
+                  style={{ backgroundColor: "#455F84" }}
                 />
               </div>
             </motion.div>

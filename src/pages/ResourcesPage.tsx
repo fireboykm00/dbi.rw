@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { primaryColor, darkColor } from "../lib/site";
+import { primaryColor } from "../lib/site";
 import {
   BookOpen,
   FileText,
@@ -192,13 +192,9 @@ const ResourcesPage = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "text-[#212529] shadow-lg transform scale-105"
+                  ? "bg-white text-[#455F84] shadow-lg transform scale-105"
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
               }`}
-              style={{
-                backgroundColor:
-                  activeTab === tab.id ? primaryColor : undefined,
-              }}
             >
               {tab.icon} {tab.name}
             </button>
@@ -225,18 +221,18 @@ const ResourcesPage = () => {
                   className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
                 >
                   <div className="flex justify-between items-start mb-4">
-                    <span className="px-3 py-1 bg-blue-50 text-[#212529] text-xs font-bold uppercase tracking-wider rounded-full">
+                    <span className="px-3 py-1 bg-blue-50 text-[#455F84] text-xs font-bold uppercase tracking-wider rounded-full">
                       {item.category}
                     </span>
                     <span className="text-sm text-gray-500 flex items-center gap-1">
                       ⏱️ {item.readTime}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#455F84] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 mb-6 grow">{item.description}</p>
-                  <button className="flex items-center gap-2 text-[#212529] font-semibold group-hover:gap-3 transition-all">
+                  <button className="flex items-center gap-2 text-[#455F84] font-semibold group-hover:gap-3 transition-all">
                     Read Guide <ArrowRight className="w-4 h-4" />
                   </button>
                 </motion.div>
@@ -250,14 +246,14 @@ const ResourcesPage = () => {
                   className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#212529]">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#455F84]">
                       <FileText className="w-5 h-5" />
                     </div>
                     <span className="text-sm text-gray-500 font-medium">
                       {item.format}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#455F84] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 mb-6 grow">{item.description}</p>
@@ -266,8 +262,8 @@ const ResourcesPage = () => {
                       {item.downloads} downloads
                     </span>
                     <button
-                      className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium border transition-colors hover:bg-blue-50"
-                      style={{ borderColor: primaryColor, color: darkColor }}
+                      className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium border transition-colors hover:bg-gray-100 bg-white shadow-sm"
+                      style={{ borderColor: "#455F84", color: "#455F84" }}
                     >
                       <Download className="w-4 h-4" /> Download
                     </button>
@@ -283,21 +279,18 @@ const ResourcesPage = () => {
                   className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group flex flex-col"
                 >
                   <div className="flex justify-between items-start mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#212529]">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-[#455F84]">
                       <Wrench className="w-5 h-5" />
                     </div>
                     <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider rounded-full">
                       {item.status}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#212529] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#455F84] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 mb-6 grow">{item.description}</p>
-                  <button
-                    className="w-full py-3 rounded-xl font-medium text-[#212529] flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                    style={{ backgroundColor: primaryColor }}
-                  >
+                  <button className="w-full py-3 rounded-xl font-medium text-[#455F84] flex items-center justify-center gap-2 hover:bg-gray-100 bg-white shadow-md transition-all">
                     Launch Tool <ExternalLink className="w-4 h-4" />
                   </button>
                 </motion.div>
@@ -326,12 +319,11 @@ const ResourcesPage = () => {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FBD40E] focus:border-transparent"
+              className="flex-1 px-6 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#455F84] focus:border-transparent"
             />
             <button
               type="submit"
-              className="px-8 py-4 rounded-xl font-bold text-[#212529] shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
-              style={{ backgroundColor: primaryColor }}
+              className="px-8 py-4 rounded-xl font-bold text-[#455F84] shadow-lg hover:bg-gray-100 bg-white transition-all transform hover:-translate-y-1"
             >
               Subscribe
             </button>

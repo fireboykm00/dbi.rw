@@ -20,22 +20,22 @@ const AboutPage = () => {
     {
       title: "Trust",
       description: "Building confidence in Rwanda's digital economy",
-      icon: <Shield className="w-12 h-12 text-[#212529]" />,
+      icon: <Shield className="w-12 h-12 text-[#455F84]" />,
     },
     {
       title: "Innovation",
       description: "Driving digital transformation forward",
-      icon: <Lightbulb className="w-12 h-12 text-[#212529]" />,
+      icon: <Lightbulb className="w-12 h-12 text-[#455F84]" />,
     },
     {
       title: "Integrity",
       description: "Upholding the highest ethical standards",
-      icon: <Scale className="w-12 h-12 text-[#212529]" />,
+      icon: <Scale className="w-12 h-12 text-[#455F84]" />,
     },
     {
       title: "Inclusion",
       description: "Ensuring digital access for all Rwandans",
-      icon: <Handshake className="w-12 h-12 text-[#212529]" />,
+      icon: <Handshake className="w-12 h-12 text-[#455F84]" />,
     },
   ];
 
@@ -244,8 +244,7 @@ const AboutPage = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex text-[#212529] gap-2 items-center font-bold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:opacity-90"
-                  style={{ backgroundColor: primaryColor }}
+                  className="inline-flex text-[#455F84] gap-2 items-center font-bold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:bg-gray-100 bg-white"
                 >
                   Become A Member
                   <ArrowRightIcon className="w-5" />

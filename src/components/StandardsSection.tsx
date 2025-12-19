@@ -1,4 +1,3 @@
-import { darkColor, primaryColor } from "../lib/site";
 import { BugIcon, ShieldIcon, CogIcon } from "lucide-react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
@@ -13,15 +12,15 @@ const StandardsSection = () => {
   const certifications = [
     {
       name: "Certified Agile Business Analysis",
-      icon: <ShieldIcon color={primaryColor} fill={primaryColor} />,
+      icon: <ShieldIcon color="white" fill="white" />,
     },
     {
       name: "Certified Tester Foundation Level",
-      icon: <BugIcon color={primaryColor} />,
+      icon: <BugIcon color="white" />,
     },
     {
       name: "Quality Engineering for DevOps",
-      icon: <CogIcon color={primaryColor} />,
+      icon: <CogIcon color="white" />,
     },
   ];
 
@@ -48,8 +47,7 @@ const StandardsSection = () => {
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 hover:opacity-90"
-            style={{ backgroundColor: darkColor, color: primaryColor }}
+            className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 bg-[#455F84] hover:bg-[#3a506f] text-white shadow-md"
           >
             Learn More
             <ArrowRightIcon className="w-5" />
@@ -88,7 +86,7 @@ const StandardsSection = () => {
               >
                 <div
                   className="xl:w-10 xl:h-10 w-8 h-8 rounded-md flex items-center justify-center"
-                  style={{ backgroundColor: darkColor }}
+                  style={{ backgroundColor: "#455F84" }}
                 >
                   {cert.icon}
                 </div>

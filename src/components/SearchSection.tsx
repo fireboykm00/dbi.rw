@@ -61,7 +61,7 @@ const SearchSection = () => {
                 placeholder="Search Company Name..."
                 className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
               />
-              <button className="bg-[#212529] hover:bg-gray-800 text-[#FBD40E] px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0">
+              <button className="bg-[#455F84] hover:bg-[#3a506f] text-white cursor-pointer px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0 shadow-md">
                 Search
                 <ArrowRightIcon className="h-5 w-5" />
               </button>

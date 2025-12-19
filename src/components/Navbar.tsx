@@ -5,6 +5,7 @@ import {
   XMarkIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,14 +29,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full px-4 lg:px-8 py-4">
-      <div
-        className="max-w-7xl w-full mx-auto rounded-md px-3 flex items-center justify-between"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
-      >
+    <nav className="w-full p-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between bg-[#455F84]/80 backdrop-blur-md rounded-lg shadow-xl transition-all duration-300">
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-          <Link to="/">
+          <Link to="/" className="hover:opacity-90 transition-opacity">
             <img src="/logo.png" alt="DBI LOGO" className="w-32 md:w-44" />
           </Link>
         </div>
@@ -46,13 +44,17 @@ const Navbar = () => {
             <li key={link.name}>
               <Link
                 to={link.href}
-                className={`text-sm transition-colors duration-200 ${
-                  isActive(link.href)
-                    ? "font-bold text-[#FBD40E]"
-                    : "font-normal text-white hover:text-[#FBD40E]"
+                className={`text-sm font-medium tracking-wide transition-all duration-200 hover:text-white ${
+                  isActive(link.href) ? "text-white font-bold" : "text-white/80"
                 }`}
               >
                 {link.name}
+                {isActive(link.href) && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="h-0.5 bg-white mt-0.5"
+                  />
+                )}
               </Link>
             </li>
           ))}
@@ -60,7 +62,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white p-2"
+          className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -72,49 +74,56 @@ const Navbar = () => {
         </button>
 
         {/* CTA Button */}
-        <Link
-          to="/certification"
-          className="hidden lg:flex items-center gap-2 bg-[#FBD40E] hover:bg-[#e0bd0c] text-[#212529] text-sm font-medium px-5 py-4 rounded-lg transition-colors duration-200"
-        >
-          Get Certified
-          <ArrowRightIcon className="w-5 h-5" />
-        </Link>
+        <div className="hidden lg:block">
+          <Link
+            to="/certification"
+            className="flex items-center gap-2 bg-white hover:bg-gray-100 text-[#455F84] text-sm font-bold px-6 py-4 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+          >
+            Get Certified
+            <ArrowRightIcon className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div
-          className="lg:hidden mt-2 mx-6 rounded-lg p-4"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }}
-        >
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.name}>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-[#455F84] border-t border-white/10 overflow-hidden"
+          >
+            <ul className="flex flex-col p-6 gap-4">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-lg block py-2 transition-colors duration-200 ${
+                      isActive(link.href)
+                        ? "font-bold text-white"
+                        : "font-medium text-white/80 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              <li className="pt-4 border-t border-white/10">
                 <Link
-                  to={link.href}
+                  to="/certification"
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm block py-2 transition-colors duration-200 ${
-                    isActive(link.href)
-                      ? "font-bold text-[#FBD40E]"
-                      : "font-normal text-white hover:text-[#FBD40E]"
-                  }`}
+                  className="flex items-center justify-center gap-2 bg-white text-[#455F84] text-lg font-bold px-4 py-4 rounded-xl w-full shadow-lg"
                 >
-                  {link.name}
+                  Get Certified
+                  <ArrowRightIcon className="w-5 h-5" />
                 </Link>
               </li>
-            ))}
-            <li>
-              <Link
-                to="/certification"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 bg-[#FBD40E] text-[#212529] text-sm font-medium px-4 py-3 rounded-lg w-full"
-              >
-                Get Certified
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

@@ -71,7 +71,7 @@ const AcademyPage = () => {
           />
 
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/60" />
+          {/* <div className="absolute inset-0 bg-black/60" /> */}
 
           {/* Content */}
           <div className="relative z-10 text-center px-6">
@@ -110,7 +110,7 @@ const AcademyPage = () => {
             viewport={{ once: true }}
             variants={slideInRight}
           >
-            <h2 className="text-4xl font-bold text-[#212529] mb-6">
+            <h2 className="text-4xl font-bold text-[#455F84] mb-6">
               Don't just learn. Get Accredited.
             </h2>
             <p className="text-gray-600">
@@ -125,7 +125,7 @@ const AcademyPage = () => {
 
       {/* Internationally Accredited Certifications Section */}
       <div className="p-2">
-        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-[#212529] rounded-[20px]">
+        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-[#455F84] rounded-[20px]">
           <div className="max-w-7xl mx-auto">
             <motion.h2
               initial="hidden"
@@ -149,16 +149,16 @@ const AcademyPage = () => {
                   variants={fadeInUp}
                   className="bg-white p-8 rounded-xl flex flex-col h-full"
                 >
-                  <h3 className="text-2xl font-bold text-[#212529] mb-4">
+                  <h3 className="text-2xl font-bold text-[#455F84] mb-4">
                     {cert.title}
                   </h3>
                   <p className="text-gray-600 mb-8 grow">{cert.description}</p>
                   <div className="mt-auto">
-                    <p className="font-bold text-[#212529] text-sm mb-6">
+                    <p className="font-bold text-[#455F84] text-sm mb-6">
                       {cert.tag}
                     </p>
                     <button className="cursor-pointer">
-                      <ArrowRightIcon className="w-6 h-6 text-[#212529]" />
+                      <ArrowRightIcon className="w-6 h-6 text-[#455F84]" />
                     </button>
                   </div>
                 </motion.div>
@@ -185,7 +185,7 @@ const AcademyPage = () => {
             variants={fadeInUp}
             className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#212529]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#455F84]">
               Connect with Global Experts
             </h2>
             <p className="text-gray-600 max-w-md md:text-right">
@@ -214,7 +214,7 @@ const AcademyPage = () => {
                     className="max-h-full max-w-[80%] object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-[#212529] mb-4">
+                <h3 className="text-xl font-bold text-[#455F84] mb-4">
                   {expert.title}
                 </h3>
                 <div className="border-t grow border-gray-200 pt-6 gap-6 flex flex-col">
@@ -223,7 +223,7 @@ const AcademyPage = () => {
                   </p>
                   <div className="mt-auto flex justify-end ">
                     <button className="cursor-pointer">
-                      <ArrowRightIcon className="w-6 h-6 text-[#212529]" />
+                      <ArrowRightIcon className="w-6 h-6 text-[#455F84]" />
                     </button>
                   </div>
                 </div>

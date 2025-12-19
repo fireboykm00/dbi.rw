@@ -86,7 +86,7 @@ const DirectoryPage = () => {
                   placeholder="Search Company Name..."
                   className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
                 />
-                <button className="bg-[#212529] hover:bg-gray-800 text-[#FBD40E] px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0">
+                <button className="bg-white hover:bg-gray-100 text-[#455F84] px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0 shadow-md">
                   Search
                   <ArrowRightIcon className="h-5 w-5" />
                 </button>
@@ -129,7 +129,7 @@ const DirectoryPage = () => {
                 onClick={() => setActiveTab(sector)}
                 className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                   activeTab === sector
-                    ? "bg-[#212529] text-[#FBD40E]"
+                    ? "bg-white text-[#455F84] shadow-md"
                     : "bg-transparent text-gray-500 hover:text-gray-900"
                 }`}
               >
@@ -166,10 +166,10 @@ const DirectoryPage = () => {
                   </span>
 
                   <div className="flex items-end justify-between">
-                    <h3 className="text-xl font-bold text-[#212529]">
+                    <h3 className="text-xl font-bold text-[#455F84]">
                       {platform.name}
                     </h3>
-                    <ArrowRightIcon className="w-6 h-6 text-gray-400 group-hover:text-[#212529] transition-colors" />
+                    <ArrowRightIcon className="w-6 h-6 text-gray-400 group-hover:text-[#455F84] transition-colors" />
                   </div>
                 </div>
               </motion.div>
@@ -181,7 +181,7 @@ const DirectoryPage = () => {
             <button className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-900">
               <ChevronLeftIcon className="w-4 h-4" />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center bg-[#212529] text-[#FBD40E] rounded-md text-sm font-medium">
+            <button className="w-8 h-8 flex items-center justify-center bg-white text-[#455F84] rounded-md text-sm font-medium shadow-sm">
               1
             </button>
             <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md text-sm font-medium">
@@ -199,7 +199,7 @@ const DirectoryPage = () => {
 
       {/* FAQ Section */}
       <div className="p-2">
-        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 rounded-[20px] bg-[#212529]">
+        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 rounded-[20px] bg-[#455F84]">
           <div className="max-w-7xl w-full mx-auto">
             <motion.div
               initial="hidden"
@@ -231,21 +231,21 @@ const DirectoryPage = () => {
                     onClick={() => toggleFaq(index)}
                     className={`w-full flex items-center justify-between p-6 text-left transition-colors ${
                       openFaqIndex === index
-                        ? "bg-[#FBD40E]"
-                        : "bg-white hover:bg-[#FBD40E]"
+                        ? "bg-white"
+                        : "bg-white/90 hover:bg-white"
                     } ${
                       index !== faqData.length - 1
                         ? "border-b border-gray-100"
                         : ""
                     }`}
                   >
-                    <span className="text-lg font-semibold pr-8 text-[#212529]">
+                    <span className="text-lg font-semibold pr-8 text-[#455F84]">
                       {faq.question}
                     </span>
                     {openFaqIndex === index ? (
-                      <XMarkIcon className="w-5 h-5 text-[#212529] shrink-0" />
+                      <XMarkIcon className="w-5 h-5 text-[#455F84] shrink-0" />
                     ) : (
-                      <PlusIcon className="w-5 h-5 text-[#212529] shrink-0" />
+                      <PlusIcon className="w-5 h-5 text-[#455F84] shrink-0" />
                     )}
                   </button>
                   <AnimatePresence>
@@ -257,7 +257,7 @@ const DirectoryPage = () => {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-10 py-4 bg-white/90 text-[#212529] leading-relaxed">
+                        <div className="px-10 py-4 bg-white/90 text-[#455F84] leading-relaxed">
                           {Array.isArray(faq.answer) ? (
                             <ul className="list-disc pl-5 space-y-2">
                               {faq.answer.map((item, i) => (

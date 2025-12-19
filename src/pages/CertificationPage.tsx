@@ -51,25 +51,29 @@ const CertificationPage = () => {
   ];
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-[60vh] md:min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden rounded-xl">
+        <section className="relative min-h-[60vh] md:min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden rounded-xl bg-black">
           {/* Background Image */}
+
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                "url('/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg')", // Using existing hero image as placeholder
-              backgroundPosition: "center",
-            }}
-          />
+            className="absolute inset-0"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+              style={{
+                backgroundImage:
+                  "url('/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg')",
+              }}
+            />
+          </motion.div>
 
           {/* Gradient Overlay - darker on left for text readability */}
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
+          {/* <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" /> */}
 
           {/* Content */}
           <div className="relative z-10 flex flex-col justify-end min-h-[60vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-6 lg:px-12 pt-16 md:pt-24 pb-8 md:pb-12">
@@ -96,7 +100,7 @@ const CertificationPage = () => {
               <motion.a
                 variants={fadeInUp}
                 href="#"
-                className="inline-flex items-center gap-3 bg-[#FBD40E] hover:bg-[#e0bd0c] text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
+                className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-[#455F84] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12 shadow-md"
               >
                 Start Assessment
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -142,7 +146,7 @@ const CertificationPage = () => {
               viewport={{ once: true }}
               variants={slideInRight}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-8 leading-[1.15]">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#455F84] mb-8 leading-[1.15]">
                 Bridging the Gap Between
                 <br />
                 You and Your Customers
@@ -154,7 +158,7 @@ const CertificationPage = () => {
                 based on industry best practices.
               </p>
 
-              <div className="space-y-6 text-[#212529]">
+              <div className="space-y-6 text-[#455F84]">
                 <div className="flex gap-4 items-start">
                   <BadgeCheck
                     className="w-6 h-6 shrink-0 mt-1"
@@ -214,7 +218,7 @@ const CertificationPage = () => {
               variants={fadeInUp}
               className="lg:col-span-1 flex flex-col justify-center"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#212529] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#455F84] mb-6">
                 Validate Your Excellence
               </h2>
               <p className="text-gray-600 text-lg">
@@ -237,7 +241,7 @@ const CertificationPage = () => {
                     className="w-24 h-24 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-[#212529] mb-4">
+                <h3 className="text-xl font-bold text-[#455F84] mb-4">
                   {seal.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -251,7 +255,7 @@ const CertificationPage = () => {
 
       {/* How To Get DBI Trust Seal Section */}
       <div className="p-2 mb-20">
-        <section className="p-6 md:p-30 rounded-[16px] bg-[#212529] text-white">
+        <section className="p-6 md:p-30 rounded-[16px] bg-[#455F84] text-white">
           <div className="">
             <div className="grid xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20">
               <motion.h2
@@ -314,7 +318,7 @@ const CertificationPage = () => {
                   className="relative flex flex-col items-start group"
                 >
                   {/* Step Badge */}
-                  <div className="bg-[#FBD40E] text-[#212529] px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md">
+                  <div className="bg-white text-[#455F84] px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md">
                     {item.step}
                   </div>
 
@@ -322,7 +326,7 @@ const CertificationPage = () => {
                   <div className="hidden md:block absolute top-8 left-14 bottom-0 w-px h-16 border-l-2 border-dotted border-white/30 z-0" />
 
                   {/* Content Card */}
-                  <div className="bg-[#444444] hover:bg-[#555555] text-white rounded-xl p-8 w-full flex-1 transition-colors duration-300 relative z-10 mt-4">
+                  <div className="bg-white/10 hover:bg-white/20 text-white rounded-xl p-8 w-full flex-1 transition-colors duration-300 relative z-10 mt-4 backdrop-blur-sm border border-white/10">
                     <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
                     <p className="text-white/70 text-lg leading-relaxed">
                       {item.description}

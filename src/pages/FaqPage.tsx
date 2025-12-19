@@ -16,7 +16,7 @@ const FaqPage = () => {
     <div className="w-full bg-white">
       {/* Hero Section */}
       <div className="p-2">
-        <section className="relative min-h-[60vh] w-full overflow-hidden rounded-[20px] flex items-center justify-center bg-[#212529]">
+        <section className="relative min-h-[60vh] w-full overflow-hidden rounded-[20px] flex items-center justify-center bg-[#455F84]">
           {/* Background Image */}
           <motion.div
             initial="hidden"
@@ -78,13 +78,13 @@ const FaqPage = () => {
                       : "bg-white hover:bg-gray-50"
                   }`}
                 >
-                  <span className="text-lg font-semibold text-[#212529] pr-8">
+                  <span className="text-lg font-semibold text-[#455F84] pr-8">
                     {faq.question}
                   </span>
                   {openFaqIndex === index ? (
-                    <XMarkIcon className="w-5 h-5 text-[#212529] shrink-0" />
+                    <XMarkIcon className="w-5 h-5 text-[#455F84] shrink-0" />
                   ) : (
-                    <PlusIcon className="w-5 h-5 text-[#212529] shrink-0" />
+                    <PlusIcon className="w-5 h-5 text-[#455F84] shrink-0" />
                   )}
                 </button>
                 <AnimatePresence>

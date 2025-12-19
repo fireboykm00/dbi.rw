@@ -46,7 +46,7 @@ const ReadyToGetVerified = () => {
             </motion.p>
             <motion.button
               variants={fadeInUp}
-              className="bg-[#FBD40E] text-[#212529] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 hover:bg-[#e0bd0c] transition-all"
+              className="bg-white text-[#455F84] px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 hover:bg-gray-100 transition-all shadow-lg"
             >
               Start Assessment
               <ArrowRightIcon className="w-5 h-5" />

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { primaryColor } from "../lib/site";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, fadeIn } from "../lib/animations";
@@ -14,18 +13,23 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[80vh] md:min-h-screen w-full overflow-hidden rounded-[20px]">
+    <section className="relative min-h-[80vh] md:min-h-screen w-full bg-black overflow-hidden rounded-[20px]">
       {/* Background Image */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={fadeIn}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/all/hero.jpg')" }}
-      />
+        className="absolute inset-0"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+          style={{ backgroundImage: "url('/all/hero.jpg')" }}
+        />
+      </motion.div>
 
       {/* Gradient Overlay - darker on left for text readability */}
-      <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
+      {/* <div className="absolute inset-0 bg-linear-to-r from-[#455F84]/50 via-[#455F84]/30 to-transparent" /> */}
+
       {/* Content Container */}
       <div className="relative z-10 flex flex-col justify-end min-h-[80vh] md:min-h-screen max-w-7xl mx-auto px-4 md:px-8 lg:px-12 pt-24 pb-12">
         <motion.div
@@ -58,10 +62,7 @@ const Hero = () => {
           <motion.div variants={fadeInUp}>
             <Link
               to="#"
-              className="inline-flex items-center hover:bg-[#e0bd0c] gap-3 text-[#212529] font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
-              style={{
-                backgroundColor: primaryColor,
-              }}
+              className="inline-flex items-center gap-2 bg-[#455F84] hover:bg-[#3a506f] text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 mb-12"
             >
               Get Your Trust Seal
               <ArrowRightIcon className="w-5" />
@@ -88,13 +89,13 @@ const Hero = () => {
                 </div>
               ))}
               {/* Plus indicator */}
-              <div className="w-10 h-10 relative rounded-full z-10 bg-[#FBD40E] border-2 border-transparent overflow-hidden flex items-center justify-center">
+              <div className="w-10 h-10 relative rounded-full z-10 bg-white border-2 border-transparent overflow-hidden flex items-center justify-center">
                 <img
                   src={profilesImages[0]}
                   alt={`Company`}
                   className="absolute w-10 h-10 object-cover z-0 opacity-50"
                 />
-                <span className="text-[#212529] text-sm font-bold z-11">+</span>
+                <span className="text-[#455F84] text-sm font-bold z-11">+</span>
               </div>
             </div>
 
