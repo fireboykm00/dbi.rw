@@ -13,13 +13,13 @@ const SearchSection = () => {
         >
           {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-60 transition-transform duration-1000 hover:scale-110"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
                 "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
             }}
           />
-
+          <div className="absolute inset-0 bg-black opacity-60" />
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center justify-center min-h-[400px] md:min-h-[550px] px-4 py-8 md:px-6 md:py-12 lg:px-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-4">

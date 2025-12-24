@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import PartnersSection from "../components/PartnersSection";
 import { primaryColor, primaryColorDark } from "../lib/site";
+import { LightBulbIcon } from "@heroicons/react/24/outline";
 
 const ResourcesPage = () => {
   const [activeTab, setActiveTab] = useState("guides");
@@ -489,8 +490,8 @@ const ResourcesPage = () => {
               </div>
               <div className="hidden md:flex justify-end">
                 <div className="bg-white/10 backdrop-blur-xl p-12 rounded-4xl border border-white/20 shadow-2xl max-w-sm text-center transition-all duration-200 hover:scale-105 hover:bg-white/20">
-                  <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mx-auto mb-6 text-4xl shadow-xl transition-transform duration-200 hover:rotate-12">
-                    💡
+                  <div className="w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-6 text-4xl shadow-xl transition-transform duration-200 hover:rotate-12">
+                    <LightBulbIcon className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-4">
                     Your Idea Matters

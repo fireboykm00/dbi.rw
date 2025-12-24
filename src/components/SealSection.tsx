@@ -37,7 +37,7 @@ const SealSection = () => {
               <img
                 src="/all/56d112e5e1cd2d4b5abb8a898f4a3655b593e8f5.jpg"
                 alt="Professional working"
-                className="w-full h-full object-cover rounded-2xl transform scale-x-[-1] transition-transform duration-700 hover:scale-110"
+                className="w-full h-full object-cover rounded-2xl transform scale-x-[-1] transition-transform duration-700"
               />
 
               {/* Security Check Badge */}
@@ -51,11 +51,6 @@ const SealSection = () => {
                 <span className="text-sm font-medium text-gray-800">
                   Security Check: Passed
                 </span>
-              </div>
-
-              {/* Phone Mockup */}
-              <div className="hidden md:flex absolute bottom-24 right-8 w-20 h-36 bg-white rounded-xl shadow-xl border border-gray-200 items-center justify-center transition-all duration-200 hover:scale-105 hover:shadow-2xl">
-                <div className="w-16 h-32 bg-gray-100 rounded-lg"></div>
               </div>
 
               {/* Testimonial Card */}
