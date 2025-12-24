@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { faqData } from "../lib/site";
+import {
+  darkColor,
+  faqData,
+  primaryColor,
+  primaryColorDark,
+} from "../lib/site";
 import {
   MagnifyingGlassIcon,
   ArrowRightIcon,
@@ -10,8 +15,6 @@ import {
 } from "@heroicons/react/24/solid";
 import PartnersSection from "../components/PartnersSection";
 import ReadyToGetVerified from "../components/ReadToGetVerified";
-import { motion, AnimatePresence } from "framer-motion";
-import { fadeInUp, staggerContainer, fadeIn, scaleIn } from "../lib/animations";
 
 const DirectoryPage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -34,65 +37,50 @@ const DirectoryPage = () => {
   };
 
   return (
-    <div className="w-full bg-white">
+    <div className="w-full">
       {/* Hero Section */}
       <div className="p-2">
         <section className="relative w-full overflow-hidden rounded-[20px] min-h-[80vh] flex items-center justify-center bg-black">
           {/* Background Image */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="absolute inset-0"
-          >
+          <div className="absolute inset-0">
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
               style={{
                 backgroundImage:
                   "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
               }}
             />
-          </motion.div>
+          </div>
+
+          <div className="absolute inset-0 bg-linear-to-r from-black/60 to-black/60" />
 
           {/* Content Container */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center flex flex-col items-center pt-20">
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              animate="visible"
-              className="w-full flex flex-col items-center"
-            >
-              <motion.h1
-                variants={fadeInUp}
-                className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
-              >
+            <div className="w-full flex flex-col items-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Official Registry of Certified Businesses
-              </motion.h1>
-              <motion.p
-                variants={fadeInUp}
-                className="text-lg md:text-xl text-gray-200 mb-12 leading-relaxed"
-              >
+              </h1>
+              <p className="text-lg md:text-xl text-gray-200 mb-12 leading-relaxed">
                 Browse the list of organizations that have met the DBI standards
                 for quality, compliance, and trust.
-              </motion.p>
+              </p>
 
               {/* Search Bar */}
-              <motion.div
-                variants={scaleIn}
-                className="w-full max-w-3xl bg-white rounded-lg p-2 flex items-center shadow-xl  ring-4 md:ring-10 ring-white/10"
-              >
+              <div className="w-full max-w-3xl bg-white rounded-lg p-2 flex items-center shadow-xl ring-4 md:ring-10 ring-white/10 transition-all duration-300 hover:ring-white/20">
                 <MagnifyingGlassIcon className="h-6 w-6 text-gray-400 ml-4 shrink-0" />
                 <input
                   type="text"
                   placeholder="Search Company Name..."
-                  className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
+                  className={`flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full`}
                 />
-                <button className="bg-[#455F84] hover:bg-[#3a506f] text-white px-8 py-4 rounded-md flex items-center gap-2 transition-colors font-medium shrink-0 shadow-md">
+                <button
+                  className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white px-8 py-4 rounded-md flex items-center gap-2 transition-all duration-300 font-medium shrink-0 shadow-md hover:shadow-lg`}
+                >
                   Search
                   <ArrowRightIcon className="h-5 w-5" />
                 </button>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -110,13 +98,7 @@ const DirectoryPage = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Tabs */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-            className="flex flex-wrap justify-center gap-4 mb-16"
-          >
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             {[
               "All Sectors",
               "Fintech",
@@ -128,32 +110,25 @@ const DirectoryPage = () => {
               <button
                 key={sector}
                 onClick={() => setActiveTab(sector)}
-                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
                   activeTab === sector
-                    ? "bg-white text-[#455F84] shadow-md"
-                    : "bg-transparent text-gray-500 hover:text-gray-900"
+                    ? `bg-white text-[${primaryColor}] shadow-md scale-105`
+                    : "bg-transparent text-gray-500 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >
                 {sector}
               </button>
             ))}
-          </motion.div>
+          </div>
 
           {/* Grid */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {certifiedPlatforms.map((platform, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeInUp}
-                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col"
+                className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-gray-200 transition-all duration-300 group flex flex-col hover:-translate-y-1"
               >
-                <div className="h-32 flex items-center justify-center mb-8">
+                <div className="h-32 flex items-center justify-center mb-8 transition-all duration-200">
                   <img
                     src={platform.logo}
                     alt={platform.name}
@@ -167,31 +142,35 @@ const DirectoryPage = () => {
                   </span>
 
                   <div className="flex items-end justify-between">
-                    <h3 className="text-xl font-bold text-[#455F84]">
+                    <h3 className={`text-xl font-bold text-[${primaryColor}]`}>
                       {platform.name}
                     </h3>
-                    <ArrowRightIcon className="w-6 h-6 text-gray-400 group-hover:text-[#455F84] transition-colors" />
+                    <ArrowRightIcon
+                      className={`w-6 h-6 text-gray-400 group-hover:text-[${primaryColor}] transition-all duration-300 group-hover:translate-x-1`}
+                    />
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Pagination */}
           <div className="flex justify-center items-center gap-2">
-            <button className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-900">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-colors">
               <ChevronLeftIcon className="w-4 h-4" />
             </button>
-            <button className="w-8 h-8 flex items-center justify-center bg-white text-[#455F84] rounded-md text-sm font-medium shadow-sm">
+            <button
+              className={`w-8 h-8 flex items-center justify-center bg-white text-[${primaryColor}] rounded-md text-sm font-medium shadow-sm border border-gray-100`}
+            >
               1
             </button>
-            <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md text-sm font-medium">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md text-sm font-medium transition-colors">
               2
             </button>
-            <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md text-sm font-medium">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-600 hover:bg-gray-100 rounded-md text-sm font-medium transition-colors">
               3
             </button>
-            <button className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-900">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-colors">
               <ChevronRightIcon className="w-4 h-4" />
             </button>
           </div>
@@ -200,15 +179,14 @@ const DirectoryPage = () => {
 
       {/* FAQ Section */}
       <div className="p-2">
-        <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 rounded-[20px] bg-[#455F84]">
+        <section
+          className="py-12 px-4 md:py-24 md:px-6 lg:px-12 rounded-[20px]"
+          style={{
+            backgroundColor: darkColor,
+          }}
+        >
           <div className="max-w-7xl w-full mx-auto">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="mb-16"
-            >
+            <div className="mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Frequently Asked Questions
               </h2>
@@ -216,63 +194,60 @@ const DirectoryPage = () => {
                 Everything you need to know about the DBI Trust Seal and
                 certification process.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-lg overflow-hidden border border-white/10">
               {faqData.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="overflow-hidden transition-all duration-200"
-                >
+                <div key={index} className="overflow-hidden">
                   <button
                     onClick={() => toggleFaq(index)}
-                    className={`w-full flex items-center justify-between p-6 text-left transition-colors ${
+                    className={`w-full flex items-center justify-between p-6 text-left transition-all duration-300 ${
                       openFaqIndex === index
-                        ? "bg-white"
-                        : "bg-white/90 hover:bg-white"
+                        ? `bg-[${primaryColor}] text-white`
+                        : `bg-white hover:bg-[${primaryColor}]/10`
                     } ${
                       index !== faqData.length - 1
                         ? "border-b border-gray-100"
                         : ""
                     }`}
                   >
-                    <span className="text-lg font-semibold pr-8 text-[#455F84]">
+                    <span
+                      className={`text-lg font-semibold pr-8 transition-colors duration-300 ${
+                        openFaqIndex === index
+                          ? "text-white"
+                          : `text-[${primaryColor}]`
+                      }`}
+                    >
                       {faq.question}
                     </span>
                     {openFaqIndex === index ? (
-                      <XMarkIcon className="w-5 h-5 text-[#455F84] shrink-0" />
+                      <XMarkIcon className="w-5 h-5 text-current shrink-0 transition-transform duration-300 rotate-90" />
                     ) : (
-                      <PlusIcon className="w-5 h-5 text-[#455F84] shrink-0" />
+                      <PlusIcon
+                        className={`w-5 h-5 text-[${primaryColor}] shrink-0 transition-transform duration-300 group-hover:rotate-90`}
+                      />
                     )}
                   </button>
-                  <AnimatePresence>
-                    {openFaqIndex === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-10 py-4 bg-white/90 text-[#455F84] leading-relaxed">
-                          {Array.isArray(faq.answer) ? (
-                            <ul className="list-disc pl-5 space-y-2">
-                              {faq.answer.map((item, i) => (
-                                <li key={i}>{item}</li>
-                              ))}
-                            </ul>
-                          ) : (
-                            <p>{faq.answer}</p>
-                          )}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                  <div
+                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      openFaqIndex === index
+                        ? "max-h-[1000px] opacity-100 p-8 pt-4"
+                        : "max-h-0 opacity-0"
+                    } bg-gray-50 text-gray-700 leading-relaxed`}
+                  >
+                    <div className="pt-4 border-t border-gray-100">
+                      {Array.isArray(faq.answer) ? (
+                        <ul className="list-disc pl-5 space-y-2">
+                          {faq.answer.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p>{faq.answer}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

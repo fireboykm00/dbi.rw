@@ -1,6 +1,4 @@
-import { darkColor } from "../lib/site";
-import { motion } from "framer-motion";
-import { slideInLeft, slideInRight, scaleIn } from "../lib/animations";
+import { primaryColor } from "../lib/site";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const PolicySection = () => {
@@ -12,33 +10,19 @@ const PolicySection = () => {
         style={{ backgroundImage: "url('/shapes/shapes.svg')" }}
       />
 
-      {/* LINE 12 FIX: Changed items-center to xl:items-start to keep text top-aligned on large screens */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center xl:items-start gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           {/* Left Side - Image */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={slideInLeft}
-            className="flex-1 w-full max-w-lg"
-          >
+          <div className="flex-1 w-full max-w-lg">
             <img
               src="/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg"
               alt="Team collaboration"
-              className="w-full object-cover h-64 md:h-full md:min-h-[600px] rounded-2xl -rotate-2"
+              className="w-full object-cover h-64 md:h-full md:min-h-[600px] rounded-2xl -rotate-2 transition-transform duration-700 hover:rotate-0"
             />
-          </motion.div>
+          </div>
 
           {/* Right Side - Content */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={slideInRight}
-            className="flex-1 flex flex-col items-start max-w-xl relative"
-          >
-            {/* LINE 24 FIX: Adjusted text sizing for smoother XL scaling */}
+          <div className="flex-1 flex flex-col items-start max-w-xl relative">
             <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
               Bridging Policy &<br />
               Practice.
@@ -56,19 +40,21 @@ const PolicySection = () => {
             {/* CTA Button */}
             <a
               href="#"
-              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-colors duration-200 bg-[#455F84] hover:bg-[#3a506f] text-white shadow-md z-20"
+              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-all duration-300 bg-[#03396C] hover:bg-[#022b52] text-white shadow-md hover:shadow-lg transform hover:-translate-y-1 z-20"
             >
               Read Our Mission
               <ArrowRightIcon className="w-5 h-5" />
             </a>
 
             {/* --- COMPONENT 1: Text Version (Visible Mobile/Tablet, Hidden on XL) --- */}
-            {/* Option 1: Subtle Accent Bar */}
             <div
-              className="flex xl:hidden mt-10 items-center gap-4 py-2 border-l-4 pl-4"
-              style={{ borderColor: darkColor }}
+              className="flex xl:hidden mt-10 items-center gap-4 py-2 border-l-4 pl-4 transition-all duration-300 hover:pl-6"
+              style={{ borderColor: primaryColor }}
             >
-              <span className="text-5xl font-bold" style={{ color: darkColor }}>
+              <span
+                className="text-5xl font-bold"
+                style={{ color: primaryColor }}
+              >
                 300+
               </span>
               <span className="text-3xl text-gray-700 font-medium">
@@ -77,14 +63,10 @@ const PolicySection = () => {
             </div>
 
             {/* --- COMPONENT 2: Bubble Version (Hidden on Mobile, Visible Absolute on XL) --- */}
-            <motion.div
-              variants={scaleIn}
-              transition={{ delay: 0.3 }}
-              className="hidden xl:flex absolute -right-16 bottom-1/2 transform translate-y-1/2 z-10"
-            >
+            <div className="hidden xl:flex absolute -right-16 bottom-1/2 transform translate-y-1/2 z-10 hover:scale-110 transition-transform duration-200">
               <div
                 className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-lg"
-                style={{ backgroundColor: "#455F84", color: "white" }}
+                style={{ backgroundColor: primaryColor, color: "white" }}
               >
                 <span className="text-5xl font-bold">
                   300<sup className="text-lg">+</sup>
@@ -94,15 +76,15 @@ const PolicySection = () => {
                 {/* Speech bubble tail */}
                 <div
                   className="absolute bottom-0 -left-6 w-10 h-10 rounded-full"
-                  style={{ backgroundColor: "#455F84" }}
+                  style={{ backgroundColor: primaryColor }}
                 />
                 <div
                   className="absolute bottom-5 -left-2 w-8 h-5 -rotate-45"
-                  style={{ backgroundColor: "#455F84" }}
+                  style={{ backgroundColor: primaryColor }}
                 />
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

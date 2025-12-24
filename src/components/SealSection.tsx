@@ -1,14 +1,7 @@
 import { BadgeCheck } from "lucide-react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
-import {
-  fadeInUp,
-  staggerContainer,
-  slideInLeft,
-  slideInRight,
-  scaleIn,
-} from "../lib/animations";
+import { primaryColor, primaryColorDark } from "../lib/site";
 
 const SealSection = () => {
   const sealTypes = [
@@ -38,58 +31,40 @@ const SealSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           {/* Left Side - Image with overlays */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={slideInLeft}
-            className="relative flex-1 w-full max-w-lg"
-          >
+          <div className="relative flex-1 w-full max-w-lg">
             {/* Main Image */}
             <div className="relative rounded-2xl h-64 md:h-[600px] lg:h-[500px] xl:h-[600px]">
               <img
                 src="/all/56d112e5e1cd2d4b5abb8a898f4a3655b593e8f5.jpg"
                 alt="Professional working"
-                className="w-full h-full object-cover rounded-2xl transform scale-x-[-1]"
+                className="w-full h-full object-cover rounded-2xl transform scale-x-[-1] transition-transform duration-700 hover:scale-110"
               />
 
               {/* Security Check Badge */}
-              <motion.div
-                variants={scaleIn}
-                className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 lg:-right-12 xl:-right-16 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2"
-              >
+              <div className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 lg:-right-12 xl:-right-16 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2 transition-all duration-300 hover:-translate-y-2">
                 <div
                   className="w-10 h-10 rounded-md flex items-center justify-center"
-                  style={{ backgroundColor: "#455F84" }}
+                  style={{ backgroundColor: primaryColor }}
                 >
                   <ShieldCheckIcon className="text-white w-6" />
                 </div>
                 <span className="text-sm font-medium text-gray-800">
                   Security Check: Passed
                 </span>
-              </motion.div>
+              </div>
 
               {/* Phone Mockup */}
-              <motion.div
-                variants={scaleIn}
-                transition={{ delay: 0.2 }}
-                className="hidden md:flex absolute bottom-24 right-8 w-20 h-36 bg-white rounded-xl shadow-xl border border-gray-200 items-center justify-center"
-              >
+              <div className="hidden md:flex absolute bottom-24 right-8 w-20 h-36 bg-white rounded-xl shadow-xl border border-gray-200 items-center justify-center transition-all duration-200 hover:scale-105 hover:shadow-2xl">
                 <div className="w-16 h-32 bg-gray-100 rounded-lg"></div>
-              </motion.div>
+              </div>
 
               {/* Testimonial Card */}
-              <motion.div
-                variants={scaleIn}
-                transition={{ delay: 0.4 }}
-                className="hidden md:block max-w-[300px] absolute bottom-20 -right-5 lg:-right-8 xl:-right-10 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg"
-              >
+              <div className="hidden md:block max-w-[300px] absolute bottom-20 -right-5 lg:-right-8 xl:-right-10 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
                 <div className="flex items-start gap-3">
                   <div
                     className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden"
-                    style={{ backgroundColor: "#455F84" }}
+                    style={{ backgroundColor: primaryColor }}
                   >
-                    {/* <QuoteIcon className="text-[#FBD40E] transform rotate-180" /> */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
@@ -103,46 +78,33 @@ const SealSection = () => {
                     Exceptional service and peace of mind. Highly recommend!
                   </p>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Side - Content */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="flex-1 max-w-xl"
-          >
+          <div className="flex-1 max-w-xl">
             {/* Heading */}
-            <motion.h2
-              variants={slideInRight}
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-gray-900 leading-tight mb-6"
-            >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] font-bold text-gray-900 leading-tight mb-6">
               A Seal for Every Sector
-            </motion.h2>
+            </h2>
 
             {/* Description */}
-            <motion.p
-              variants={slideInRight}
-              className="text-gray-600 text-base md:text-lg leading-relaxed mb-8"
-            >
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8">
               Validate your platform against industry best practices. The DBI
               Trust Seal signals security, reliability, and compliance to your
               customers and partners.
-            </motion.p>
+            </p>
 
             {/* Seal Types List */}
             <div className="space-y-4 mb-8">
               {sealTypes.map((seal, index) => (
-                <motion.div
+                <div
                   key={index}
-                  variants={fadeInUp}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-3 group transition-all duration-200 hover:translate-x-1"
                 >
                   {/* Icon */}
-                  <div className="mt-1">
+                  <div className="mt-1 transition-colors duration-200 text-gray-400 group-hover:text-blue-500">
                     <BadgeCheck className="w-5 h-5" />
                   </div>
                   {/* Text */}
@@ -150,21 +112,21 @@ const SealSection = () => {
                     <span className="font-semibold">{seal.name}</span>{" "}
                     <span className="text-gray-600">{seal.description}</span>
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* CTA Button */}
-            <motion.div variants={fadeInUp}>
+            <div>
               <a
                 href="#"
-                className="inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-colors duration-200 bg-[#455F84] hover:bg-[#3a506f] shadow-md"
+                className={`inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-all duration-300 bg-[${primaryColor}] hover:bg-[${primaryColorDark}] shadow-md hover:shadow-lg transform hover:-translate-y-1`}
               >
                 Get Started
                 <ArrowRightIcon className="w-5" />
               </a>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
