@@ -1,8 +1,6 @@
 "use client";
 
-import { primaryColor } from "../../lib/site";
 import Image from "next/image";
-import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 
 const seals = [
   {
