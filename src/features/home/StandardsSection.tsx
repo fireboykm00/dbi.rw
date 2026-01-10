@@ -1,6 +1,7 @@
 import { BugIcon, ShieldIcon, CogIcon } from "lucide-react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { primaryColor, primaryColorDark } from "../../lib/site";
+import Image from "next/image";
 
 const StandardsSection = () => {
   const certifications = [
@@ -46,10 +47,12 @@ const StandardsSection = () => {
         <div className="relative mt-8 lg:mt-0">
           {/* Certificate Image */}
           <div className="relative">
-            <img
+            <Image
               src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png"
               alt=""
               className="w-auto h-64 md:h-[400px] lg:h-[350px] xl:h-[400px] transition-transform duration-700 hover:scale-105"
+              width={1920}
+              height={1080}
             />
 
             {/* Floating Badges */}

@@ -1,5 +1,6 @@
 import { primaryColor } from "../../lib/site";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const PolicySection = () => {
   return (
@@ -14,10 +15,12 @@ const PolicySection = () => {
         <div className="flex flex-col lg:flex-row items-center xl:items-start gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           {/* Left Side - Image */}
           <div className="flex-1 w-full max-w-lg">
-            <img
+            <Image
               src="/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg"
               alt="Team collaboration"
               className="w-full object-cover h-64 md:h-full md:min-h-[600px] rounded-2xl -rotate-2 transition-transform duration-700 hover:rotate-0"
+              width={1920}
+              height={1080}
             />
           </div>
 
@@ -31,7 +34,7 @@ const PolicySection = () => {
             {/* Description */}
             <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 max-w-md">
               The Digital Business Institute (DBI) is a Trade and Investment
-              Support Institution (TISI) dedicated to accelerating Rwanda's
+              Support Institution (TISI) dedicated to accelerating Rwanda&apos;s
               digital exports. Operating under the Private Sector Federation
               (PSF), we provide the standards that help Rwandan businesses
               compete globally.

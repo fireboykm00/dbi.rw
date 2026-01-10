@@ -1,4 +1,5 @@
 import { primaryColor } from "../../lib/site";
+import Image from "next/image";
 
 const CertificationValidation = () => {
   const seals = [
@@ -64,10 +65,12 @@ const CertificationValidation = () => {
               className={`${seal.color} border border-transparent rounded-2xl p-8 hover:shadow-2xl hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-1 shadow-md`}
             >
               <div className="mb-6 transition-transform duration-200 hover:scale-110">
-                <img
+                <Image
                   src={seal.image}
                   alt={seal.title}
                   className="w-24 h-24 object-contain"
+                  width={24}
+                  height={24}
                 />
               </div>
               <h3

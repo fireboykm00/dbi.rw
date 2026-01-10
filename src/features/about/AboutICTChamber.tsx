@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from "lucide-react";
 import { primaryColor, primaryColorDark } from "../../lib/site";
 import PartnersSection from "../home/PartnersSection";
+import Image from "next/image";
 
 const AboutICTChamber = () => {
   return (
@@ -44,10 +45,12 @@ const AboutICTChamber = () => {
             <div className="flex justify-center md:justify-end">
               <div className="bg-white p-12 rounded-xl shadow-2xl max-w-md w-full flex flex-col items-center text-center transition-transform hover:scale-105 duration-200">
                 {/* Using a placeholder or existing logo, user can replace */}
-                <img
+                <Image
                   src="/company/bfbd458ea5ba115505dd9277dffa7ff895a4e613.png"
                   alt="Rwanda ICT Chamber"
                   className="w-48 h-auto mb-6 transition-all duration-200"
+                  width={192}
+                  height={192}
                 />
                 <div className="border-t-2 border-gray-200 w-16 my-4" />
                 <p className="text-gray-500 font-medium">

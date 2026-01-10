@@ -1,15 +1,18 @@
 import { BadgeCheck } from "lucide-react";
 import { primaryColor } from "../../lib/site";
+import Image from "next/image";
 
 const CertificationBridgingGap = () => {
   return (
     <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute top-0 right-0 w-[80%] h-full opacity-100 pointer-events-none">
-        <img
+        <Image
           src="/shapes/shapes.svg"
           alt="Background Pattern"
           className="w-full h-full object-cover"
+          width={1000}
+          height={1000}
         />
       </div>
 
@@ -17,10 +20,12 @@ const CertificationBridgingGap = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-20 lg:gap-24 items-center">
           {/* Image Side */}
           <div className="relative h-[600px] transform -rotate-2 bg-black rounded-4xl overflow-hidden hover:rotate-0 transition-transform duration-700">
-            <img
+            <Image
               src="/all/5f5daa7adf3331199f682a231d8c7d576b3a4b1c.jpg"
               alt="Professionals working"
               className="absolute inset-0 h-full w-full object-cover opacity-70"
+              width={1000}
+              height={1000}
             />
           </div>
 

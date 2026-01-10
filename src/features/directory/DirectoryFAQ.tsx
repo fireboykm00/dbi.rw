@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { XMarkIcon, PlusIcon } from "@heroicons/react/24/solid";
 import { darkColor, faqData, primaryColor } from "../../lib/site";

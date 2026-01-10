@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { primaryColor, primaryColorDark } from "../../lib/site";
+import Link from "next/link";
+import Image from "next/image";
 
 const Hero = () => {
   // Profile Images for trust badge
@@ -44,7 +45,7 @@ const Hero = () => {
           {/* CTA Button */}
           <div>
             <Link
-              to="#"
+              href="#"
               className={`inline-flex items-center gap-2 bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300 mb-12`}
             >
               Get Your Trust Seal
@@ -61,19 +62,23 @@ const Hero = () => {
                   key={index}
                   className="w-10 h-10 rounded-full bg-white border-2 border-white overflow-hidden flex items-center justify-center transition-transform hover:scale-110 duration-300"
                 >
-                  <img
+                  <Image
                     src={logo}
                     alt={`Company ${index + 1}`}
                     className={`w-10 h-10 object-cover z-[${index}]`}
+                    width={40}
+                    height={40}
                   />
                 </div>
               ))}
               {/* Plus indicator */}
               <div className="w-10 h-10 relative rounded-full z-10 bg-white border-2 border-transparent overflow-hidden flex items-center justify-center">
-                <img
+                <Image
                   src={profilesImages[0]}
                   alt={`Company`}
                   className="absolute w-10 h-10 object-cover z-0 opacity-50"
+                  width={40}
+                  height={40}
                 />
                 <span
                   className={`text-[${primaryColor}] text-sm font-bold z-11`}

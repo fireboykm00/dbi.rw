@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PartnersSection = () => {
   // Company logos from public/company folder
   const companyLogos = [
@@ -28,10 +30,12 @@ const PartnersSection = () => {
               key={index}
               className="bg-white border border-gray-100 rounded-xl p-6 flex items-center justify-center hover:shadow-xl hover:border-gray-200 transition-all duration-300"
             >
-              <img
+              <Image
                 src={logo}
                 alt={`Partner ${index + 1}`}
                 className="max-h-12 w-auto object-contain"
+                width={128}
+                height={128}
               />
             </div>
           ))}

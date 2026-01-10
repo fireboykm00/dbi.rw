@@ -1,5 +1,6 @@
 import { Shield, Handshake, Lightbulb } from "lucide-react";
 import { primaryColor, primaryColorDark } from "../../lib/site";
+import Image from "next/image";
 
 const AboutMissionVision = () => {
   return (
@@ -78,10 +79,12 @@ const AboutMissionVision = () => {
             <div className="lg:w-1/2 relative">
               <div className="relative z-10">
                 <div className="aspect-4/5 rounded-4xl overflow-hidden shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-700">
-                  <img
+                  <Image
                     src="/all/56d112e5e1cd2d4b5abb8a898f4a3655b593e8f5.jpg"
                     alt="Digital Innovation"
                     className="w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
                   />
                 </div>
 
@@ -202,9 +205,9 @@ const AboutMissionVision = () => {
                     </h3>
 
                     <p className="text-xl text-gray-600 leading-relaxed font-light italic">
-                      "A Rwanda where every citizen can engage in digital
+                      &quot;A Rwanda where every citizen can engage in digital
                       commerce with complete confidence, knowing that certified
-                      businesses operate with integrity and transparency."
+                      businesses operate with integrity and transparency.&quot;
                     </p>
                   </div>
                 </div>

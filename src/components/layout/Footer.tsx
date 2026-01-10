@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
 import {
   MapPinIcon,
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { darkColor, primaryColor } from "../../lib/site";
+import Image from "next/image";
+import Link from "next/link";
+
 const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
@@ -12,7 +14,7 @@ const Footer = () => {
     { name: "Events", href: "/events" },
     {
       name: "Digital Professionals Network",
-      href: "/digital-professionals-network",
+      href: "/dpn",
     },
     { name: "FAQ", href: "/faq" },
   ];
@@ -64,14 +66,16 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 xl:gap-24">
             {/* Logo & Description */}
             <div>
-              <img
+              <Image
                 src="/logo.png"
                 alt="DBI Logo"
                 className="w-32 md:w-40 mb-6"
+                width={100}
+                height={100}
               />
               <p className="text-white text-sm leading-relaxed max-w-xs">
-                Empowering Rwanda's digital businesses through skills, trust,
-                and innovation.
+                Empowering Rwanda&apos;s digital businesses through skills,
+                trust, and innovation.
               </p>
             </div>
 
@@ -84,7 +88,7 @@ const Footer = () => {
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <Link
-                      to={link.href}
+                      href={link.href}
                       className="text-white hover:text-white/80 transition-colors duration-200 text-sm flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-white" />
@@ -142,12 +146,12 @@ const Footer = () => {
                   >
                     <PhoneIcon className="w-5 h-5" style={{ color: "white" }} />
                   </div>
-                  <a
+                  <Link
                     href="tel:+250781375971"
                     className="text-gray-200 hover:text-white transition-colors text-sm"
                   >
                     +250781375971
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -159,7 +163,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex justify-center gap-3">
             {socialLinks.map((social) => (
-              <a
+              <Link
                 key={social.name}
                 href={social.href}
                 className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200"
@@ -168,7 +172,7 @@ const Footer = () => {
                 target="blank"
               >
                 {social.icon}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="border-t border-gray-700 h-2 w-full"></div>
@@ -182,13 +186,13 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <Link
-                to="/privacy"
+                href="/privacy"
                 className="text-gray-300 hover:text-white transition-colors text-sm"
               >
                 Privacy policy
               </Link>
               <Link
-                to="/terms"
+                href="/terms"
                 className="text-gray-300 hover:text-white transition-colors text-sm"
               >
                 Terms & conditions

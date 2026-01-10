@@ -2,6 +2,7 @@ import { BadgeCheck } from "lucide-react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { primaryColor, primaryColorDark } from "../../lib/site";
+import Image from "next/image";
 
 const SealSection = () => {
   const sealTypes = [
@@ -34,10 +35,12 @@ const SealSection = () => {
           <div className="relative flex-1 w-full max-w-lg">
             {/* Main Image */}
             <div className="relative rounded-2xl h-64 md:h-[600px] lg:h-[500px] xl:h-[600px]">
-              <img
+              <Image
                 src="/all/56d112e5e1cd2d4b5abb8a898f4a3655b593e8f5.jpg"
                 alt="Professional working"
                 className="w-full h-full object-cover rounded-2xl transform scale-x-[-1] transition-transform duration-700"
+                width={1920}
+                height={1080}
               />
 
               {/* Security Check Badge */}

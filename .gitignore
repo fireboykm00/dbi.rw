@@ -4,6 +4,9 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/node_modules
+/.pnp
+.pnp.*
 .pnpm-store/
 
 # Logs
@@ -88,3 +91,23 @@ pnpm-lock.yaml
 # Test output
 /.nyc_output
 /coverage
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

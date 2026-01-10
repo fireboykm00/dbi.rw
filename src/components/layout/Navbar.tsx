@@ -1,16 +1,19 @@
+"use client";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import {
   Bars3Icon,
   XMarkIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
 import { primaryColor, primaryColorDark } from "../../lib/site";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-  const currentPath = location.pathname;
+
+  const currentPath = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -19,7 +22,7 @@ const Navbar = () => {
     { name: "Directory", href: "/directory" },
     {
       name: "Digital Professionals Network",
-      href: "/digital-professionals-network",
+      href: "/dpn",
     },
     { name: "About", href: "/about" },
   ];
@@ -39,8 +42,14 @@ const Navbar = () => {
       >
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-          <Link to="/" className="hover:opacity-90 transition-opacity">
-            <img src="/logo.png" alt="DBI LOGO" className="w-32 md:w-44" />
+          <Link href="/" className="hover:opacity-90 transition-opacity">
+            <Image
+              src="/logo.png"
+              alt="DBI LOGO"
+              className="w-32 md:w-44"
+              width={500}
+              height={500}
+            />
           </Link>
         </div>
 
@@ -49,7 +58,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
-                to={link.href}
+                href={link.href}
                 className={`text-sm font-medium tracking-wide transition-all duration-200 hover:text-white ${
                   isActive(link.href) ? "text-white font-bold" : "text-white/80"
                 }`}
@@ -76,7 +85,7 @@ const Navbar = () => {
         {/* CTA Button */}
         <div className="hidden lg:block">
           <Link
-            to="/certification"
+            href="/certification"
             className={`flex items-center gap-2 text-white font-bold px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
           >
             Get Certified
@@ -97,7 +106,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
-                  to={link.href}
+                  href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-lg block py-3 px-4 rounded-xl transition-all duration-200 ${
                     isActive(link.href)
@@ -111,7 +120,7 @@ const Navbar = () => {
             ))}
             <li className="pt-4 mt-2 border-t border-white/10">
               <Link
-                to="/certification"
+                href="/certification"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-center gap-2 text-white text-lg font-bold px-4 py-4 rounded-xl w-full shadow-lg transition-all active:scale-95 bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
               >

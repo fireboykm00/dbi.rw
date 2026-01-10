@@ -1,19 +1,24 @@
+import Image from "next/image";
 import { primaryColor } from "../../lib/site";
 
 const AcademyAccreditation = () => {
   return (
     <div className="p-2 relative">
-      <img
+      <Image
         src="/shapes/shapes.svg"
         className="w-full inset-0 absolute h-full pointer-events-none opacity-20"
-        alt=""
+        alt="Background Pattern"
+        width={1000}
+        height={1000}
       />
       <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 flex flex-col md:flex-row gap-6 lg:gap-10 items-center max-w-7xl w-full mx-auto overflow-hidden">
         <div className="grow">
-          <img
+          <Image
             src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png"
             className="w-full object-cover -rotate-2 hover:rotate-0 transition-transform duration-700"
             alt="Accreditation"
+            width={1000}
+            height={1000}
           />
         </div>
         <div>
@@ -21,7 +26,7 @@ const AcademyAccreditation = () => {
             className="text-4xl font-bold mb-6"
             style={{ color: primaryColor }}
           >
-            Don't just learn. Get Accredited.
+            Don&apos;t just learn. Get Accredited.
           </h2>
           <p className="text-gray-600">
             Digital Business Institute is fully accredited by the Southern

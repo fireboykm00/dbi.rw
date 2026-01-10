@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { primaryColor } from "../../lib/site";
+import Image from "next/image";
 
 const AcademyExperts = () => {
   const experts = [
@@ -26,10 +27,12 @@ const AcademyExperts = () => {
   return (
     <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-white relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <img
+        <Image
           src="/shapes/shapes.svg"
           alt=""
           className="w-full h-full object-cover opacity-30"
+          width={1920}
+          height={1080}
         />
       </div>
       <div className="max-w-7xl mx-auto relative z-10">
@@ -53,10 +56,12 @@ const AcademyExperts = () => {
               className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:-translate-y-1"
             >
               <div className="h-32 mb-6 flex items-center transition-all duration-200">
-                <img
+                <Image
                   src={expert.logo}
                   alt={`${expert.title} logo`}
                   className="max-h-full max-w-[80%] object-contain"
+                  width={500}
+                  height={500}
                 />
               </div>
               <h3

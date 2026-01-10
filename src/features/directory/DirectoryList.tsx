@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import {
   ArrowRightIcon,
@@ -5,6 +6,7 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 import { primaryColor } from "../../lib/site";
+import Image from "next/image";
 
 const DirectoryList = () => {
   const [activeTab, setActiveTab] = useState("All Sectors");
@@ -25,10 +27,12 @@ const DirectoryList = () => {
     <section className="relative py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-white overflow-hidden">
       {/* Background Shapes */}
       <div className="absolute inset-0 pointer-events-none">
-        <img
+        <Image
           src="/shapes/shapes.svg"
           alt=""
           className="w-full h-full object-cover opacity-30"
+          width={1920}
+          height={1080}
         />
       </div>
 
@@ -65,10 +69,12 @@ const DirectoryList = () => {
               className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl hover:border-gray-200 transition-all duration-300 group flex flex-col hover:-translate-y-1"
             >
               <div className="h-32 flex items-center justify-center mb-8 transition-all duration-200">
-                <img
+                <Image
                   src={platform.logo}
                   alt={platform.name}
                   className="max-h-full max-w-full object-contain"
+                  width={128}
+                  height={128}
                 />
               </div>
 
