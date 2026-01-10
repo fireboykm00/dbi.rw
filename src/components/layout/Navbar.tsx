@@ -16,7 +16,6 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const currentPath = usePathname();
 
   const navLinks = [
@@ -32,6 +31,7 @@ const Navbar = () => {
   ];
 
   const isActive = (href: string) => {
+    if (!currentPath) return false;
     if (href === "/") {
       return currentPath === "/" || currentPath === "";
     }
@@ -39,9 +39,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full p-4 py-8 2xl:py-10">
+    <nav className="w-full p-4 py-8 2xl:py-10 relative z-50">
       <div
-        className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 2xl:px-8 flex items-center justify-between backdrop-blur-md rounded-lg shadow-xl transition-all duration-300"
+        className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 2xl:px-8 flex items-center justify-between backdrop-blur-md rounded-lg shadow-xl"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
       >
         {/* Logo Section */}
@@ -53,6 +53,7 @@ const Navbar = () => {
               className="w-32 md:w-44 2xl:w-52"
               width={500}
               height={500}
+              priority
             />
           </Link>
         </div>
@@ -63,7 +64,7 @@ const Navbar = () => {
             <li key={link.name}>
               <Link
                 href={link.href}
-                className={`text-sm 2xl:text-base font-medium tracking-wide transition-all duration-200 hover:text-white ${
+                className={`text-sm 2xl:text-base font-medium tracking-wide transition-colors duration-200 hover:text-white ${
                   isActive(link.href) ? "text-white font-bold" : "text-white/80"
                 }`}
               >
@@ -75,7 +76,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white p-2.5 hover:bg-white/10 rounded-xl transition-all duration-200"
+          className="lg:hidden text-white p-2.5 hover:bg-white/10 rounded-xl transition-colors duration-200"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -90,7 +91,7 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <Link
             href={startAssessmentLink}
-            className={`flex items-center gap-2 text-white font-bold px-6 py-3 2xl:px-8 2xl:py-4 2xl:text-lg rounded-md transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
+            className={`flex items-center gap-2 text-white font-bold px-6 py-3 2xl:px-8 2xl:py-4 2xl:text-lg rounded-md transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
           >
             Get Certified
             <ArrowRightIcon className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -101,8 +102,10 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className="max-w-7xl mx-auto lg:hidden">
         <div
-          className={`overflow-hidden transition-all duration-500 ease-in-out backdrop-blur-xl rounded-2xl shadow-2xl mt-2 ${
-            mobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+          className={`overflow-hidden transition-all duration-300 ease-in-out backdrop-blur-xl rounded-2xl shadow-2xl mt-2 ${
+            mobileMenuOpen
+              ? "max-h-[600px] opacity-100"
+              : "max-h-0 opacity-0 pointer-events-none"
           }`}
           style={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
         >
