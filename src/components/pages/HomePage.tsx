@@ -4,7 +4,10 @@ import Hero from "../../features/home/Hero";
 import PartnersSection from "../../features/home/PartnersSection";
 import CertifiedPlatformsList from "@/features/shared/CertifiedPlatformsList";
 import JoinICTChamber from "@/features/shared/JoinICTChamber";
-import Loader from "@/components/ui/Loader";
+import {
+  RegistryGridSkeleton,
+  SearchSectionSkeleton,
+} from "@/components/ui/Skeletons";
 
 const HomePage = () => {
   return (
@@ -14,23 +17,11 @@ const HomePage = () => {
         <Hero />
       </div>
 
-      <Suspense
-        fallback={
-          <div className="py-24 bg-white flex items-center justify-center">
-            <Loader />
-          </div>
-        }
-      >
+      <Suspense fallback={<SearchSectionSkeleton />}>
         <SearchSection />
       </Suspense>
 
-      <Suspense
-        fallback={
-          <div className="py-24 bg-gray-50 flex items-center justify-center">
-            <Loader />
-          </div>
-        }
-      >
+      <Suspense fallback={<RegistryGridSkeleton />}>
         <CertifiedPlatformsList />
       </Suspense>
 

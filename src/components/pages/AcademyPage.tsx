@@ -3,7 +3,7 @@ import ReadyToGetVerified from "../../features/shared/ReadToGetVerified";
 import AcademyHero from "../../features/academy/AcademyHero";
 import AcademyAccreditation from "../../features/academy/AcademyAccreditation";
 import AcademyCertifications from "../../features/academy/AcademyCertifications";
-import AcademyExperts from "../../features/academy/AcademyExperts";
+import DPNExperts from "../../features/dpn/DNPExperts";
 
 const AcademyPage = () => {
   return (
@@ -17,7 +17,7 @@ const AcademyPage = () => {
       <AcademyCertifications />
 
       {/* Connect with Global Experts Section */}
-      <AcademyExperts />
+      <DPNExperts />
 
       <ReadyToGetVerified />
       <PartnersSection />

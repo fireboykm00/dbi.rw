@@ -9,23 +9,23 @@ import Link from "next/link";
 
 const CertificationSteps = () => {
   return (
-    <div className="p-2 mb-20">
+    <div className="p-2 mb-20 2xl:mb-28">
       <section
-        className="p-6 md:p-20 lg:p-32 rounded-[16px] text-white"
+        className="p-6 md:p-20 lg:p-32 2xl:p-40 rounded-[16px] text-white"
         style={{ backgroundColor: darkColor }}
       >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+        <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto">
+          <div className="grid xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 2xl:gap-24 mb-12 md:mb-20 2xl:mb-28">
+            <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-bold leading-tight">
               How To Get DBI Trust Seal
             </h2>
-            <p className="text-white/70 text-lg leading-relaxed max-w-xl">
+            <p className="text-white/70 text-lg 2xl:text-xl leading-relaxed max-w-xl 2xl:max-w-2xl">
               Follow these 4 simple steps to earn your Trust Seal and verify
               your business.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-16 2xl:gap-x-12 2xl:gap-y-20">
             {[
               {
                 step: "Step 01",

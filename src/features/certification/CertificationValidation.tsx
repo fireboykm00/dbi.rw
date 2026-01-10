@@ -41,27 +41,27 @@ const CertificationValidation = () => {
   ];
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-6 md:px-12 2xl:py-32 2xl:px-16 bg-white">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-20 max-w-3xl mx-auto space-y-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+        <div className="text-center mb-20 2xl:mb-24 max-w-3xl 2xl:max-w-4xl mx-auto space-y-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-gray-900 tracking-tight leading-tight">
             Validing Your Excellence.
           </h2>
-          <p className="text-xl text-gray-500 font-light leading-relaxed">
+          <p className="text-xl 2xl:text-2xl text-gray-500 font-light leading-relaxed">
             Choose your sector-specific path and gain the credibility your
             business deserves with an official DBI Trust Seal.
           </p>
         </div>
 
         {/* Seal Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 2xl:gap-10 mb-16 2xl:mb-20">
           {seals.map((seal, index) => (
             <div
               key={index}
-              className="group p-10 rounded-[32px] border border-gray-100 bg-white hover:shadow-[0_20px_60px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-1 flex flex-col items-center text-center"
+              className="group p-10 2xl:p-12 rounded-[32px] border border-gray-100 bg-white hover:shadow-[0_20px_60px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-1 flex flex-col items-center text-center"
             >
-              <div className="relative w-32 h-32 mb-8 transform group-hover:scale-110 transition-transform duration-500">
+              <div className="relative w-32 h-32 2xl:w-40 2xl:h-40 mb-8 2xl:mb-10 transform group-hover:scale-110 transition-transform duration-500">
                 <Image
                   src={seal.image}
                   alt={seal.title}
@@ -70,10 +70,10 @@ const CertificationValidation = () => {
                   height={1000}
                 />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-2xl 2xl:text-3xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                 {seal.title}
               </h3>
-              <p className="text-gray-500 font-light leading-relaxed">
+              <p className="text-gray-500 font-light leading-relaxed 2xl:text-lg">
                 {seal.description}
               </p>
             </div>
