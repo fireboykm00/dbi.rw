@@ -16,7 +16,7 @@ const PolicySection = () => {
           {/* Left Side - Image */}
           <div className="flex-1 w-full max-w-lg">
             <Image
-              src="/all/01e93083026649cc62f2b83603f2e70c2855a428.jpg"
+              src="/all/certification-hero-bg.jpg"
               alt="Team collaboration"
               className="w-full object-cover h-64 md:h-full md:min-h-[600px] rounded-2xl -rotate-2 transition-transform duration-700 hover:rotate-0"
               width={1920}

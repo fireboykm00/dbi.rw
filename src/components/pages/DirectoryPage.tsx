@@ -1,8 +1,8 @@
 import PartnersSection from "../../features/home/PartnersSection";
 import ReadyToGetVerified from "../../features/shared/ReadToGetVerified";
 import DirectoryHero from "../../features/directory/DirectoryHero";
-import DirectoryList from "../../features/directory/DirectoryList";
 import DirectoryFAQ from "../../features/directory/DirectoryFAQ";
+import CertifiedPlatformsList from "../../features/shared/CertifiedPlatformsList";
 
 const DirectoryPage = () => {
   return (
@@ -11,7 +11,7 @@ const DirectoryPage = () => {
       <DirectoryHero />
 
       {/* Certified Platforms Section */}
-      <DirectoryList />
+      <CertifiedPlatformsList />
 
       {/* FAQ Section */}
       <DirectoryFAQ />

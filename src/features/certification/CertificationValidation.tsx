@@ -1,89 +1,88 @@
-import { primaryColor } from "../../lib/site";
 import Image from "next/image";
 
 const CertificationValidation = () => {
   const seals = [
     {
-      title: "For Tech Startups",
+      title: "Fintech Trust Seal",
       description:
-        "Recognizes tech start-ups that demonstrate exceptional potential in innovation, growth, and impact within Rwanda's digital sector.",
-      image: "/seals/startup.png",
-      color: "bg-gray-50",
-    },
-    {
-      title: "For Digital Learning",
-      description:
-        "Recognizes EdTech solutions that enhance access to quality education and foster learning through technology.",
-      image: "/seals/edtech.png",
-      color: "bg-gray-50",
-    },
-    {
-      title: "For Online Retail",
-      description:
-        "Recognizes platforms that demonstrate excellence in user experience, business growth, and market impact.",
-      image: "/seals/ecommerce.png",
-      color: "bg-gray-50",
-    },
-    {
-      title: "For Engineering Excellence",
-      description:
-        "Recognizes organizations that demonstrate excellence in software engineering and adherence to industry best practices.",
-      image: "/seals/sod.png",
-      color: "bg-gray-50",
-    },
-    {
-      title: "For Financial Innovation",
-      description:
-        "Recognizes FinTech companies that adhere to industry best practices and demonstrate excellence in driving financial inclusion.",
+        "Recognizing companies driving innovation and financial inclusion through secure technology and best practices.",
       image: "/seals/fintech.png",
-      color: "bg-gray-50",
+    },
+    {
+      title: "E-Commerce Trust Seal",
+      description:
+        "Recognizing platforms demonstrating excellence in user experience, business growth, and market impact.",
+      image: "/seals/ecommerce.png",
+    },
+    {
+      title: "EdTech Trust Seal",
+      description:
+        "Recognizing solutions enhancing access to quality education and driving digital transformation in learning.",
+      image: "/seals/edtech.png",
+    },
+    {
+      title: "Startup Trust Seal",
+      description:
+        "Recognizing tech start-ups with exceptional potential in innovation and growth within Rwanda's digital sector.",
+      image: "/seals/startup.png",
+    },
+    {
+      title: "Software Development Seal",
+      description:
+        "Recognizing organizations demonstrating excellence in software engineering, quality, and technical proficiency.",
+      image: "/seals/sod.png",
+    },
+    {
+      title: "Mobility Trust Seal",
+      description:
+        "Recognizing solutions that enhance transportation efficiency and promote sustainable mobility through technology.",
+      image: "/seals/mobility.png",
     },
   ];
 
   return (
-    <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-white">
+    <section className="py-24 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Header Card */}
-          <div className="lg:col-span-1 flex flex-col justify-center">
-            <h2
-              className="text-4xl md:text-5xl font-bold mb-6"
-              style={{ color: primaryColor }}
-            >
-              Validate Your Excellence
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Prove your credibility with a sector-specific seal. Choose your
-              path below to get certified.
-            </p>
-          </div>
+        {/* Header Section */}
+        <div className="text-center mb-20 max-w-3xl mx-auto space-y-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+            Validing Your Excellence.
+          </h2>
+          <p className="text-xl text-gray-500 font-light leading-relaxed">
+            Choose your sector-specific path and gain the credibility your
+            business deserves with an official DBI Trust Seal.
+          </p>
+        </div>
 
-          {/* Seal Cards */}
+        {/* Seal Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {seals.map((seal, index) => (
             <div
               key={index}
-              className={`${seal.color} border border-transparent rounded-2xl p-8 hover:shadow-2xl hover:border-gray-200 transition-all duration-300 transform hover:-translate-y-1 shadow-md`}
+              className="group p-10 rounded-[32px] border border-gray-100 bg-white hover:shadow-[0_20px_60px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-1 flex flex-col items-center text-center"
             >
-              <div className="mb-6 transition-transform duration-200 hover:scale-110">
+              <div className="relative w-32 h-32 mb-8 transform group-hover:scale-110 transition-transform duration-500">
                 <Image
                   src={seal.image}
                   alt={seal.title}
-                  className="w-24 h-24 object-contain"
-                  width={24}
-                  height={24}
+                  className="w-full h-full object-contain drop-shadow-lg"
+                  width={1000}
+                  height={1000}
                 />
               </div>
-              <h3
-                className="text-xl font-bold mb-4"
-                style={{ color: primaryColor }}
-              >
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                 {seal.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-500 font-light leading-relaxed">
                 {seal.description}
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Bottom Accent */}
+        <div className="flex justify-center">
+          <div className="w-full h-px bg-linear-to-r from-transparent via-gray-100 to-transparent" />
         </div>
       </div>
     </section>

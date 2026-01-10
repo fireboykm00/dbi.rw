@@ -3,16 +3,16 @@ import Image from "next/image";
 const PartnersSection = () => {
   // Company logos from public/company folder
   const companyLogos = [
-    "/company/0626bc97506bb1532997da043f51bfb728da3ff6.png",
-    "/company/0643799158194a82f7a285dd7760dbd2e4e73a30.png",
-    "/company/0829bc8f641282f41aee58dbb4c784e4f8a07fbb.png",
-    "/company/66f5c5c704a036b1c316ef3af4ff07d369fa9e85.png",
-    "/company/74076be10a132699f4a2164765e39078c067e7ee.png",
-    "/company/97e1d3d26399a5fc94a8a4cc76eb552e34c2136b.png",
-    "/company/992d88107160ca0e6b939d237e61c78a8447ea72.png",
-    "/company/a5543218548108dc52acc3933872007e7a9a722d.png",
-    "/company/bfbd458ea5ba115505dd9277dffa7ff895a4e613.png",
-    "/company/dd9dfa52a35d4fd4a475691af87e5d90820b16b8 (1).png",
+    "/company/partner-1.png",
+    "/company/partner-2.png",
+    "/company/partner-3.png",
+    "/company/partner-4.png",
+    "/company/partner-5.png",
+    "/company/partner-6.png",
+    "/company/partner-7.png",
+    "/company/partner-8.png",
+    "/company/partner-9.png",
+    "/company/partner-10.png",
   ];
 
   return (

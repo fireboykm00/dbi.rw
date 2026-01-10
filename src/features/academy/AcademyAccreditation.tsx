@@ -14,7 +14,7 @@ const AcademyAccreditation = () => {
       <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 flex flex-col md:flex-row gap-6 lg:gap-10 items-center max-w-7xl w-full mx-auto overflow-hidden">
         <div className="grow">
           <Image
-            src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png"
+            src="/all/accreditation-cert.png"
             className="w-full object-cover -rotate-2 hover:rotate-0 transition-transform duration-700"
             alt="Accreditation"
             width={1000}

@@ -1,21 +1,19 @@
 import { ArrowRightIcon } from "lucide-react";
 import { primaryColor, primaryColorDark } from "../../lib/site";
-import PartnersSection from "../home/PartnersSection";
 import Image from "next/image";
 
-const AboutICTChamber = () => {
+const JoinICTChamber = () => {
   return (
     <div className="p-2 my-6 md:my-10 lg:my-16">
-      <section className="relative py-12 px-4 md:py-24 md:px-6 lg:px-12 overflow-hidden rounded-xl min-h-[500px] md:min-h-[700px] bg-black flex items-center">
+      <section className="relative p-12 md:py-24 lg:px-12 overflow-hidden rounded-xl min-h-[500px] md:min-h-[700px] bg-black flex items-center">
         {/* Background Image & Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-60"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/all/310a11fe05bb9a32ed316a5104ae8c97bd08aca4.jpg')",
+            backgroundImage: "url('/all/alex-ntale-meeting.png')",
           }}
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/50 " />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 items-center">
@@ -46,7 +44,7 @@ const AboutICTChamber = () => {
               <div className="bg-white p-12 rounded-xl shadow-2xl max-w-md w-full flex flex-col items-center text-center transition-transform hover:scale-105 duration-200">
                 {/* Using a placeholder or existing logo, user can replace */}
                 <Image
-                  src="/company/bfbd458ea5ba115505dd9277dffa7ff895a4e613.png"
+                  src="/company/partner-9.png"
                   alt="Rwanda ICT Chamber"
                   className="w-48 h-auto mb-6 transition-all duration-200"
                   width={192}
@@ -61,9 +59,8 @@ const AboutICTChamber = () => {
           </div>
         </div>
       </section>
-      <PartnersSection />
     </div>
   );
 };
 
-export default AboutICTChamber;
+export default JoinICTChamber;

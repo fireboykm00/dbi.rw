@@ -1,13 +1,20 @@
-import { darkColor, primaryColor } from "../../lib/site";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import {
+  darkColor,
+  primaryColor,
+  primaryColorDark,
+  startAssessmentLink,
+} from "../../lib/site";
+import Link from "next/link";
 
 const CertificationSteps = () => {
   return (
     <div className="p-2 mb-20">
       <section
-        className="p-6 md:p-30 rounded-[16px] text-white"
+        className="p-6 md:p-20 lg:p-32 rounded-[16px] text-white"
         style={{ backgroundColor: darkColor }}
       >
-        <div className="">
+        <div className="max-w-7xl mx-auto">
           <div className="grid xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
               How To Get DBI Trust Seal
@@ -69,6 +76,21 @@ const CertificationSteps = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* New Bottom Section (Centered CTA) */}
+          <div className="mt-24 pt-16 border-t border-white/10 text-center flex flex-col items-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 max-w-3xl leading-tight">
+              Ready to verify your business and{" "}
+              <span className="text-blue-400">build more trust?</span>
+            </h2>
+            <Link
+              href={startAssessmentLink}
+              className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] group relative inline-flex items-center gap-3 text-white px-10 py-5 rounded-md font-bold text-lg transition-all duration-500 shadow-2xl`}
+            >
+              <span className="relative z-10">Start Assessment</span>
+              <ArrowRightIcon className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>

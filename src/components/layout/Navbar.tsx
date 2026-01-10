@@ -5,7 +5,11 @@ import {
   XMarkIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
-import { primaryColor, primaryColorDark } from "../../lib/site";
+import {
+  primaryColor,
+  primaryColorDark,
+  startAssessmentLink,
+} from "../../lib/site";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -85,7 +89,7 @@ const Navbar = () => {
         {/* CTA Button */}
         <div className="hidden lg:block">
           <Link
-            href="/certification"
+            href={startAssessmentLink}
             className={`flex items-center gap-2 text-white font-bold px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
           >
             Get Certified

@@ -1,9 +1,8 @@
+import SearchSection from "@/features/home/SearchSection";
 import Hero from "../../features/home/Hero";
-import SealSection from "../../features/home/SealSection";
-import StandardsSection from "../../features/home/StandardsSection";
-import PolicySection from "../../features/home/PolicySection";
-import SearchSection from "../../features/home/SearchSection";
 import PartnersSection from "../../features/home/PartnersSection";
+import CertifiedPlatformsList from "@/features/shared/CertifiedPlatformsList";
+import JoinICTChamber from "@/features/shared/JoinICTChamber";
 
 const HomePage = () => {
   return (
@@ -13,20 +12,9 @@ const HomePage = () => {
         <Hero />
       </div>
 
-      {/* Seal Section */}
-      <SealSection />
-
-      {/* Standards Section */}
-      <div className="px-4 md:px-20 lg:px-10 xl:px-20">
-        <StandardsSection />
-      </div>
-
-      {/* Policy Section */}
-      <PolicySection />
-
-      {/* Search Section */}
       <SearchSection />
-
+      <CertifiedPlatformsList />
+      <JoinICTChamber />
       {/* Partners Section */}
       <PartnersSection />
     </>

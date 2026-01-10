@@ -9,8 +9,7 @@ const DPNRequest = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
+            backgroundImage: "url('/all/search-bg.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-linear-to-r from-black/60 to-black/60 " />
@@ -18,12 +17,12 @@ const DPNRequest = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-white">
               <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
-                Can't find what you're looking for?
+                Can&apos;t find what you&apos;re looking for?
               </h2>
               <p className="text-xl mb-10 text-white/80 leading-relaxed">
-                We are constantly expanding our library. If there's a specific
-                guide, template, or tool you need, let us know and we'll
-                prioritize it.
+                We are constantly expanding our library. If there&apos;s a
+                specific guide, template, or tool you need, let us know and
+                we&apos;ll prioritize it.
               </p>
               <button
                 className={`inline-flex bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white gap-3 items-center font-bold px-10 py-5 rounded-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1`}

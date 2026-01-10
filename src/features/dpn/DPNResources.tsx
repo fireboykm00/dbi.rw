@@ -1,149 +1,77 @@
-import { BookOpen, FileText, Wrench, ArrowRight } from "lucide-react";
 import { primaryColor } from "../../lib/site";
-
+import Image from "next/image";
 const DPNResources = () => {
   return (
     <section className="py-24 px-4 md:py-32 md:px-6 lg:px-12 bg-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Visual Side (Left) */}
-          <div className="relative order-2 lg:order-1">
-            <div className="relative">
-              <div className="aspect-square bg-gray-50 rounded-[3rem] overflow-hidden shadow-inner flex items-center justify-center p-8 md:p-12 transition-all duration-700 hover:shadow-2xl">
-                <div className="grid grid-cols-2 gap-4 w-full h-full">
-                  {/* Guides Card */}
-                  <div className="aspect-square bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300"
-                      style={{
-                        backgroundColor: `${primaryColor}10`,
-                        color: primaryColor,
-                      }}
-                    >
-                      <BookOpen className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                      Guides
-                    </span>
-                  </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Content Side (Left) */}
+          <div className="space-y-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+              Resource Catalogue
+            </h2>
 
-                  {/* Templates Card - Offset */}
-                  <div className="aspect-square bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300 transform translate-y-8">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300"
-                      style={{
-                        backgroundColor: `${primaryColor}10`,
-                        color: primaryColor,
-                      }}
-                    >
-                      <FileText className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                      Templates
-                    </span>
-                  </div>
+            <div className="space-y-6">
+              <p className="text-xl text-gray-600 leading-relaxed font-light">
+                Our team of experts are continuously observing the market for
+                valuable information and capacity building resources.
+              </p>
 
-                  {/* Tools Card */}
-                  <div className="aspect-square bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center justify-center text-center group hover:-translate-y-2 transition-all duration-300">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300"
-                      style={{
-                        backgroundColor: `${primaryColor}10`,
-                        color: primaryColor,
-                      }}
-                    >
-                      <Wrench className="w-6 h-6" />
-                    </div>
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                      Tools
-                    </span>
-                  </div>
+              <p className="text-lg text-gray-500 leading-relaxed">
+                Our team of experts curated a catalogue of support offers (e.g.
+                information resources, online trainings and self-study
+                materials) along all criteria of the DBI Certificate, in order
+                to give you guidance in the self-paced capacity development for
+                your company.
+              </p>
 
-                  {/* Highlight Card - Offset */}
-                  <div className="relative group">
-                    <div
-                      className="absolute inset-0 rounded-2xl shadow-2xl p-6 flex flex-col items-center justify-center text-center text-white transform translate-y-8 transition-transform duration-500 hover:scale-105"
-                      style={{ backgroundColor: primaryColor }}
-                    >
-                      <h4 className="text-3xl md:text-4xl font-black mb-1">
-                        100+
-                      </h4>
-                      <p className="text-[10px] uppercase font-bold tracking-widest opacity-80 leading-tight">
-                        Industry-Standard Resources
-                      </p>
+              <div className="pt-4">
+                <p className="text-gray-900 font-bold flex items-center gap-2 mb-6">
+                  <span
+                    className="w-8 h-[2px] rounded-full"
+                    style={{ backgroundColor: primaryColor }}
+                  />
+                  You can search the catalogue along the following criteria:
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Industry Standards",
+                    "Regulatory Compliance",
+                    "Digital Security",
+                    "Operational Excellence",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 group">
+                      <div
+                        className="w-2 h-2 rounded-full transition-transform group-hover:scale-150"
+                        style={{ backgroundColor: primaryColor }}
+                      />
+                      <span className="text-gray-600 font-medium">{item}</span>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              </div>
-
-              {/* Decorative background number */}
-              <div
-                className="absolute -top-10 -left-10 text-[10rem] font-black opacity-[0.03] select-none pointer-events-none"
-                style={{ color: primaryColor }}
-              >
-                01
               </div>
             </div>
           </div>
 
-          {/* Content Side (Right) */}
-          <div className="order-1 lg:order-2">
+          {/* Visual Side (Right) */}
+          <div className="relative hidden lg:block">
+            <div className="relative rounded-[40px] overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-700">
+              <Image
+                src="/business-advisory.jpg"
+                alt="Business experts collaborating on resource catalogue"
+                className="w-full h-auto object-cover"
+                width={800}
+                height={800}
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-blue-900/20 to-transparent pointer-events-none" />
+            </div>
+
+            {/* Decorative elements */}
             <div
-              className="inline-block px-4 py-1.5 rounded-full border mb-8"
-              style={{
-                backgroundColor: `${primaryColor}05`,
-                borderColor: `${primaryColor}20`,
-              }}
-            >
-              <span
-                className="text-xs font-black uppercase tracking-[0.2em]"
-                style={{ color: primaryColor }}
-              >
-                Knowledge Hub
-              </span>
-            </div>
-
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-[0.95] tracking-tighter text-gray-900">
-              Engineering <br />
-              <span style={{ color: primaryColor }}>Digital Resilience.</span>
-            </h2>
-
-            <p className="text-xl text-gray-500 leading-relaxed mb-12 font-light">
-              Our resource center is a launchpad for excellence. Each template,
-              guide, and tool is specifically engineered to help Rwandan digital
-              businesses scale with integrity, trust, and technical precision.
-            </p>
-
-            <div className="space-y-8">
-              {[
-                {
-                  title: "Compliance Frameworks",
-                  desc: "Navigate local and international regulations with absolute ease.",
-                },
-                {
-                  title: "Standardized Templates",
-                  desc: "Plug-and-play documentation used by industry leaders.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="flex gap-6 group">
-                  <div
-                    className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:-rotate-12"
-                    style={{
-                      backgroundColor: `${primaryColor}10`,
-                      color: primaryColor,
-                    }}
-                  >
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-gray-900">
-                      {item.title}
-                    </h4>
-                    <p className="text-gray-500 font-light">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+              className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full blur-[80px] opacity-20 pointer-events-none"
+              style={{ backgroundColor: primaryColor }}
+            />
           </div>
         </div>
       </div>

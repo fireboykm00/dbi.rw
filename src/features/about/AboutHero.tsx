@@ -1,8 +1,10 @@
+import { primaryColor } from "../../lib/site";
+
 const AboutHero = () => {
   return (
     <div className="p-2">
-      <section className="relative min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] w-full overflow-hidden rounded-xl flex items-center justify-center bg-black">
-        {/* Background Image */}
+      <section className="relative min-h-[60vh] md:min-h-[70vh] w-full overflow-hidden rounded-[24px] flex items-center bg-black">
+        {/* Background Image with optimized overlay */}
         <div className="absolute inset-0">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -10,20 +12,21 @@ const AboutHero = () => {
               backgroundImage: "url('/all/hero.jpg')",
             }}
           />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-80" />
         </div>
 
-        <div className="absolute inset-0 bg-linear-to-r from-black/80 to-black/50" />
-
-        {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Building Trust in Rwanda's Digital Economy
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+            Everything to know about DBI.
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            The Digital Business Integrity Initiative empowers Rwandan
-            businesses through certification, education, and innovation.
-          </p>
         </div>
+
+        {/* Subtle decorative bottom glow */}
+        <div
+          className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-[120px] opacity-20"
+          style={{ backgroundColor: primaryColor }}
+        />
       </section>
     </div>
   );

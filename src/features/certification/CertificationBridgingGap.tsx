@@ -21,7 +21,7 @@ const CertificationBridgingGap = () => {
           {/* Image Side */}
           <div className="relative h-[600px] transform -rotate-2 bg-black rounded-4xl overflow-hidden hover:rotate-0 transition-transform duration-700">
             <Image
-              src="/all/5f5daa7adf3331199f682a231d8c7d576b3a4b1c.jpg"
+              src="/all/bridging-gap-bg.jpg"
               alt="Professionals working"
               className="absolute inset-0 h-full w-full object-cover opacity-70"
               width={1000}
@@ -40,10 +40,10 @@ const CertificationBridgingGap = () => {
               You and Your Customers
             </h2>
             <p className="text-gray-500 text-lg mb-10 leading-relaxed font-light">
-              In the quest to smoothen the trust bridge, the DBI Seal serves as
-              a credible mark of excellence. It signals to partners that your
-              business meets high standards of quality and compliance based on
-              industry best practices.
+              Before offering the Seal, DBI evaluates credibility based on
+              industry best practices. Ultimately, this Seal serves as an
+              imperative tool for businesses to depict the trustworthiness of
+              their services, spanning from inception to delivery.
             </p>
 
             <div className="space-y-6" style={{ color: primaryColor }}>

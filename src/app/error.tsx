@@ -20,36 +20,36 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center p-4 relative overflow-hidden font-sans">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 relative overflow-hidden font-sans">
       {/* Spotlight Effect on the "Wall" */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-white/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Mounted Logo "On the Wall" */}
       <div className="relative z-10 mb-12 transform hover:scale-105 transition-transform duration-500">
-        <div className="relative w-64 h-24 drop-shadow-2xl filter">
+        <div className="relative w-64 h-24 drop-shadow-sm filter">
           <Image
             src="/logo.png"
             alt="DBI Logo"
             fill
-            className="object-contain drop-shadow-[0_10px_20px_rgba(255,255,255,0.1)]"
+            className="object-contain"
             priority
           />
         </div>
         {/* Subtle reflection/shadow below "mounting" */}
-        <div className="w-40 h-1 bg-black/50 blur-md mx-auto mt-4 rounded-full" />
+        <div className="w-40 h-1 bg-gray-200 blur-md mx-auto mt-4 rounded-full" />
       </div>
 
-      <div className="max-w-lg w-full bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 md:p-12 text-center relative z-10 shadow-2xl">
+      <div className="max-w-lg w-full bg-gray-50/50 backdrop-blur-xl rounded-3xl border border-gray-100 p-8 md:p-12 text-center relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
         {/* Icon */}
-        <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-red-500/20 shadow-[0_0_30px_rgba(239,68,68,0.2)]">
+        <div className="w-16 h-16 bg-red-500/5 rounded-2xl flex items-center justify-center mx-auto mb-8 border border-red-500/10 shadow-[0_0_30px_rgba(239,68,68,0.1)]">
           <AlertTriangle className="w-8 h-8 text-red-500" />
         </div>
 
-        <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">
           System Error Encountered
         </h2>
 
-        <p className="text-gray-400 mb-8 leading-relaxed text-lg">
+        <p className="text-gray-600 mb-8 leading-relaxed text-lg">
           Our systems have detected an unexpected issue. The application
           integrity has been preserved, but we need you to restart the process.
         </p>
@@ -65,10 +65,10 @@ export default function Error({
         </button>
 
         {/* Developer Info Toggle */}
-        <div className="border-t border-white/5 pt-6">
+        <div className="border-t border-gray-100 pt-6">
           <button
             onClick={() => setShowDetails(!showDetails)}
-            className="flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-white transition-colors mx-auto w-full group"
+            className="flex items-center justify-center gap-2 text-sm text-gray-400 hover:text-gray-900 transition-colors mx-auto w-full group"
           >
             <Terminal className="w-4 h-4" />
             <span className="font-mono">Technical Details</span>
@@ -84,15 +84,15 @@ export default function Error({
               showDetails ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="bg-black/50 rounded-lg p-4 text-left border border-white/10 overflow-auto">
-              <p className="text-xs text-red-400 font-mono mb-2">
+            <div className="bg-gray-100 rounded-lg p-4 text-left border border-gray-200 overflow-auto">
+              <p className="text-xs text-red-500 font-mono mb-2">
                 User Action Required: Check browser console
               </p>
-              <code className="text-xs text-gray-400 font-mono break-all block">
+              <code className="text-xs text-gray-600 font-mono break-all block">
                 Error: {error.message || "Unknown error occurred"}
               </code>
               {error.digest && (
-                <code className="text-xs text-gray-500 font-mono block mt-1">
+                <code className="text-xs text-gray-400 font-mono block mt-1">
                   Digest: {error.digest}
                 </code>
               )}
@@ -103,7 +103,7 @@ export default function Error({
 
       {/* Footer Decoration */}
       <div className="absolute bottom-8 text-center">
-        <p className="text-white/20 text-sm font-light tracking-widest uppercase">
+        <p className="text-gray-300 text-sm font-light tracking-widest uppercase">
           Digital Business Institute
         </p>
       </div>

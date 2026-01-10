@@ -4,14 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Hero = () => {
-  // Profile Images for trust badge
-  const profilesImages = [
-    "/all/profile.jpg",
-    "/all/profile1.jpg",
-    "/all/profile2.jpg",
-    "/all/profile3.jpg",
-  ];
-
   return (
     <section className="relative min-h-[80vh] md:min-h-screen w-full bg-black overflow-hidden rounded-[20px]">
       {/* Background Image */}
@@ -30,22 +22,22 @@ const Hero = () => {
         <div className="max-w-xl">
           {/* Main Headline */}
           <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-[4rem] font-bold text-white leading-tight mb-6">
-            The Standard for
-            <br />
-            Digital Trust in Rwanda
+            What is DBI?
           </h1>
 
           {/* Subtext */}
-          <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-md">
-            The official verification partner for startups, fintechs, and
-            e-commerce platforms. We certify businesses and upskill
-            professionals to accelerate the digital economy.
+          <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
+            DBI is The Digital Business Institute, a trade and investment
+            support institution (TISI) and a capacity building arm of the Rwanda
+            ICT Chamber Aiming at the Acceleration of Digitalization of Rwandan
+            Businesses; Expanding Rwanda’s Digital Exports as well as Increasing
+            Competitiveness of Rwandan ICT Companies.
           </p>
 
           {/* CTA Button */}
           <div>
             <Link
-              href="#"
+              href=""
               className={`inline-flex items-center gap-2 bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white font-medium px-6 py-4 rounded-md transition-colors duration-300 mb-12`}
             >
               Get Your Trust Seal
@@ -53,45 +45,34 @@ const Hero = () => {
             </Link>
           </div>
 
-          {/* Trust Badge */}
-          <div className="inline-flex items-center gap-4 bg-gray-500/10 border-gray-500/40 border backdrop-blur-sm rounded-md px-6 py-5">
-            {/* Company Logos */}
-            <div className="flex items-center -space-x-3">
-              {profilesImages.map((logo, index) => (
+          <div className="inline-flex flex-col md:flex-row items-start md:items-center gap-4 bg-gray-500/10 border-gray-500/40 border backdrop-blur-sm rounded-xl px-6 py-5 max-w-full">
+            <span className="text-white text-sm font-medium whitespace-nowrap">
+              Our Trust Seals
+            </span>
+            <div className="flex flex-wrap items-center gap-3">
+              {[
+                "/seals/startup.png",
+                "/seals/edtech.png",
+                "/seals/ecommerce.png",
+                "/seals/sod.png",
+                "/seals/fintech.png",
+                "/seals/mobility.png",
+              ].map((seal, index) => (
                 <div
                   key={index}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-white overflow-hidden flex items-center justify-center transition-transform hover:scale-110 duration-300"
+                  className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center p-2 hover:scale-110 transition-transform duration-300 border border-white/10"
+                  title="DBI Trust Seal"
                 >
                   <Image
-                    src={logo}
-                    alt={`Company ${index + 1}`}
-                    className={`w-10 h-10 object-cover z-[${index}]`}
-                    width={40}
-                    height={40}
+                    src={seal}
+                    alt={`Seal ${index + 1}`}
+                    className="w-full h-full object-contain"
+                    width={1000}
+                    height={1000}
                   />
                 </div>
               ))}
-              {/* Plus indicator */}
-              <div className="w-10 h-10 relative rounded-full z-10 bg-white border-2 border-transparent overflow-hidden flex items-center justify-center">
-                <Image
-                  src={profilesImages[0]}
-                  alt={`Company`}
-                  className="absolute w-10 h-10 object-cover z-0 opacity-50"
-                  width={40}
-                  height={40}
-                />
-                <span
-                  className={`text-[${primaryColor}] text-sm font-bold z-11`}
-                >
-                  +
-                </span>
-              </div>
             </div>
-
-            {/* Trust Text */}
-            <span className="text-white text-sm font-medium">
-              Trusted by 50+ Verified Businesses
-            </span>
           </div>
         </div>
       </div>

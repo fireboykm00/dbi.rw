@@ -1,50 +1,69 @@
+"use client";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import { ArrowRightIcon } from "lucide-react";
 import { primaryColor, primaryColorDark } from "../../lib/site";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 const SearchSection = () => {
-  return (
-    <section className="relative w-full py-12 px-4 md:py-20 md:px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
-        {/* Dark Card with Background Image */}
-        <div
-          className="relative rounded-2xl overflow-hidden bg-black"
-          style={{ minHeight: "400px" }}
-        >
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
-            }}
-          />
-          <div className="absolute inset-0 bg-black opacity-60" />
-          {/* Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center min-h-[400px] md:min-h-[550px] px-4 py-8 md:px-6 md:py-12 lg:px-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white text-center mb-4">
-              Is that website safe?
-            </h2>
-            <p className="text-gray-300 text-center mb-8 max-w-lg text-sm md:text-base">
-              Verify if a digital platform is certified by DBI before you
-              transact.
-            </p>
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+  const [searchTerm, setSearchTerm] = useState(
+    searchParams.get("search")?.toString() || ""
+  );
 
-            {/* Search Bar */}
-            <div className="w-full max-w-3xl bg-white rounded-lg p-2 flex items-center shadow-xl ring-4 md:ring-10 ring-white/10 transition-all duration-300 hover:ring-white/20">
-              <MagnifyingGlassIcon className="h-6 w-6 text-gray-400 ml-4 shrink-0" />
-              <input
-                type="text"
-                placeholder="Search Company Name..."
-                className="flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full"
-              />
-              <button
-                className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white cursor-pointer px-8 py-4 rounded-md flex items-center gap-2 transition-all duration-300 font-medium shrink-0 shadow-md hover:shadow-lg transform hover:-translate-y-0.5`}
-              >
-                Search
-                <ArrowRightIcon className="h-5 w-5" />
-              </button>
-            </div>
+  useEffect(() => {
+    const handleClear = () => setSearchTerm("");
+    window.addEventListener("dbi-search-clear", handleClear);
+    return () => window.removeEventListener("dbi-search-clear", handleClear);
+  }, []);
+
+  const handleSearch = () => {
+    const params = new URLSearchParams(searchParams);
+    if (searchTerm.trim()) {
+      params.set("search", searchTerm.trim());
+    } else {
+      params.delete("search");
+    }
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  return (
+    <section className="relative w-full py-12 px-6">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+          Verify a Business
+        </h2>
+        <p className="text-gray-500 text-lg mb-10 max-w-2xl mx-auto">
+          Ensure the digital platform you are dealing with is certified and
+          safe.
+        </p>
+
+        {/* Minimal Search Bar */}
+        <div className="relative group max-w-2xl mx-auto">
+          <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+          <div className="relative flex items-center bg-white border border-gray-200 rounded-md shadow-lg shadow-gray-100 hover:shadow-xl transition-all duration-300 p-2">
+            <MagnifyingGlassIcon className="h-6 w-6 text-gray-400 ml-4 shrink-0" />
+            <input
+              type="text"
+              placeholder="Enter company name..."
+              className="flex-1 px-4 py-3 bg-transparent text-gray-900 placeholder-gray-400 outline-none text-lg"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyPress}
+            />
+            <button
+              onClick={handleSearch}
+              className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white px-8 py-3 rounded-md font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5`}
+            >
+              Search
+            </button>
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ const StandardsSection = () => {
           {/* Certificate Image */}
           <div className="relative">
             <Image
-              src="/all/d8f543e7441cb48d1c86ff70b389c64024504459.png"
+              src="/all/accreditation-cert.png"
               alt=""
               className="w-auto h-64 md:h-[400px] lg:h-[350px] xl:h-[400px] transition-transform duration-700 hover:scale-105"
               width={1920}

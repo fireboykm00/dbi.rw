@@ -5,61 +5,65 @@ const AboutValues = () => {
   const values = [
     {
       title: "Trust",
-      description: "Building confidence in Rwanda's digital economy",
+      description: "Building confidence in Rwanda's digital economy through transparency.",
       icon: Shield,
+      color: "text-blue-600",
+      bg: "bg-blue-50/50",
     },
     {
       title: "Innovation",
-      description: "Driving digital transformation forward",
+      description: "Driving digital transformation forward with edge solutions.",
       icon: Lightbulb,
+      color: "text-amber-500",
+      bg: "bg-amber-50/50",
     },
     {
       title: "Integrity",
-      description: "Upholding the highest ethical standards",
+      description: "Upholding the highest ethical standards in every transaction.",
       icon: Scale,
+      color: "text-emerald-600",
+      bg: "bg-emerald-50/50",
     },
     {
       title: "Inclusion",
-      description: "Ensuring digital access for all Rwandans",
+      description: "Ensuring digital access for all Rwandans, leaving no one behind.",
       icon: Handshake,
+      color: "text-indigo-600",
+      bg: "bg-indigo-50/50",
     },
   ];
 
   return (
-    <section className="py-20 px-4 md:py-24 md:px-6 lg:px-12 bg-gray-50">
+    <section className="py-24 px-4 md:px-6 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <span
-            className={`text-[${primaryColor}] font-bold tracking-widest uppercase text-sm`}
-          >
-            Our DNA
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
-            What Drives Us
-          </h2>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-8">
+          <div className="max-w-xl">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+              The Principles <br className="hidden md:block" />
+              <span className="text-gray-400">That Guide Us</span>
+            </h2>
+            <div className="h-1 w-20 rounded-full" style={{ backgroundColor: primaryColor }} />
+          </div>
+          <p className="text-gray-500 text-lg max-w-sm font-light leading-relaxed">
+            Our values are the foundation of everything we do, ensuring we serve the Rwandan digital community with excellence.
+          </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, i) => (
             <div
               key={i}
-              className={`bg-white p-10 rounded-5xl shadow-sm border border-gray-100 text-center hover:shadow-2xl hover:border-[${primaryColor}]/20 transition-all duration-200 group relative overflow-hidden`}
+              className="group p-10 rounded-[32px] border border-gray-100 bg-white transition-all duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:-translate-y-1"
             >
               <div
-                className={`absolute top-0 left-0 w-full h-1 bg-[${primaryColor}] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200`}
-              />
-              <div className="mb-8 flex justify-center transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-200">
-                <div
-                  className={`w-20 h-20 rounded-3xl bg-[${primaryColor}]/5 flex items-center justify-center group-hover:bg-[${primaryColor}] transition-colors duration-200`}
-                >
-                  <value.icon
-                    className={`w-10 h-10 text-[${primaryColor}] transition-colors`}
-                  />
-                </div>
+                className={`w-14 h-14 rounded-2xl ${value.bg} flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}
+              >
+                <value.icon className={`w-7 h-7 ${value.color}`} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                 {value.title}
               </h3>
-              <p className="text-gray-500 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed font-light">
                 {value.description}
               </p>
             </div>

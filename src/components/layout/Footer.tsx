@@ -49,6 +49,8 @@ const Footer = () => {
     },
   ];
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer
       className="relative w-full rounded-2xl overflow-hidden"
@@ -182,7 +184,7 @@ const Footer = () => {
         <div className="py-6">
           <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="text-gray-300 text-sm">
-              Copyright © 2025 DBI Rwanda. All Rights Reserved.
+              Copyright © {currentYear} DBI Rwanda. All Rights Reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link

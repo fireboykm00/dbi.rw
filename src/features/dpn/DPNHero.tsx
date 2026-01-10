@@ -7,7 +7,7 @@ const DPNHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/all/hero.jpg')",
+              backgroundImage: "url('/Business-Consulting-and-Advisory.jpg')",
             }}
           />
         </div>
@@ -17,12 +17,8 @@ const DPNHero = () => {
         {/* Content */}
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Everything You Need to Succeed Online
+            ADVISORY SERVICES
           </h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Access guides, templates, and tools to help you build, grow, and
-            secure your digital business.
-          </p>
         </div>
       </section>
     </div>

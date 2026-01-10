@@ -1,5 +1,10 @@
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { primaryColor, primaryColorDark } from "../../lib/site";
+import {
+  primaryColor,
+  primaryColorDark,
+  startAssessmentLink,
+} from "../../lib/site";
+import Link from "next/link";
 
 const ReadyToGetVerified = () => {
   return (
@@ -10,8 +15,7 @@ const ReadyToGetVerified = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-x-[-1] opacity-60"
             style={{
-              backgroundImage:
-                "url('/all/310a11fe05bb9a32ed316a5104ae8c97bd08aca4.jpg')",
+              backgroundImage: "url('/all/ict-chamber-bg.jpg')",
             }}
           />
         </div>
@@ -28,12 +32,13 @@ const ReadyToGetVerified = () => {
               (Fintech, Software, Edtech, Startup, and E-Commerce) in our
               unified portal.
             </p>
-            <button
-              className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-3 transition-all duration-300 shadow-lg`}
+            <Link
+              href={startAssessmentLink}
+              className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] inline-flex items-center gap-2 text-white px-8 py-4 rounded-md font-semibold text-lg transition-all duration-300 shadow-lg`}
             >
               Start Assessment
               <ArrowRightIcon className="w-5 h-5" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

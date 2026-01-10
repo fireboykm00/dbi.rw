@@ -1,7 +1,39 @@
+"use client";
 import { MagnifyingGlassIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import { primaryColor, primaryColorDark } from "../../lib/site";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 const DirectoryHero = () => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+  const [searchTerm, setSearchTerm] = useState(
+    searchParams.get("search")?.toString() || ""
+  );
+
+  useEffect(() => {
+    const handleClear = () => setSearchTerm("");
+    window.addEventListener("dbi-search-clear", handleClear);
+    return () => window.removeEventListener("dbi-search-clear", handleClear);
+  }, []);
+
+  const handleSearch = () => {
+    const params = new URLSearchParams(searchParams);
+    if (searchTerm.trim()) {
+      params.set("search", searchTerm.trim());
+    } else {
+      params.delete("search");
+    }
+    replace(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="p-2">
       <section className="relative w-full overflow-hidden rounded-[20px] min-h-[80vh] flex items-center justify-center bg-black">
@@ -10,8 +42,7 @@ const DirectoryHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
             style={{
-              backgroundImage:
-                "url('/all/40b5e3e526019a7a4b1eebd93c44328bd668691a.jpg')",
+              backgroundImage: "url('/all/search-bg.jpg')",
             }}
           />
         </div>
@@ -36,8 +67,12 @@ const DirectoryHero = () => {
                 type="text"
                 placeholder="Search Company Name..."
                 className={`flex-1 px-4 py-3 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-lg w-full`}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleKeyPress}
               />
               <button
+                onClick={handleSearch}
                 className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white px-8 py-4 rounded-md flex items-center gap-2 transition-all duration-300 font-medium shrink-0 shadow-md hover:shadow-lg`}
               >
                 Search

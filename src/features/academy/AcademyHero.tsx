@@ -7,8 +7,7 @@ const AcademyHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage:
-                "url('/all/587b0cfabd568a039db949742072ab6090ae1cd3.jpg')",
+              backgroundImage: "url('/all/training-bg.jpg')",
             }}
           />
         </div>
