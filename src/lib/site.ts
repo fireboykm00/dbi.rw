@@ -72,3 +72,5 @@ export const faqData: FAQItem[] = [
     answer: "Yes",
   },
 ];
+
+export const startAssessmentLink = "https://certificates.dbi.rw";
