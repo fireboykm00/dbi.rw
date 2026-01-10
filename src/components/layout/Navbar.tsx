@@ -39,9 +39,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full p-4 py-8">
+    <nav className="w-full p-4 py-8 2xl:py-10">
       <div
-        className="max-w-7xl mx-auto px-4 flex items-center justify-between backdrop-blur-md rounded-lg shadow-xl transition-all duration-300"
+        className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 2xl:px-8 flex items-center justify-between backdrop-blur-md rounded-lg shadow-xl transition-all duration-300"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
       >
         {/* Logo Section */}
@@ -50,7 +50,7 @@ const Navbar = () => {
             <Image
               src="/logo.png"
               alt="DBI LOGO"
-              className="w-32 md:w-44"
+              className="w-32 md:w-44 2xl:w-52"
               width={500}
               height={500}
             />
@@ -58,12 +58,12 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <ul className="hidden lg:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-8 2xl:gap-10">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-all duration-200 hover:text-white ${
+                className={`text-sm 2xl:text-base font-medium tracking-wide transition-all duration-200 hover:text-white ${
                   isActive(link.href) ? "text-white font-bold" : "text-white/80"
                 }`}
               >
@@ -90,10 +90,10 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <Link
             href={startAssessmentLink}
-            className={`flex items-center gap-2 text-white font-bold px-6 py-3 rounded-md transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
+            className={`flex items-center gap-2 text-white font-bold px-6 py-3 2xl:px-8 2xl:py-4 2xl:text-lg rounded-md transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
           >
             Get Certified
-            <ArrowRightIcon className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRightIcon className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
       </div>

@@ -61,7 +61,14 @@ const CertifiedPlatformsList = () => {
 
   const scrollToTop = () => {
     if (listRef.current) {
-      listRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const element = listRef.current;
+      const targetPosition =
+        element.getBoundingClientRect().top + window.scrollY - 100;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -81,7 +88,7 @@ const CertifiedPlatformsList = () => {
   return (
     <section
       ref={listRef}
-      className="relative py-12 px-4 md:py-24 md:px-6 lg:px-12 bg-gray-50 overflow-hidden"
+      className="relative py-12 px-4 md:py-24 md:px-6 lg:px-12 2xl:py-32 2xl:px-16 bg-gray-50 overflow-hidden"
     >
       {/* Background Shapes */}
       <div className="absolute inset-0 pointer-events-none">
@@ -96,53 +103,65 @@ const CertifiedPlatformsList = () => {
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50/50 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl 2xl:max-w-[1600px] mx-auto">
         {/* Title Section */}
-        <div className="text-center mb-16 space-y-4">
-          {internalSearch ? (
-            <h2 className="text-2xl text-gray-900 tracking-tight">
-              Results for &quot;<i>{internalSearch}</i>&quot;
-            </h2>
-          ) : (
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">
-              Certified Platforms
-            </h2>
-          )}
-          {internalSearch && (
-            <button
-              onClick={() => {
-                setInternalSearch("");
-                window.dispatchEvent(new CustomEvent("dbi-search-clear"));
-              }}
-              className="text-blue-600 hover:underline"
-            >
-              Clear Search
-            </button>
-          )}
-        </div>
+        <div className="mb-10 md:mb-16 2xl:mb-20">
+          <div className="text-center mb-8">
+            {internalSearch ? (
+              <div className="space-y-3">
+                <p className="text-sm text-gray-400 uppercase tracking-widest font-medium">
+                  Search Results
+                </p>
+                <h2 className="text-2xl md:text-3xl text-gray-900 tracking-tight font-semibold">
+                  &quot;<span className="text-blue-600">{internalSearch}</span>
+                  &quot;
+                </h2>
+                <button
+                  onClick={() => {
+                    setInternalSearch("");
+                    window.dispatchEvent(new CustomEvent("dbi-search-clear"));
+                  }}
+                  className="text-sm text-gray-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1"
+                >
+                  ← Clear search
+                </button>
+              </div>
+            ) : (
+              <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-gray-900 tracking-tight">
+                Certified Platforms
+              </h2>
+            )}
+          </div>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {[
-            "All Sectors",
-            "Fintech",
-            "E-Commerce",
-            "EdTech",
-            "Startups",
-            "Software",
-          ].map((sector) => (
-            <button
-              key={sector}
-              onClick={() => handleTabChange(sector)}
-              className={`px-6 py-2.5 rounded-md text-sm font-medium transition-all duration-300 border ${
-                activeTab === sector
-                  ? `bg-[${primaryColor}] border-[${primaryColor}] text-white shadow-lg shadow-blue-900/10`
-                  : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"
-              }`}
-            >
-              {sector}
-            </button>
-          ))}
+          {/* Tabs - Horizontal Scroll on Mobile */}
+          <div className="relative">
+            {/* Gradient fade edges for mobile scroll indication */}
+            <div className="absolute left-0 top-0 bottom-0 w-6 bg-linear-to-r from-gray-50 to-transparent z-10 pointer-events-none md:hidden" />
+            <div className="absolute right-0 top-0 bottom-0 w-6 bg-linear-to-l from-gray-50 to-transparent z-10 pointer-events-none md:hidden" />
+
+            <div className="flex gap-2 md:gap-3 2xl:gap-4 overflow-x-auto pb-2 md:pb-0 md:flex-wrap md:justify-center scrollbar-hide px-1">
+              {[
+                "All Sectors",
+                "Fintech",
+                "E-Commerce",
+                "EdTech",
+                "Startups",
+                "Software",
+              ].map((sector) => (
+                <button
+                  key={sector}
+                  onClick={() => handleTabChange(sector)}
+                  className={`px-4 py-2 md:px-6 md:py-2.5 2xl:px-8 2xl:py-3 rounded-md text-sm 2xl:text-base font-medium transition-all duration-300 whitespace-nowrap shrink-0 ${
+                    activeTab === sector
+                      ? `bg-[${primaryColor}] text-white shadow-lg shadow-blue-900/10`
+                      : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 hover:border-gray-300"
+                  }`}
+                >
+                  {sector}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Empty State */}
@@ -155,7 +174,7 @@ const CertifiedPlatformsList = () => {
         )}
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 2xl:gap-8 mb-16 2xl:mb-20">
           {currentItems.map((platform, index) => (
             <div
               key={index}

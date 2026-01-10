@@ -1,8 +1,8 @@
 import PartnersSection from "../../features/home/PartnersSection";
 import DPNHero from "../../features/dpn/DPNHero";
+import DPNIntro from "../../features/dpn/DPNIntro";
 import DPNResources from "../../features/dpn/DPNResources";
 import DPNExperts from "../../features/dpn/DNPExperts";
-// import DPNNewsletter from "../../features/dpn/DPNNewsletter";
 
 const DPNPage = () => {
   return (
@@ -10,14 +10,14 @@ const DPNPage = () => {
       {/* Hero Section */}
       <DPNHero />
 
-      {/* Why These Resources Matter Section - Reimagined */}
-      <DPNResources />
+      {/* Introduction Section */}
+      <DPNIntro />
 
-      {/* Toolkit Header & Content Grid */}
+      {/* Connect with Global Experts */}
       <DPNExperts />
 
-      {/* Newsletter */}
-      {/* <DPNNewsletter /> */}
+      {/* Why These Resources Matter Section */}
+      <DPNResources />
 
       <PartnersSection />
     </>

@@ -1,6 +1,6 @@
 import PartnersSection from "../../features/home/PartnersSection";
 import CertificationHero from "../../features/certification/CertificationHero";
-// import CertificationBridgingGap from "../../features/certification/CertificationBridgingGap";
+import CertificationInfo from "../../features/certification/CertificationInfo";
 import CertificationValidation from "../../features/certification/CertificationValidation";
 import CertificationSteps from "../../features/certification/CertificationSteps";
 
@@ -10,8 +10,8 @@ const CertificationPage = () => {
       {/* Hero Section */}
       <CertificationHero />
 
-      {/* Bridging the Gap Section */}
-      {/* <CertificationBridgingGap /> */}
+      {/* Certification Info Section */}
+      <CertificationInfo />
 
       {/* Validate Your Excellence Section */}
       <CertificationValidation />
