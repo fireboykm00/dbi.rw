@@ -11,12 +11,9 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
-    { name: "Events", href: "/events" },
-    {
-      name: "Digital Professionals Network",
-      href: "/dpn",
-    },
     { name: "FAQ", href: "/faq" },
+    { name: "Get Certified", href: "/certification" },
+    { name: "Contact us", href: "/contact" },
   ];
 
   const socialLinks = [
@@ -188,7 +185,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="text-gray-300 hover:text-white transition-colors text-sm"
               >
                 Privacy policy

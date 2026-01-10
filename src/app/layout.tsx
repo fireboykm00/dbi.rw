@@ -13,8 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DBI",
-  description: "DBI - Digital Business Institute",
+  title: {
+    default: "Digital Business Institute (DBI) | Rwanda ICT Chamber",
+    template: "%s | Digital Business Institute (DBI)",
+  },
+  description:
+    "Accelerating the digitalization of Rwandan businesses, expanding digital exports, and increasing global competitiveness as part of the Rwanda ICT Chamber.",
+  keywords: [
+    "DBI",
+    "Digital Business Institute",
+    "Rwanda ICT",
+    "ICT Chamber",
+    "Digitalization",
+    "ICT Certification",
+    "Rwanda Digital Exports",
+  ],
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

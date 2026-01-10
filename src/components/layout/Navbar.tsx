@@ -38,11 +38,25 @@ const Navbar = () => {
     return currentPath.startsWith(href);
   };
 
+  // Pages that have hero sections where 0.4 opacity looks best
+  const heroPages = [
+    "/",
+    "/certification",
+    "/dpn",
+    "/about",
+    "/academy",
+    "/directory",
+    "/faq",
+  ];
+  const isHeroPage = heroPages.includes(currentPath || "/");
+
+  const navBgOpacity = isHeroPage ? "0.4" : "0.8";
+
   return (
     <nav className="w-full p-4 py-8 2xl:py-10 relative z-50">
       <div
         className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 2xl:px-8 flex items-center justify-between backdrop-blur-md rounded-lg shadow-xl"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
+        style={{ backgroundColor: `rgba(0, 0, 0, ${navBgOpacity})` }}
       >
         {/* Logo Section */}
         <div className="flex items-center gap-3">
@@ -127,7 +141,7 @@ const Navbar = () => {
             ))}
             <li className="pt-4 mt-2 border-t border-white/10">
               <Link
-                href="/certification"
+                href={startAssessmentLink}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-center gap-2 text-white text-lg font-bold px-4 py-4 rounded-xl w-full shadow-lg transition-all active:scale-95 bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
               >
