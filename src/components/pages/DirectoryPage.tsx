@@ -4,30 +4,21 @@ import ReadyToGetVerified from "../../features/shared/ReadToGetVerified";
 import DirectoryHero from "../../features/directory/DirectoryHero";
 import DirectoryFAQ from "../../features/directory/DirectoryFAQ";
 import CertifiedPlatformsList from "../../features/shared/CertifiedPlatformsList";
-import Loader from "@/components/ui/Loader";
+import {
+  RegistryGridSkeleton,
+  DirectoryHeroSkeleton,
+} from "@/components/ui/Skeletons";
 
 const DirectoryPage = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <Suspense
-        fallback={
-          <div className="min-h-[60vh] bg-black flex items-center justify-center rounded-[20px] m-2">
-            <Loader />
-          </div>
-        }
-      >
+      <Suspense fallback={<DirectoryHeroSkeleton />}>
         <DirectoryHero />
       </Suspense>
 
       {/* Certified Platforms Section */}
-      <Suspense
-        fallback={
-          <div className="py-32 flex items-center justify-center bg-gray-50">
-            <Loader />
-          </div>
-        }
-      >
+      <Suspense fallback={<RegistryGridSkeleton />}>
         <CertifiedPlatformsList />
       </Suspense>
 
