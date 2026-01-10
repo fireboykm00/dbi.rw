@@ -73,4 +73,4 @@ export const faqData: FAQItem[] = [
   },
 ];
 
-export const startAssessmentLink = "https://certification.dbi.rw";
+export const startAssessmentLink = "https://certification.dbi.rw/";
