@@ -5,7 +5,7 @@ import {
   XMarkIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
-import { primaryColor, primaryColorDark } from "../lib/site";
+import { primaryColor, primaryColorDark } from "../../lib/site";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,7 +17,10 @@ const Navbar = () => {
     { name: "Certification", href: "/certification" },
     { name: "Academy", href: "/academy" },
     { name: "Directory", href: "/directory" },
-    { name: "Resources", href: "/resources" },
+    {
+      name: "Digital Professionals Network",
+      href: "/digital-professionals-network",
+    },
     { name: "About", href: "/about" },
   ];
 

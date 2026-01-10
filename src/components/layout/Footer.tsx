@@ -4,13 +4,16 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-import { darkColor, primaryColor } from "../lib/site";
+import { darkColor, primaryColor } from "../../lib/site";
 const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About us", href: "/about" },
     { name: "Events", href: "/events" },
-    { name: "Resources", href: "/resources" },
+    {
+      name: "Digital Professionals Network",
+      href: "/digital-professionals-network",
+    },
     { name: "FAQ", href: "/faq" },
   ];
 

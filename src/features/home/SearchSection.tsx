@@ -1,6 +1,6 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { ArrowRightIcon } from "lucide-react";
-import { primaryColor, primaryColorDark } from "../lib/site";
+import { primaryColor, primaryColorDark } from "../../lib/site";
 
 const SearchSection = () => {
   return (

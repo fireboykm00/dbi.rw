@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { primaryColor, primaryColorDark } from "../lib/site";
+import { primaryColor, primaryColorDark } from "../../lib/site";
 
 const Hero = () => {
   // Profile Images for trust badge

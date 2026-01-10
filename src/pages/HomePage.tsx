@@ -1,9 +1,9 @@
-import Hero from "../components/Hero";
-import SealSection from "../components/SealSection";
-import StandardsSection from "../components/StandardsSection";
-import PolicySection from "../components/PolicySection";
-import SearchSection from "../components/SearchSection";
-import PartnersSection from "../components/PartnersSection";
+import Hero from "../features/home/Hero";
+import SealSection from "../features/home/SealSection";
+import StandardsSection from "../features/home/StandardsSection";
+import PolicySection from "../features/home/PolicySection";
+import SearchSection from "../features/home/SearchSection";
+import PartnersSection from "../features/home/PartnersSection";
 
 const HomePage = () => {
   return (

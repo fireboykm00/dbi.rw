@@ -1,6 +1,6 @@
 import { BugIcon, ShieldIcon, CogIcon } from "lucide-react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { primaryColor, primaryColorDark } from "../lib/site";
+import { primaryColor, primaryColorDark } from "../../lib/site";
 
 const StandardsSection = () => {
   const certifications = [

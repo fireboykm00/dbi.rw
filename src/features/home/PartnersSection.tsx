@@ -22,7 +22,7 @@ const PartnersSection = () => {
         </h3>
 
         {/* Logos Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8 ">
           {companyLogos.map((logo, index) => (
             <div
               key={index}
@@ -31,7 +31,7 @@ const PartnersSection = () => {
               <img
                 src={logo}
                 alt={`Partner ${index + 1}`}
-                className="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-200"
+                className="max-h-12 w-auto object-contain"
               />
             </div>
           ))}

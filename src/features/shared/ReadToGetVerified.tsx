@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import { primaryColor, primaryColorDark } from "../lib/site";
+import { primaryColor, primaryColorDark } from "../../lib/site";
 
 const ReadyToGetVerified = () => {
   return (

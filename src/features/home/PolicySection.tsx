@@ -1,4 +1,4 @@
-import { primaryColor } from "../lib/site";
+import { primaryColor } from "../../lib/site";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 const PolicySection = () => {

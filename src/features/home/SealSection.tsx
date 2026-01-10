@@ -1,7 +1,7 @@
 import { BadgeCheck } from "lucide-react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { primaryColor, primaryColorDark } from "../lib/site";
+import { primaryColor, primaryColorDark } from "../../lib/site";
 
 const SealSection = () => {
   const sealTypes = [
