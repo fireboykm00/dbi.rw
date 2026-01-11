@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { PlusIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { faqData, primaryColor } from "../../lib/site";
+import { faqData } from "@/data/faq";
 
 const FAQList = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -27,22 +27,13 @@ const FAQList = () => {
                     : "bg-white hover:bg-gray-50/50"
                 }`}
               >
-                <span
-                  className="text-lg font-semibold pr-8 transition-colors duration-300"
-                  style={{ color: primaryColor }}
-                >
+                <span className="text-lg font-semibold pr-8 transition-colors duration-300 text-brand-primary">
                   {faq.question}
                 </span>
                 {openFaqIndex === index ? (
-                  <XMarkIcon
-                    className="w-5 h-5 shrink-0 transition-transform duration-300 rotate-90"
-                    style={{ color: primaryColor }}
-                  />
+                  <XMarkIcon className="w-5 h-5 shrink-0 transition-transform duration-300 rotate-90 text-brand-primary" />
                 ) : (
-                  <PlusIcon
-                    className="w-5 h-5 shrink-0 transition-transform duration-300 hover:rotate-90"
-                    style={{ color: primaryColor }}
-                  />
+                  <PlusIcon className="w-5 h-5 shrink-0 transition-transform duration-300 hover:rotate-90 text-brand-primary" />
                 )}
               </button>
               <div

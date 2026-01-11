@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 import Link from "next/link";
 import { startAssessmentLink } from "../../lib/site";
+
 const CertificationHero = () => {
   return (
     <div className="p-2">
@@ -42,7 +42,7 @@ const CertificationHero = () => {
           <div className="pt-2">
             <Link
               href={startAssessmentLink}
-              className={`inline-flex items-center gap-2 bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white font-medium px-6 py-4 2xl:px-8 2xl:py-5 2xl:text-lg rounded-md transition-colors duration-300 mb-12`}
+              className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-medium px-6 py-4 2xl:px-8 2xl:py-5 2xl:text-lg rounded-md transition-colors duration-300 mb-12"
             >
               Start Assessment
               <ArrowRight className="w-6 h-6 2xl:w-7 2xl:h-7 group-hover:translate-x-1 transition-transform" />

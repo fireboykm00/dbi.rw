@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { primaryColor } from "../../lib/site";
 
 const AcademyAccreditation = () => {
   return (
     <div className="p-2 relative">
       <Image
         src="/shapes/shapes.svg"
-        className="w-full inset-0 absolute h-full pointer-events-none opacity-20"
+        className="w-full inset-0 absolute h-full pointer-events-none opacity-40"
         alt="Background Pattern"
         width={1000}
         height={1000}
@@ -22,10 +21,7 @@ const AcademyAccreditation = () => {
           />
         </div>
         <div>
-          <h2
-            className="text-4xl font-bold mb-6"
-            style={{ color: primaryColor }}
-          >
+          <h2 className="text-4xl font-bold mb-6 text-brand-primary">
             Don&apos;t just learn. Get Accredited.
           </h2>
           <p className="text-gray-600">

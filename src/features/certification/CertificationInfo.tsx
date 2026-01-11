@@ -1,15 +1,30 @@
 "use client";
 
+import Image from "next/image";
+
 const CertificationInfo = () => {
   return (
-    <section className="py-24 px-6 md:px-12 2xl:py-36 2xl:px-16 bg-white">
-      <div className="max-w-4xl 2xl:max-w-5xl mx-auto text-center">
+    <section className="relative py-24 px-6 md:px-12 2xl:py-36 2xl:px-16 bg-white overflow-hidden">
+      {/* Background Shapes */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image
+          src="/shapes/shapes.svg"
+          alt=""
+          className="w-full h-full object-cover opacity-40"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50/50 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+      </div>
+
+      <div className="relative z-10 max-w-4xl 2xl:max-w-5xl mx-auto text-center">
         {/* Main Title Area */}
         <div className="inline-flex flex-col items-center mb-12">
           <h2 className="text-4xl md:text-6xl 2xl:text-7xl font-bold text-gray-900 leading-tight tracking-tight mb-4">
             DBI Certificate
           </h2>
-          <div className="w-20 h-1.5 bg-blue-600 rounded-full" />
+          <div className="w-20 h-1.5 bg-brand-primary rounded-full" />
         </div>
 
         {/* Description Content */}

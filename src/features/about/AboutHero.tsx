@@ -1,5 +1,3 @@
-import { primaryColor } from "../../lib/site";
-
 const AboutHero = () => {
   return (
     <div className="p-2">
@@ -23,10 +21,7 @@ const AboutHero = () => {
         </div>
 
         {/* Subtle decorative bottom glow */}
-        <div
-          className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-[120px] opacity-20"
-          style={{ backgroundColor: primaryColor }}
-        />
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-[120px] opacity-20 bg-brand-primary" />
       </section>
     </div>
   );

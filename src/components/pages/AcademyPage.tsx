@@ -3,7 +3,7 @@ import ReadyToGetVerified from "../../features/shared/ReadToGetVerified";
 import AcademyHero from "../../features/academy/AcademyHero";
 import AcademyAccreditation from "../../features/academy/AcademyAccreditation";
 import AcademyCertifications from "../../features/academy/AcademyCertifications";
-import DPNExperts from "../../features/dpn/DNPExperts";
+import DPNExperts from "../../features/dpn/DPNExperts";
 
 const AcademyPage = () => {
   return (

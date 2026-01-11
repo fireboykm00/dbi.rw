@@ -1,4 +1,3 @@
-import { primaryColor } from "../../lib/site";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
@@ -43,21 +42,15 @@ const PolicySection = () => {
             {/* CTA Button */}
             <a
               href="#"
-              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-all duration-300 bg-[#03396C] hover:bg-[#022b52] text-white shadow-md hover:shadow-lg transform hover:-translate-y-1 z-20"
+              className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-all duration-300 bg-brand-primary hover:bg-brand-primary-dark text-white shadow-md hover:shadow-lg transform hover:-translate-y-1 z-20"
             >
               Read Our Mission
               <ArrowRightIcon className="w-5 h-5" />
             </a>
 
             {/* --- COMPONENT 1: Text Version (Visible Mobile/Tablet, Hidden on XL) --- */}
-            <div
-              className="flex xl:hidden mt-10 items-center gap-4 py-2 border-l-4 pl-4 transition-all duration-300 hover:pl-6"
-              style={{ borderColor: primaryColor }}
-            >
-              <span
-                className="text-5xl font-bold"
-                style={{ color: primaryColor }}
-              >
+            <div className="flex xl:hidden mt-10 items-center gap-4 py-2 border-l-4 border-brand-primary pl-4 transition-all duration-300 hover:pl-6">
+              <span className="text-5xl font-bold text-brand-primary">
                 300+
               </span>
               <span className="text-3xl text-gray-700 font-medium">
@@ -67,24 +60,15 @@ const PolicySection = () => {
 
             {/* --- COMPONENT 2: Bubble Version (Hidden on Mobile, Visible Absolute on XL) --- */}
             <div className="hidden xl:flex absolute -right-16 bottom-1/2 transform translate-y-1/2 z-10 hover:scale-110 transition-transform duration-200">
-              <div
-                className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-lg"
-                style={{ backgroundColor: primaryColor, color: "white" }}
-              >
+              <div className="relative w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-lg bg-brand-primary text-white">
                 <span className="text-5xl font-bold">
                   300<sup className="text-lg">+</sup>
                 </span>
                 <span className="text-sm">Members</span>
 
                 {/* Speech bubble tail */}
-                <div
-                  className="absolute bottom-0 -left-6 w-10 h-10 rounded-full"
-                  style={{ backgroundColor: primaryColor }}
-                />
-                <div
-                  className="absolute bottom-5 -left-2 w-8 h-5 -rotate-45"
-                  style={{ backgroundColor: primaryColor }}
-                />
+                <div className="absolute bottom-0 -left-6 w-10 h-10 rounded-full bg-brand-primary" />
+                <div className="absolute bottom-5 -left-2 w-8 h-5 -rotate-45 bg-brand-primary" />
               </div>
             </div>
           </div>

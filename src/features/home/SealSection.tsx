@@ -1,7 +1,6 @@
 import { BadgeCheck } from "lucide-react";
 import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 import Image from "next/image";
 
 const SealSection = () => {
@@ -45,10 +44,7 @@ const SealSection = () => {
 
               {/* Security Check Badge */}
               <div className="hidden md:flex absolute top-1/5 -translate-y-1/2 -right-10 lg:-right-12 xl:-right-16 shadow-lg drop-shadow-2xl z-10 bg-white rounded-md px-5 py-4 items-center gap-2 transition-all duration-300 hover:-translate-y-2">
-                <div
-                  className="w-10 h-10 rounded-md flex items-center justify-center"
-                  style={{ backgroundColor: primaryColor }}
-                >
+                <div className="w-10 h-10 rounded-md flex items-center justify-center bg-brand-primary">
                   <ShieldCheckIcon className="text-white w-6" />
                 </div>
                 <span className="text-sm font-medium text-gray-800">
@@ -59,10 +55,7 @@ const SealSection = () => {
               {/* Testimonial Card */}
               <div className="hidden md:block max-w-[300px] absolute bottom-20 -right-5 lg:-right-8 xl:-right-10 z-10 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
                 <div className="flex items-start gap-3">
-                  <div
-                    className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden"
-                    style={{ backgroundColor: primaryColor }}
-                  >
+                  <div className="w-8 h-8 absolute p-1 -top-3 -left-4 rounded-full flex items-center justify-center overflow-hidden bg-brand-primary">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
@@ -118,7 +111,7 @@ const SealSection = () => {
             <div>
               <a
                 href="#"
-                className={`inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-all duration-300 bg-[${primaryColor}] hover:bg-[${primaryColorDark}] shadow-md hover:shadow-lg transform hover:-translate-y-1`}
+                className="inline-flex items-center gap-3 text-white font-medium px-6 py-4 rounded-md transition-all duration-300 bg-brand-primary hover:bg-brand-primary-dark shadow-md hover:shadow-lg transform hover:-translate-y-1"
               >
                 Get Started
                 <ArrowRightIcon className="w-5" />

@@ -1,5 +1,4 @@
 import { BadgeCheck } from "lucide-react";
-import { primaryColor } from "../../lib/site";
 import Image from "next/image";
 
 const CertificationBridgingGap = () => {
@@ -31,10 +30,7 @@ const CertificationBridgingGap = () => {
 
           {/* Content Side */}
           <div>
-            <h2
-              className="text-4xl md:text-5xl font-bold mb-8 leading-[1.15]"
-              style={{ color: primaryColor }}
-            >
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-[1.15] text-brand-primary">
               Bridging the Gap Between
               <br />
               You and Your Customers
@@ -46,7 +42,7 @@ const CertificationBridgingGap = () => {
               their services, spanning from inception to delivery.
             </p>
 
-            <div className="space-y-6" style={{ color: primaryColor }}>
+            <div className="space-y-6 text-brand-primary">
               {[
                 {
                   label: "Credible Mark:",

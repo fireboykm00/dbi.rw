@@ -3,20 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Home } from "lucide-react";
-import { primaryColor } from "@/lib/site";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Gradients */}
-      <div
-        className="absolute top-0 left-0 w-96 h-96 rounded-full blur-[100px] opacity-[0.03] -translate-x-1/2 -translate-y-1/2"
-        style={{ backgroundColor: primaryColor }}
-      />
-      <div
-        className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-[100px] opacity-[0.03] translate-x-1/2 translate-y-1/2"
-        style={{ backgroundColor: primaryColor }}
-      />
+      <div className="absolute top-0 left-0 w-96 h-96 rounded-full blur-[100px] opacity-[0.03] -translate-x-1/2 -translate-y-1/2 bg-brand-primary" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-[100px] opacity-[0.03] translate-x-1/2 translate-y-1/2 bg-brand-primary" />
 
       <div className="relative z-10 max-w-2xl w-full text-center flex flex-col items-center">
         {/* Company Logo */}
@@ -61,8 +54,7 @@ export default function NotFound() {
 
             <Link
               href="/"
-              className="px-8 py-3 rounded-lg font-bold text-white shadow-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center hover:-translate-y-1"
-              style={{ backgroundColor: primaryColor }}
+              className="px-8 py-3 rounded-lg font-bold text-white shadow-lg transition-all flex items-center gap-2 w-full sm:w-auto justify-center hover:-translate-y-1 bg-brand-primary"
             >
               <Home className="w-5 h-5" />
               Back Home

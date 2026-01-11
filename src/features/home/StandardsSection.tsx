@@ -1,6 +1,5 @@
 import { BugIcon, ShieldIcon, CogIcon } from "lucide-react";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 import Image from "next/image";
 
 const StandardsSection = () => {
@@ -36,7 +35,7 @@ const StandardsSection = () => {
           </p>
           <a
             href="#"
-            className={`inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-all duration-300 bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white shadow-md hover:shadow-lg transform hover:-translate-y-1`}
+            className="inline-flex items-center gap-3 font-medium px-6 py-4 rounded-md transition-all duration-300 bg-brand-primary hover:bg-brand-primary-dark text-white shadow-md hover:shadow-lg transform hover:-translate-y-1"
           >
             Learn More
             <ArrowRightIcon className="w-5" />
@@ -67,10 +66,7 @@ const StandardsSection = () => {
                     : "bottom-20"
                 }`}
               >
-                <div
-                  className="xl:w-10 xl:h-10 w-8 h-8 rounded-md flex items-center justify-center transition-colors duration-300"
-                  style={{ backgroundColor: primaryColor }}
-                >
+                <div className="xl:w-10 xl:h-10 w-8 h-8 rounded-md flex items-center justify-center transition-colors duration-300 bg-brand-primary">
                   {cert.icon}
                 </div>
                 <span className="text-xs font-medium text-gray-800 whitespace-nowrap">

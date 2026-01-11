@@ -1,4 +1,3 @@
-import { primaryColor } from "../../lib/site";
 import Image from "next/image";
 const DPNResources = () => {
   return (
@@ -27,10 +26,7 @@ const DPNResources = () => {
 
               <div className="pt-4">
                 <p className="text-gray-900 font-bold flex items-center gap-2 mb-6">
-                  <span
-                    className="w-8 h-[2px] rounded-full"
-                    style={{ backgroundColor: primaryColor }}
-                  />
+                  <span className="w-8 h-[2px] rounded-full bg-brand-primary" />
                   You can search the catalogue along the following criteria:
                 </p>
 
@@ -42,10 +38,7 @@ const DPNResources = () => {
                     "Operational Excellence",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 group">
-                      <div
-                        className="w-2 h-2 rounded-full transition-transform group-hover:scale-150"
-                        style={{ backgroundColor: primaryColor }}
-                      />
+                      <div className="w-2 h-2 rounded-full transition-transform group-hover:scale-150 bg-brand-primary" />
                       <span className="text-gray-600 font-medium">{item}</span>
                     </div>
                   ))}
@@ -68,10 +61,7 @@ const DPNResources = () => {
             </div>
 
             {/* Decorative elements */}
-            <div
-              className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full blur-[80px] opacity-20 pointer-events-none"
-              style={{ backgroundColor: primaryColor }}
-            />
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full blur-[80px] opacity-20 pointer-events-none bg-brand-primary" />
           </div>
         </div>
       </div>

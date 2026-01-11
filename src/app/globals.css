@@ -34,6 +34,11 @@
   --animate-shimmer: shimmer 2s infinite linear;
   --animate-slide-in: slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --animate-fade-in: fade-in 0.3s ease-out;
+
+  --color-brand-primary: #03396c;
+  --color-brand-primary-dark: #022b52;
+  --color-brand-dark: #212529;
+  --color-brand-gray: #555555;
 }
 
 .shimmer-bg {
