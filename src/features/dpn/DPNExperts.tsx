@@ -7,13 +7,12 @@ import {
   PhoneIcon,
   CheckCircleIcon,
 } from "@heroicons/react/24/outline";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 import Image from "next/image";
 import { experts, Expert } from "../../data/experts";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
 
-const DNPExperts = () => {
+const DPNExperts = () => {
   const [selectedExpert, setSelectedExpert] = useState<Expert | null>(null);
 
   return (
@@ -66,10 +65,7 @@ const DNPExperts = () => {
 
                   {/* Text Area */}
                   <div className="flex flex-col flex-1">
-                    <h3
-                      className="text-xl 2xl:text-2xl font-bold mb-4 leading-snug transition-colors duration-200 group-hover:text-blue-700 h-14 line-clamp-2"
-                      style={{ color: primaryColor }}
-                    >
+                    <h3 className="text-xl 2xl:text-2xl font-bold mb-4 leading-snug transition-colors duration-200 group-hover:text-blue-700 h-14 line-clamp-2 text-brand-primary">
                       {expert.title}
                     </h3>
 
@@ -119,10 +115,7 @@ const DNPExperts = () => {
 
                     {/* Title & Description */}
                     <div className="space-y-6">
-                      <Dialog.Title
-                        className="text-3xl md:text-4xl font-bold leading-tight"
-                        style={{ color: primaryColor }}
-                      >
+                      <Dialog.Title className="text-3xl md:text-4xl font-bold leading-tight text-brand-primary">
                         {selectedExpert.title}
                       </Dialog.Title>
                       <p className="text-gray-600 text-lg leading-relaxed font-light">
@@ -170,7 +163,7 @@ const DNPExperts = () => {
                           href={selectedExpert.website}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`flex-1 inline-flex items-center justify-center gap-2 bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white font-bold px-8 py-5 rounded-xl transition-all duration-300 shadow-xl shadow-blue-900/10 hover:shadow-blue-900/20`}
+                          className="flex-1 inline-flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-bold px-8 py-5 rounded-xl transition-all duration-300 shadow-xl shadow-blue-900/10 hover:shadow-blue-900/20"
                         >
                           <GlobeAltIcon className="w-5 h-5" />
                           Visit Official Website
@@ -188,4 +181,4 @@ const DNPExperts = () => {
   );
 };
 
-export default DNPExperts;
+export default DPNExperts;

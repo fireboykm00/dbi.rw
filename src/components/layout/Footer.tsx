@@ -3,7 +3,6 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
-import { darkColor, primaryColor } from "../../lib/site";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,10 +48,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer
-      className="relative w-full rounded-2xl overflow-hidden"
-      style={{ backgroundColor: darkColor }}
-    >
+    <footer className="relative w-full rounded-2xl overflow-hidden bg-brand-dark">
       {/* Background Shape */}
       <div
         className="absolute inset-0 bg-no-repeat bg-cover"
@@ -105,16 +101,8 @@ const Footer = () => {
               </h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                    style={{
-                      backgroundColor: primaryColor,
-                    }}
-                  >
-                    <MapPinIcon
-                      className="w-5 h-5"
-                      style={{ color: "white" }}
-                    />
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-brand-primary">
+                    <MapPinIcon className="w-5 h-5 text-white" />
                   </div>
                   <span className="text-gray-300 text-sm">
                     Fairview Building, KG 622 Avenue
@@ -123,39 +111,26 @@ const Footer = () => {
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                    style={{
-                      backgroundColor: primaryColor,
-                    }}
-                  >
-                    <EnvelopeIcon
-                      className="w-5 h-5"
-                      style={{ color: "white" }}
-                    />
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-brand-primary">
+                    <EnvelopeIcon className="w-5 h-5 text-white" />
                   </div>
-                  <Link
+                  <a
                     href="mailto:info@dbi.rw"
                     className="text-gray-300 text-sm"
                   >
                     info@dbi.rw
-                  </Link>
+                  </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                    style={{
-                      backgroundColor: primaryColor,
-                    }}
-                  >
-                    <PhoneIcon className="w-5 h-5" style={{ color: "white" }} />
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 bg-brand-primary">
+                    <PhoneIcon className="w-5 h-5 text-white" />
                   </div>
-                  <Link
+                  <a
                     href="tel:+250781375971"
                     className="text-gray-200 hover:text-white transition-colors text-sm"
                   >
                     +250781375971
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -170,8 +145,7 @@ const Footer = () => {
               <Link
                 key={social.name}
                 href={social.href}
-                className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200"
-                style={{ color: "white", backgroundColor: primaryColor }}
+                className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 text-white bg-brand-primary"
                 aria-label={social.name}
                 target="blank"
               >

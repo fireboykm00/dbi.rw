@@ -5,11 +5,7 @@ import {
   XMarkIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/solid";
-import {
-  primaryColor,
-  primaryColorDark,
-  startAssessmentLink,
-} from "../../lib/site";
+import { startAssessmentLink } from "../../lib/site";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -105,7 +101,7 @@ const Navbar = () => {
         <div className="hidden lg:block">
           <Link
             href={startAssessmentLink}
-            className={`flex items-center gap-2 text-white font-bold px-6 py-3 2xl:px-8 2xl:py-4 2xl:text-lg rounded-md transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
+            className="flex items-center gap-2 text-white font-bold px-6 py-3 2xl:px-8 2xl:py-4 2xl:text-lg rounded-md transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group bg-brand-primary hover:bg-brand-primary-dark"
           >
             Get Certified
             <ArrowRightIcon className="w-4 h-4 2xl:w-5 2xl:h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -143,7 +139,7 @@ const Navbar = () => {
               <Link
                 href={startAssessmentLink}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center justify-center gap-2 text-white text-lg font-bold px-4 py-4 rounded-xl w-full shadow-lg transition-all active:scale-95 bg-[${primaryColor}] hover:bg-[${primaryColorDark}]`}
+                className="flex items-center justify-center gap-2 text-white text-lg font-bold px-4 py-4 rounded-xl w-full shadow-lg transition-all active:scale-95 bg-brand-primary hover:bg-brand-primary-dark"
               >
                 Get Certified
                 <ArrowRightIcon className="w-5 h-5" />

@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { LightBulbIcon } from "@heroicons/react/24/outline";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 
 const DPNRequest = () => {
   return (
@@ -24,9 +23,7 @@ const DPNRequest = () => {
                 specific guide, template, or tool you need, let us know and
                 we&apos;ll prioritize it.
               </p>
-              <button
-                className={`inline-flex bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white gap-3 items-center font-bold px-10 py-5 rounded-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1`}
-              >
+              <button className="inline-flex bg-brand-primary hover:bg-brand-primary-dark text-white gap-3 items-center font-bold px-10 py-5 rounded-lg transition-all duration-300 shadow-2xl transform hover:-translate-y-1">
                 Request a Resource
                 <ArrowRight className="w-6 h-6" />
               </button>

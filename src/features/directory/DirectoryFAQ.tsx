@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { XMarkIcon, PlusIcon } from "@heroicons/react/24/solid";
-import { darkColor, faqData, primaryColor } from "../../lib/site";
+import { faqData } from "@/data/faq";
 
 const DirectoryFAQ = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -12,12 +12,7 @@ const DirectoryFAQ = () => {
 
   return (
     <div className="p-2">
-      <section
-        className="py-12 px-4 md:py-24 md:px-6 lg:px-12 rounded-[20px]"
-        style={{
-          backgroundColor: darkColor,
-        }}
-      >
+      <section className="py-12 px-4 md:py-24 md:px-6 lg:px-12 rounded-[20px] bg-brand-dark">
         <div className="max-w-7xl w-full mx-auto">
           <div className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -36,8 +31,8 @@ const DirectoryFAQ = () => {
                   onClick={() => toggleFaq(index)}
                   className={`w-full flex items-center justify-between p-6 text-left transition-all duration-300 ${
                     openFaqIndex === index
-                      ? `bg-[${primaryColor}] text-white`
-                      : `bg-white hover:bg-[${primaryColor}]/10`
+                      ? "bg-brand-primary text-white"
+                      : "bg-white hover:bg-brand-primary/10"
                   } ${
                     index !== faqData.length - 1
                       ? "border-b border-gray-100"
@@ -48,7 +43,7 @@ const DirectoryFAQ = () => {
                     className={`text-lg font-semibold pr-8 transition-colors duration-300 ${
                       openFaqIndex === index
                         ? "text-white"
-                        : `text-[${primaryColor}]`
+                        : "text-brand-primary"
                     }`}
                   >
                     {faq.question}
@@ -56,9 +51,7 @@ const DirectoryFAQ = () => {
                   {openFaqIndex === index ? (
                     <XMarkIcon className="w-5 h-5 text-current shrink-0 transition-transform duration-300 rotate-90" />
                   ) : (
-                    <PlusIcon
-                      className={`w-5 h-5 text-[${primaryColor}] shrink-0 transition-transform duration-300 group-hover:rotate-90`}
-                    />
+                    <PlusIcon className="w-5 h-5 text-brand-primary shrink-0 transition-transform duration-300 group-hover:rotate-90" />
                   )}
                 </button>
                 <div

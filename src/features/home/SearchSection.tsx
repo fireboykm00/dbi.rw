@@ -1,6 +1,5 @@
 "use client";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
@@ -61,7 +60,7 @@ const SearchSection = () => {
             />
             <button
               onClick={handleSearch}
-              className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white p-3 md:px-8 md:py-3 2xl:px-10 2xl:py-4 2xl:text-lg rounded-md font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 shrink-0 flex items-center justify-center gap-2`}
+              className="bg-brand-primary hover:bg-brand-primary-dark text-white p-3 md:px-8 md:py-3 2xl:px-10 2xl:py-4 2xl:text-lg rounded-md font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 shrink-0 flex items-center justify-center gap-2"
             >
               <span className="hidden md:inline">Search</span>
               <ArrowRightIcon className="h-5 w-5 2xl:h-7 2xl:w-7" />

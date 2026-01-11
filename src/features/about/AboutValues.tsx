@@ -1,32 +1,35 @@
 import { Shield, Lightbulb, Scale, Handshake } from "lucide-react";
-import { primaryColor } from "../../lib/site";
 
 const AboutValues = () => {
   const values = [
     {
       title: "Trust",
-      description: "Building confidence in Rwanda's digital economy through transparency.",
+      description:
+        "Building confidence in Rwanda's digital economy through transparency.",
       icon: Shield,
       color: "text-blue-600",
       bg: "bg-blue-50/50",
     },
     {
       title: "Innovation",
-      description: "Driving digital transformation forward with edge solutions.",
+      description:
+        "Driving digital transformation forward with edge solutions.",
       icon: Lightbulb,
       color: "text-amber-500",
       bg: "bg-amber-50/50",
     },
     {
       title: "Integrity",
-      description: "Upholding the highest ethical standards in every transaction.",
+      description:
+        "Upholding the highest ethical standards in every transaction.",
       icon: Scale,
       color: "text-emerald-600",
       bg: "bg-emerald-50/50",
     },
     {
       title: "Inclusion",
-      description: "Ensuring digital access for all Rwandans, leaving no one behind.",
+      description:
+        "Ensuring digital access for all Rwandans, leaving no one behind.",
       icon: Handshake,
       color: "text-indigo-600",
       bg: "bg-indigo-50/50",
@@ -42,10 +45,11 @@ const AboutValues = () => {
               The Principles <br className="hidden md:block" />
               <span className="text-gray-400">That Guide Us</span>
             </h2>
-            <div className="h-1 w-20 rounded-full" style={{ backgroundColor: primaryColor }} />
+            <div className="h-1 w-20 rounded-full bg-brand-primary" />
           </div>
           <p className="text-gray-500 text-lg max-w-sm font-light leading-relaxed">
-            Our values are the foundation of everything we do, ensuring we serve the Rwandan digital community with excellence.
+            Our values are the foundation of everything we do, ensuring we serve
+            the Rwandan digital community with excellence.
           </p>
         </div>
 

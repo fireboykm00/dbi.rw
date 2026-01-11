@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { RotateCcw, AlertTriangle, Terminal, ChevronDown } from "lucide-react";
-import { primaryColor } from "@/lib/site";
 import Image from "next/image";
 
 export default function Error({
@@ -57,8 +56,7 @@ export default function Error({
         {/* Action Button */}
         <button
           onClick={reset}
-          className="w-full px-6 py-4 rounded-xl font-bold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 flex items-center justify-center gap-2 mb-6"
-          style={{ backgroundColor: primaryColor }}
+          className="w-full px-6 py-4 rounded-xl font-bold text-white shadow-lg transition-all hover:brightness-110 hover:-translate-y-1 flex items-center justify-center gap-2 mb-6 bg-brand-primary"
         >
           <RotateCcw className="w-5 h-5" />
           Reload Application

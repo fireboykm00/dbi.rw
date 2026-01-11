@@ -1,6 +1,5 @@
 "use client";
 import { MagnifyingGlassIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 import { useState, useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
@@ -66,14 +65,14 @@ const DirectoryHero = () => {
               <input
                 type="text"
                 placeholder="Search Company Name..."
-                className={`flex-1 px-3 md:px-4 py-3 2xl:py-4 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-base md:text-lg 2xl:text-xl w-full min-w-0`}
+                className="flex-1 px-3 md:px-4 py-3 2xl:py-4 text-gray-900 placeholder-gray-500 outline-none bg-transparent text-base md:text-lg 2xl:text-xl w-full min-w-0"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={handleKeyPress}
               />
               <button
                 onClick={handleSearch}
-                className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white p-3 md:px-8 md:py-4 2xl:px-10 2xl:py-5 2xl:text-lg rounded-md flex items-center justify-center gap-2 transition-all duration-300 font-medium shrink-0 shadow-md hover:shadow-lg`}
+                className="bg-brand-primary hover:bg-brand-primary-dark text-white p-3 md:px-8 md:py-4 2xl:px-10 2xl:py-5 2xl:text-lg rounded-md flex items-center justify-center gap-2 transition-all duration-300 font-medium shrink-0 shadow-md hover:shadow-lg"
               >
                 <span className="hidden md:inline">Search</span>
                 <ArrowRightIcon className="h-5 w-5 2xl:h-6 2xl:w-6" />

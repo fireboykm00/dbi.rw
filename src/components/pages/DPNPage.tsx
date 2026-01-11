@@ -2,7 +2,7 @@ import PartnersSection from "../../features/home/PartnersSection";
 import DPNHero from "../../features/dpn/DPNHero";
 import DPNIntro from "../../features/dpn/DPNIntro";
 import DPNResources from "../../features/dpn/DPNResources";
-import DPNExperts from "../../features/dpn/DNPExperts";
+import DPNExperts from "../../features/dpn/DPNExperts";
 
 const DPNPage = () => {
   return (

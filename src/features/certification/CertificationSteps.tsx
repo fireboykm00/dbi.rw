@@ -1,19 +1,11 @@
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import {
-  darkColor,
-  primaryColor,
-  primaryColorDark,
-  startAssessmentLink,
-} from "../../lib/site";
+import { startAssessmentLink } from "../../lib/site";
 import Link from "next/link";
 
 const CertificationSteps = () => {
   return (
     <div className="p-2 mb-20 2xl:mb-28">
-      <section
-        className="p-6 md:p-20 lg:p-32 2xl:p-40 rounded-[16px] text-white"
-        style={{ backgroundColor: darkColor }}
-      >
+      <section className="p-6 md:p-20 lg:p-32 2xl:p-40 rounded-[16px] text-white bg-brand-dark">
         <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto">
           <div className="grid xl:grid-cols-2 gap-8 md:gap-12 lg:gap-16 2xl:gap-24 mb-12 md:mb-20 2xl:mb-28">
             <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-bold leading-tight">
@@ -55,10 +47,7 @@ const CertificationSteps = () => {
                 className="relative flex flex-col items-start group"
               >
                 {/* Step Badge */}
-                <div
-                  className="text-white px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300"
-                  style={{ backgroundColor: primaryColor }}
-                >
+                <div className="text-white px-8 py-3 rounded-full text-xl inline-block mb-6 relative z-10 shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-300 bg-brand-primary">
                   {item.step}
                 </div>
 
@@ -86,7 +75,7 @@ const CertificationSteps = () => {
             </h2>
             <Link
               href={startAssessmentLink}
-              className={`bg-[${primaryColor}] hover:bg-[${primaryColorDark}] group relative inline-flex items-center gap-3 text-white px-10 py-5 rounded-md font-bold text-lg transition-all duration-500 shadow-2xl`}
+              className="bg-brand-primary hover:bg-brand-primary-dark group relative inline-flex items-center gap-3 text-white px-10 py-5 rounded-md font-bold text-lg transition-all duration-500 shadow-2xl"
             >
               <span className="relative z-10">Start Assessment</span>
               <ArrowRightIcon className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />

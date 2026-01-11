@@ -1,5 +1,4 @@
 import { ArrowRightIcon } from "lucide-react";
-import { primaryColor, primaryColorDark } from "../../lib/site";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -33,7 +32,7 @@ const JoinICTChamber = () => {
               </p>
               <Link
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfRhDiNX5JTPLPyLai2zDZWvqBv1yDEr19VlgpLgWZbZcBdzQ/viewform"
-                className={`inline-flex bg-[${primaryColor}] hover:bg-[${primaryColorDark}] text-white gap-2 items-center font-bold px-8 py-5 2xl:px-10 2xl:py-6 2xl:text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1`}
+                className="inline-flex bg-brand-primary hover:bg-brand-primary-dark text-white gap-2 items-center font-bold px-8 py-5 2xl:px-10 2xl:py-6 2xl:text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1"
               >
                 Become A Member
                 <ArrowRightIcon className="w-5 2xl:w-6" />

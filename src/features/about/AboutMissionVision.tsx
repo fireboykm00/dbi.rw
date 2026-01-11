@@ -1,14 +1,7 @@
-"use client";
-
-import { darkColor } from "../../lib/site";
-
 const AboutMissionVision = () => {
   return (
     <div className="px-2 mb-20 2xl:mb-28">
-      <section
-        className="py-24 px-6 md:px-12 2xl:py-32 2xl:px-16 rounded-[24px] text-white"
-        style={{ backgroundColor: darkColor }}
-      >
+      <section className="py-24 px-6 md:px-12 2xl:py-32 2xl:px-16 rounded-[24px] text-white bg-brand-dark">
         <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto">
           {/* Main Statement */}
           <div className="max-w-4xl 2xl:max-w-5xl mb-10 2xl:mb-14">
