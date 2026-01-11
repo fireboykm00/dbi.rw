@@ -3,7 +3,7 @@ import { primaryColor } from "../../lib/site";
 const AboutHero = () => {
   return (
     <div className="p-2">
-      <section className="relative min-h-[60vh] md:min-h-[70vh] w-full overflow-hidden rounded-[24px] flex items-center bg-black">
+      <section className="pt-32 relative min-h-[60vh] md:min-h-[70vh] w-full overflow-hidden rounded-[24px] flex items-center bg-black">
         {/* Background Image with optimized overlay */}
         <div className="absolute inset-0">
           <div

@@ -1,4 +1,4 @@
-import { ResourcesPage } from "@/components/pages";
+import { DPNPage } from "@/components/pages";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function DPN() {
-  return <ResourcesPage />;
+  return <DPNPage />;
 }
