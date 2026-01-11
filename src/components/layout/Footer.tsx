@@ -134,7 +134,12 @@ const Footer = () => {
                       style={{ color: "white" }}
                     />
                   </div>
-                  <span className="text-gray-300 text-sm">info@dbi.rw</span>
+                  <Link
+                    href="mailto:info@dbi.rw"
+                    className="text-gray-300 text-sm"
+                  >
+                    info@dbi.rw
+                  </Link>
                 </li>
                 <li className="flex items-center gap-3">
                   <div

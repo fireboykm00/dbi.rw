@@ -32,7 +32,7 @@ const DNPExperts = () => {
       </div>
 
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 2xl:mb-28 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-start mb-20 2xl:mb-28 gap-8">
           <div className="max-w-2xl 2xl:max-w-3xl">
             <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-bold tracking-tight mb-6 text-gray-900">
               Connect with <br className="hidden md:block" />

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "ICT Chamber",
     "Digitalization",
     "ICT Certification",
-    "Rwanda Digital Exports",
+    "Rwanda Digital Experts",
   ],
   icons: {
     icon: "/favicon.ico",
