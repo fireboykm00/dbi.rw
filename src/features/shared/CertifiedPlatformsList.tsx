@@ -178,18 +178,18 @@ const CertifiedPlatformsList = () => {
           {currentItems.map((platform, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-3xl p-2 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(3,57,108,0.1)] transition-all duration-500 flex flex-col h-full"
+              className="group relative bg-white rounded-3xl p-2 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(3,57,108,0.08)] transition-all duration-300 flex flex-col h-full"
             >
-              {/* Logo Area with subtle background pattern */}
-              <div className="relative aspect-square md:aspect-auto md:h-[220px] bg-gray-50/50 rounded-2xl flex items-center justify-center p-10 overflow-hidden group-hover:bg-[#03396C]/5 transition-colors duration-500">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -translate-y-16 translate-x-16" />
+              {/* Logo Area with snappier transitions */}
+              <div className="relative aspect-square md:aspect-auto md:h-[220px] bg-gray-50/50 rounded-2xl flex items-center justify-center p-10 overflow-hidden group-hover:bg-[#03396C]/5 transition-colors duration-300">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl -translate-y-16 translate-x-16" />
                 </div>
 
                 <Image
                   src={platform.logo}
                   alt={platform.name}
-                  className="w-auto h-auto max-w-full max-h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-500"
+                  className="w-auto h-auto max-w-full max-h-full object-contain relative z-10 group-hover:scale-105 transition-transform duration-300 will-change-transform"
                   width={160}
                   height={160}
                 />
@@ -202,12 +202,12 @@ const CertifiedPlatformsList = () => {
                     <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-[#03396C]/5 text-[#03396C] uppercase tracking-wider mb-2">
                       {platform.sector}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#03396C] transition-colors leading-tight">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#03396C] transition-colors duration-200 leading-tight">
                       {platform.name}
                     </h3>
                   </div>
 
-                  <div className="mt-1 w-10 h-10 rounded-full bg-[#03396C] text-white flex items-center justify-center scale-90 opacity-0 -translate-y-2 group-hover:scale-100 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 shadow-lg shadow-[#03396C]/20">
+                  <div className="mt-1 w-10 h-10 rounded-full bg-[#03396C] text-white flex items-center justify-center scale-90 opacity-0 -translate-y-2 group-hover:scale-100 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-lg shadow-[#03396C]/20">
                     <ArrowRightIcon className="w-5 h-5" />
                   </div>
                 </div>
@@ -216,9 +216,9 @@ const CertifiedPlatformsList = () => {
                   <div className="flex items-center gap-2">
                     <div className="relative">
                       <CheckBadgeIcon className="w-5 h-5 text-emerald-500 relative z-10" />
-                      <div className="absolute inset-0 bg-emerald-400/30 rounded-full blur-md scale-150 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-sm scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                    <span className="text-xs font-semibold text-gray-400 group-hover:text-emerald-600 transition-colors">
+                    <span className="text-xs font-semibold text-gray-400 group-hover:text-emerald-600 transition-colors duration-200">
                       Officially Verified
                     </span>
                   </div>
