@@ -7,7 +7,7 @@ const FAQHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/all/bridging-gap-bg.jpg')",
+              backgroundImage: "url('/all/bridging-gap-bg.webp')",
             }}
           />
         </div>

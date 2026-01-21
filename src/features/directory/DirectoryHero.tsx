@@ -41,7 +41,7 @@ const DirectoryHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
             style={{
-              backgroundImage: "url('/all/search-bg.jpg')",
+              backgroundImage: "url('/all/search-bg.webp')",
             }}
           />
         </div>

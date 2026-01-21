@@ -185,13 +185,14 @@ const CertifiedPlatformsList = () => {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl -translate-y-16 translate-x-16" />
                 </div>
 
-                <Image
-                  src={platform.logo}
-                  alt={platform.name}
-                  className="w-auto h-auto max-w-full max-h-full object-contain relative z-10 group-hover:scale-105 transition-transform duration-300 will-change-transform"
-                  width={160}
-                  height={160}
-                />
+              <Image
+                src={platform.logo}
+                alt={platform.name}
+                className="w-auto h-auto max-w-full max-h-full object-contain relative z-10 group-hover:scale-105 transition-transform duration-300 will-change-transform"
+                width={160}
+                height={160}
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+              />
               </div>
 
               {/* Content Area */}

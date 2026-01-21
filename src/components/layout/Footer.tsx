@@ -52,7 +52,7 @@ const Footer = () => {
       {/* Background Shape */}
       <div
         className="absolute inset-0 bg-no-repeat bg-cover"
-        style={{ backgroundImage: "url('/shapes/footer-shapes.png')" }}
+        style={{ backgroundImage: "url('/shapes/footer-shapes.webp')" }}
       />
 
       <div className="relative z-10">
@@ -62,7 +62,7 @@ const Footer = () => {
             {/* Logo & Description */}
             <div>
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="DBI Logo"
                 className="w-32 md:w-40 mb-6"
                 width={100}

@@ -7,7 +7,7 @@ const AboutHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/all/hero.jpg')",
+              backgroundImage: "url('/all/hero.webp')",
             }}
           />
           <div className="absolute inset-0 bg-black/60" />

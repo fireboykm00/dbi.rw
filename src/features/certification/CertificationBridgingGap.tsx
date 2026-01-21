@@ -20,7 +20,7 @@ const CertificationBridgingGap = () => {
           {/* Image Side */}
           <div className="relative h-[600px] transform -rotate-2 bg-black rounded-4xl overflow-hidden hover:rotate-0 transition-transform duration-700">
             <Image
-              src="/all/bridging-gap-bg.jpg"
+              src="/all/bridging-gap-bg.webp"
               alt="Professionals working"
               className="absolute inset-0 h-full w-full object-cover opacity-70"
               width={1000}

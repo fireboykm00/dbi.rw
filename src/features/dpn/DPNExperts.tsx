@@ -21,10 +21,11 @@ const DPNExperts = () => {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <Image
           src="/shapes/shapes.svg"
-          alt=""
-          className="w-full h-full object-cover opacity-60"
+          alt="Background shapes"
+          className="w-full h-full object-cover opacity-40"
           width={1920}
           height={1080}
+          sizes="100vw"
         />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50/50 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
@@ -60,6 +61,7 @@ const DPNExperts = () => {
                       className="max-h-full max-w-full object-contain"
                       width={240}
                       height={120}
+                      sizes="(max-width: 768px) 50vw, 25vw"
                     />
                   </div>
 
@@ -104,6 +106,7 @@ const DPNExperts = () => {
                           className="max-h-full w-auto object-contain"
                           width={200}
                           height={100}
+                          sizes="200px"
                         />
                       </div>
                       <Dialog.Close asChild>

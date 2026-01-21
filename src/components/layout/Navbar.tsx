@@ -58,12 +58,13 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <Link href="/" className="hover:opacity-90 transition-opacity">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="DBI LOGO"
               className="w-32 md:w-44 2xl:w-52"
-              width={500}
-              height={500}
+              width={200}
+              height={60}
               priority
+              sizes="(max-width: 768px) 128px, (max-width: 1200px) 176px, 208px"
             />
           </Link>
         </div>
