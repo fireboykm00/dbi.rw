@@ -10,7 +10,7 @@ const JoinICTChamber = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/all/alex-ntale-meeting.png')",
+            backgroundImage: "url('/all/alex-ntale-meeting.webp')",
           }}
         />
         <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/50 " />
@@ -44,7 +44,7 @@ const JoinICTChamber = () => {
               <div className="bg-white p-12 2xl:p-16 rounded-xl shadow-2xl max-w-md 2xl:max-w-lg w-full flex flex-col items-center text-center transition-transform hover:scale-105 duration-200">
                 {/* Using a placeholder or existing logo, user can replace */}
                 <Image
-                  src="/company/partner-9.png"
+                  src="/company/partner-9.webp"
                   alt="Rwanda ICT Chamber"
                   className="w-48 2xl:w-56 h-auto mb-6 transition-all duration-200"
                   width={192}

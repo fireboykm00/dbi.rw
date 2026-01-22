@@ -51,7 +51,7 @@ const DPNResources = () => {
           <div className="relative hidden lg:block">
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-700">
               <Image
-                src="/business-advisory.jpg"
+                src="/business-advisory.webp"
                 alt="Business experts collaborating on resource catalogue"
                 className="w-full h-auto object-cover"
                 width={800}

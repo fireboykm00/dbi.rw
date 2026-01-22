@@ -82,8 +82,9 @@ const TrustSeals = () => {
                   <Image
                     src={seal.image}
                     alt={`${seal.name} Trust Seal`}
-                    width={2000}
-                    height={2000}
+                    width={200}
+                    height={200}
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                     className="w-full h-auto drop-shadow-xl"
                   />
                 </div>

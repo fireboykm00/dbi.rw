@@ -11,7 +11,7 @@ const ReadyToGetVerified = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-x-[-1] opacity-60"
             style={{
-              backgroundImage: "url('/all/ict-chamber-bg.jpg')",
+              backgroundImage: "url('/all/ict-chamber-bg.webp')",
             }}
           />
         </div>

@@ -15,7 +15,7 @@ export default function NotFound() {
         {/* Company Logo */}
         <div className="mb-8 relative w-48 h-16 md:w-56 md:h-20 transition-opacity">
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="DBI Logo"
             fill
             className="object-contain"

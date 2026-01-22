@@ -35,7 +35,7 @@ const SealSection = () => {
             {/* Main Image */}
             <div className="relative rounded-2xl h-64 md:h-[600px] lg:h-[500px] xl:h-[600px]">
               <Image
-                src="/all/innovation-bg.jpg"
+                src="/all/innovation-bg.webp"
                 alt="Professional working"
                 className="w-full h-full object-cover rounded-2xl transform scale-x-[-1] transition-transform duration-700"
                 width={1920}

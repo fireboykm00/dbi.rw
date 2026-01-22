@@ -35,7 +35,8 @@ const PartnersSection = () => {
                 alt={`Partner ${index + 1}`}
                 className="max-h-12 2xl:max-h-16 w-auto object-contain"
                 width={128}
-                height={128}
+                height={48}
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
               />
             </div>
           ))}

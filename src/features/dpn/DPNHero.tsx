@@ -7,7 +7,7 @@ const DPNHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/Business-Consulting-and-Advisory.jpg')",
+              backgroundImage: "url('/Business-Consulting-and-Advisory.webp')",
             }}
           />
         </div>

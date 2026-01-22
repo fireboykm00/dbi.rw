@@ -27,7 +27,7 @@ export default function Error({
       <div className="relative z-10 mb-12 transform hover:scale-105 transition-transform duration-500">
         <div className="relative w-64 h-24 drop-shadow-sm filter">
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="DBI Logo"
             fill
             className="object-contain"

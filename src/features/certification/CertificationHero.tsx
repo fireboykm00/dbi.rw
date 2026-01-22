@@ -11,7 +11,7 @@ const CertificationHero = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/all/certification-hero-bg.jpg')",
+              backgroundImage: "url('/all/certification-hero-bg.webp')",
             }}
           />
         </div>

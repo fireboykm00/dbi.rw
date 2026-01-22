@@ -6,11 +6,17 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className="relative min-h-[80vh] md:min-h-screen w-full bg-black overflow-hidden rounded-[20px]">
-      {/* Background Image */}
+      {/* Background Image - Optimized with Next/Image */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/all/hero.jpg')" }}
+        <Image
+          src="/all/hero.webp"
+          alt="DBI Hero Background"
+          fill
+          priority
+          sizes="100vw"
+          quality={80}
+          className="object-cover object-center"
+          style={{ objectPosition: 'center' }}
         />
       </div>
 
@@ -67,8 +73,9 @@ const Hero = () => {
                     src={seal}
                     alt={`Seal ${index + 1}`}
                     className="w-full h-full object-contain"
-                    width={1000}
-                    height={1000}
+                    width={48}
+                    height={48}
+                    sizes="(max-width: 768px) 48px, 56px"
                   />
                 </div>
               ))}

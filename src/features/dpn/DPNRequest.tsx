@@ -8,7 +8,7 @@ const DPNRequest = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/all/search-bg.jpg')",
+            backgroundImage: "url('/all/search-bg.webp')",
           }}
         />
         <div className="absolute inset-0 bg-linear-to-r from-black/60 to-black/60 " />
